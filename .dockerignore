@@ -1,0 +1,12 @@
+# Docker ignore file for TSP Solver
+target/
+results/
+*.log
+.git/
+.gitignore
+README.md
+*.md
+.vscode/
+.idea/
+*.iml
+*.ipynb_checkpoints/
