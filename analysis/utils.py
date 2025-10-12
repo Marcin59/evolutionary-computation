@@ -196,7 +196,9 @@ def plot_best_solutions(data):
             # Plot all nodes (unselected) in light gray
             for node in nodes:
                 x, y = node['x'], node['y']
-                ax.scatter(x, y, c='lightgray', s=20, alpha=0.5, zorder=1)
+                cost = node['cost']
+                size = 50 + 200 * (cost - min_cost) / (max_cost - min_cost)
+                ax.scatter(x, y, c='lightgray', s=size, alpha=0.5, zorder=1)
                 ax.text(x, y-50, str(node['id']), ha='center', va='top', 
                        fontsize=6, alpha=0.7)
             

@@ -89,7 +89,7 @@ public class NearestNeighborAnyPositionAlgorithm extends Algorithm {
 
         if (currentRoute.size() == 1) {
             // Special case: only one node in route
-            distanceChange = 2 * distMatrix.getDistance(currentRoute.get(0), newNode);
+            distanceChange = distMatrix.getDistance(currentRoute.get(0), newNode);
         } else {
             // Get nodes before and after insertion position
             int prevNode, nextNode;
