@@ -1,6 +1,6 @@
 package tsp.analysis;
 
-import tsp.algorithms.greedyAlgorithms.*;
+import tsp.algorithms.greedy.*;
 import tsp.core.*;
 import java.util.*;
 import java.util.function.Function;

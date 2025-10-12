@@ -1,4 +1,4 @@
-package tsp.algorithms.greedyAlgorithms;
+package tsp.algorithms.greedy;
 
 import tsp.core.*;
 import java.util.*;
@@ -48,13 +48,13 @@ public class NearestNeighborAnyPositionAlgorithm extends Algorithm {
         while (selectedNodes.size() < instance.getRequiredNodes()) {
             Integer bestNode = null;
             int bestPosition = -1;
-            double bestObjectiveChange = Double.MAX_VALUE;
+            long bestObjectiveChange = Long.MAX_VALUE;
             
             // Try adding each unselected node at each possible position
             for (Integer candidate : unselectedNodes) {
                 // Try all possible positions (0 to route.size())
                 for (int position = 0; position <= route.size(); position++) {
-                    double objectiveChange = calculateObjectiveChangeAtPosition(
+                    long objectiveChange = calculateObjectiveChangeAtPosition(
                         candidate, position, route, distMatrix);
                     
                     if (objectiveChange < bestObjectiveChange) {
@@ -79,13 +79,13 @@ public class NearestNeighborAnyPositionAlgorithm extends Algorithm {
     /**
      * Calculate objective function change when inserting a node at a specific position.
      */
-    private double calculateObjectiveChangeAtPosition(int newNode, int position, 
+    private long calculateObjectiveChangeAtPosition(int newNode, int position,
                                                     List<Integer> currentRoute, DistanceMatrix distMatrix) {
         // Cost of adding the new node
-        double nodeCost = instance.getNode(newNode).getCost();
+        long nodeCost = instance.getNode(newNode).getCost();
         
         // Distance cost change
-        double distanceChange;
+        long distanceChange;
         
         if (currentRoute.size() == 1) {
             // Special case: only one node in route
@@ -109,8 +109,8 @@ public class NearestNeighborAnyPositionAlgorithm extends Algorithm {
             }
             
             // Calculate distance change
-            double removedDistance = distMatrix.getDistance(prevNode, nextNode);
-            double addedDistance = distMatrix.getDistance(prevNode, newNode) + 
+            long removedDistance = distMatrix.getDistance(prevNode, nextNode);
+            long addedDistance = distMatrix.getDistance(prevNode, newNode) +
                                  distMatrix.getDistance(newNode, nextNode);
             
             distanceChange = addedDistance - removedDistance;

@@ -74,7 +74,7 @@ public class AlgorithmExperimentRunner {
             GreedyExperimentRunner.BestSolutionInfo info = entry.getValue();
             
             System.out.println("\n" + algorithmName + ":");
-            System.out.println("  Best objective: " + String.format("%.2f", 
+            System.out.println("  Best objective: " + String.format("%d",
                 info.getBestResult().getObjectiveValue()));
             System.out.println("  Total runs: " + info.getTotalRuns());
             System.out.println("  Validation: " + (info.isValidated() ? "PASSED" : "FAILED"));
@@ -135,18 +135,18 @@ public class AlgorithmExperimentRunner {
                 .toList();
             
             double avgObjective = algorithmResults.stream()
-                .mapToDouble(AlgorithmResult::getObjectiveValue)
+                .mapToLong(AlgorithmResult::getObjectiveValue)
                 .average().orElse(0.0);
             
-            double maxObjective = algorithmResults.stream()
-                .mapToDouble(AlgorithmResult::getObjectiveValue)
-                .max().orElse(0.0);
+            long maxObjective = algorithmResults.stream()
+                .mapToLong(AlgorithmResult::getObjectiveValue)
+                .max().orElse(0);
             
             double avgTime = algorithmResults.stream()
-                .mapToLong(AlgorithmResult::getComputationTimeMs)
+                .mapToDouble(AlgorithmResult::getComputationTimeMs)
                 .average().orElse(0.0);
             
-            System.out.printf("%s: Min=%.2f, Avg=%.2f, Max=%.2f, AvgTime=%.1fms (%d runs) [%s]\n",
+            System.out.printf("%s: Min=%d, Avg=%.2f, Max=%d, AvgTime=%.1fms (%d runs) [%s]\n",
                 algorithmName, 
                 info.getBestResult().getObjectiveValue(),
                 avgObjective, 

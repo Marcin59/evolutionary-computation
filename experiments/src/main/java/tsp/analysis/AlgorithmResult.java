@@ -11,9 +11,9 @@ public class AlgorithmResult {
     private final String instanceName;
     private final Solution solution;
     private final long computationTimeMs;
-    private final double objectiveValue;
-    private final double pathLength;
-    private final double nodeCosts;
+    private final long objectiveValue;
+    private final long pathLength;
+    private final long nodeCosts;
     private final int selectedNodes;
     private final int totalNodes;
     
@@ -34,16 +34,16 @@ public class AlgorithmResult {
     public String getInstanceName() { return instanceName; }
     public Solution getSolution() { return solution; }
     public long getComputationTimeMs() { return computationTimeMs; }
-    public double getObjectiveValue() { return objectiveValue; }
-    public double getPathLength() { return pathLength; }
-    public double getNodeCosts() { return nodeCosts; }
+    public long getObjectiveValue() { return objectiveValue; }
+    public long getPathLength() { return pathLength; }
+    public long getNodeCosts() { return nodeCosts; }
     public int getSelectedNodes() { return selectedNodes; }
     public int getTotalNodes() { return totalNodes; }
     
     @Override
     public String toString() {
         return String.format(
-            "AlgorithmResult{algorithm='%s', instance='%s', objective=%.2f, time=%dms}",
+            "AlgorithmResult{algorithm='%s', instance='%s', objective=%d, time=%dms}",
             algorithmName, instanceName, objectiveValue, computationTimeMs
         );
     }

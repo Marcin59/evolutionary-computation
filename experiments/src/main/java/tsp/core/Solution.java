@@ -11,7 +11,7 @@ public abstract class Solution {
     protected final Instance instance;
     protected final Set<Integer> selectedNodes;
     protected final List<Integer> route;
-    protected Double objectiveValue;
+    protected Long objectiveValue;
     
     public Solution(Instance instance, Set<Integer> selectedNodes, List<Integer> route) {
         this.instance = instance;
@@ -58,7 +58,7 @@ public abstract class Solution {
     /**
      * Calculate and cache the objective value.
      */
-    public double getObjectiveValue() {
+    public long getObjectiveValue() {
         if (objectiveValue == null) {
             objectiveValue = calculateObjectiveValue();
         }
@@ -68,9 +68,9 @@ public abstract class Solution {
     /**
      * Calculate objective value: total path length + total node costs.
      */
-    private double calculateObjectiveValue() {
-        double totalPathLength = 0.0;
-        double totalNodeCosts = 0.0;
+    private long calculateObjectiveValue() {
+        long totalPathLength = 0;
+        long totalNodeCosts = 0;
         
         // Calculate path length (including return to start)
         DistanceMatrix distMatrix = instance.getDistanceMatrix();
@@ -91,9 +91,9 @@ public abstract class Solution {
     /**
      * Get path length component of objective function.
      */
-    public double getPathLength() {
+    public long getPathLength() {
         DistanceMatrix distMatrix = instance.getDistanceMatrix();
-        double pathLength = 0.0;
+        long pathLength = 0;
         
         for (int i = 0; i < route.size(); i++) {
             int currentNode = route.get(i);
@@ -107,8 +107,8 @@ public abstract class Solution {
     /**
      * Get node costs component of objective function.
      */
-    public double getNodeCosts() {
-        double totalCosts = 0.0;
+    public long getNodeCosts() {
+        long totalCosts = 0;
         for (Integer nodeId : selectedNodes) {
             totalCosts += instance.getNode(nodeId).getCost();
         }
@@ -147,7 +147,7 @@ public abstract class Solution {
     
     @Override
     public String toString() {
-        return String.format("Solution{nodes=%d/%d, objective=%.2f, path=%.2f, costs=%.2f}", 
+        return String.format("Solution{nodes=%d/%d, objective=%d, path=%d, costs=%d}",
                            selectedNodes.size(), instance.getTotalNodes(), 
                            getObjectiveValue(), getPathLength(), getNodeCosts());
     }
