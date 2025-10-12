@@ -49,20 +49,6 @@ public class GreedyExperimentRunner {
             }
         }
         
-        // Additional 200 random solutions (separate from node-based random)
-        System.out.println("\nRunning additional random solutions...");
-        for (int i = 0; i < 200; i++) {
-            int randomStartNode = new Random().nextInt(instance.getTotalNodes());
-            Algorithm algorithm = new RandomSolutionAlgorithm(instance, randomStartNode, 
-                                                            System.nanoTime() + i);
-            AlgorithmResult result = ExperimentRunner.runSingle(algorithm);
-            allResults.add(result);
-            
-            if ((i + 1) % 50 == 0) {
-                System.out.printf("  Completed %d/200 additional random solutions\n", i + 1);
-            }
-        }
-        
         System.out.println("\nTotal results generated: " + allResults.size());
         return allResults;
     }

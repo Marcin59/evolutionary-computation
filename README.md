@@ -18,7 +18,6 @@ Given nodes with (x, y) coordinates and costs, the goal is to:
 ```
 ├── analysis/                # Python analysis and visualization
 │   ├── TSP_Greedy_Analysis.ipynb    # Comprehensive greedy analysis
-│   ├── TSP_Analysis.ipynb           # General TSP analysis
 │   ├── requirements.txt             # Python dependencies
 │   └── README.md                    # Analysis documentation
 ├── experiments/             # Java experiments and algorithms
@@ -67,39 +66,8 @@ experiments/src/main/java/tsp/
 ```
 analysis/
 ├── TSP_Greedy_Analysis.ipynb    # Comprehensive greedy algorithms analysis
-├── TSP_Analysis.ipynb           # General TSP analysis and visualization
 ├── requirements.txt             # Python dependencies
 └── README.md                    # Analysis documentation
-```
-
-**Features**:
-- ✅ Statistical analysis and significance testing
-- ✅ Performance comparisons and rankings  
-- ✅ 2D visualization of solutions with node costs
-- ✅ Algorithm consistency and convergence analysis
-- ✅ Configurable algorithm folder loading
-- ✅ Export functionality for plots and data
-
-## Key Design Features
-
-### ✅ **Extensible Algorithm Framework**
-- Abstract `Algorithm` class makes adding new evolutionary algorithms easy
-- Clean separation between node selection and route construction
-- Algorithms only access `DistanceMatrix`, not coordinates (as required)
-
-### ✅ **Comprehensive Performance Tracking**
-- Automatic computation time measurement
-- Objective function breakdown (path length vs node costs)
-- Export to multiple formats (JSON, CSV) for Python analysis
-
-### ✅ **Statistical Analysis Ready**
-- Multiple runs per algorithm for statistical significance
-- Export formats optimized for pandas/numpy analysis
-- Built-in summary statistics and performance ranking
-
-### ✅ **Clean Data Flow**
-```
-CSV Data → Instance → DistanceMatrix → Algorithm → Solution → Results → Python Analysis
 ```
 
 ## Usage
@@ -135,119 +103,6 @@ pip install -r analysis/requirements.txt
 pip install pandas numpy matplotlib seaborn scipy jupyter jupyterlab
 ```
 
-#### Run Analysis
-```bash
-# Windows
-scripts\start-analysis.bat
-
-# Linux/Mac
-chmod +x scripts/start-analysis.sh
-./scripts/start-analysis.sh
-
-# Or manually:
-cd analysis
-jupyter lab TSP_Greedy_Analysis.ipynb
-```
-
-#### Manual Docker Commands
-
-```bash
-# Build image (from experiments folder)
-cd experiments
-docker build -t tsp-solver .
-
-# Run experiments (Windows)
-docker run --rm -v "%cd%\results:/app/results" -v "%cd%\data:/app/data" tsp-solver
-
-# Run experiments (Linux/Mac)
-docker run --rm -v "$(pwd)/results:/app/results" -v "$(pwd)/data:/app/data" tsp-solver
-
-# Return to root and analyze locally:
-cd ..
-cd analysis
-jupyter lab TSP_Greedy_Analysis.ipynb
-```
-
-### Full Local Installation (Alternative)
-
-#### Prerequisites
-- Java 17 (LTS) - Download from [Adoptium](https://adoptium.net/temurin/releases/?version=17)
-- Maven 3.6+
-- Python 3.8+ with pip
-
-#### Run Experiments
-```bash
-# Compile and run experiments (from experiments folder)
-cd experiments
-mvn clean compile exec:java -Dexec.mainClass="tsp.Main"
-```
-
-This will:
-- Load `data/TSPA.csv` and `data/TSPB.csv`
-- Run each algorithm 30 times on each instance
-- Export results to `results/` directory in JSON and CSV formats
-
-#### Analyze Results in Python
-
-Install dependencies and run the notebook:
-```bash
-pip install -r analysis/requirements.txt
-cd analysis
-jupyter lab TSP_Greedy_Analysis.ipynb
-```
-
-The notebook will:
-- Load experiment results from JSON files
-- Perform statistical analysis and significance testing
-- Generate visualizations and performance comparisons
-- Export summary reports and rankings
-
-## Current Algorithms
-
-### 1. **RandomAlgorithm**
-- Randomly selects 50% of nodes
-- Creates random route through selected nodes
-- Baseline for comparison
-
-### 2. **GreedyAlgorithm** 
-- Selects nodes with lowest costs
-- Uses nearest neighbor for route construction
-- Pure cost optimization
-
-### 3. **GreedyDistanceAlgorithm**
-- Balances node cost (70%) and centrality (30%)
-- Starts route from most central node
-- More sophisticated selection strategy
-
-## Adding New Algorithms
-
-To add evolutionary algorithms, extend the `Algorithm` class:
-
-```java
-public class GeneticAlgorithm extends Algorithm {
-    public GeneticAlgorithm(Instance instance) {
-        super("Genetic", instance);
-    }
-    
-    @Override
-    public Solution solve() {
-        // Your evolutionary algorithm implementation
-        // Return TSPSolution with selected nodes and route
-    }
-}
-```
-
-Then add to the experiment runner in `Main.java`:
-
-```java
-List<Supplier<Algorithm>> algorithms = List.of(
-    () -> new RandomAlgorithm(instance),
-    () -> new GreedyAlgorithm(instance),
-    () -> new GreedyDistanceAlgorithm(instance),
-    () -> new GeneticAlgorithm(instance)  // Add here
-);
-```
-
 ## Results Structure
 
 ### JSON Export Format
@@ -272,45 +127,6 @@ List<Supplier<Algorithm>> algorithms = List.of(
   }
 }
 ```
-
-### Python Analysis Output
-- Statistical significance tests between algorithms
-- Performance rankings and recommendations
-- Convergence analysis and consistency metrics
-- Instance comparison and algorithm characteristics
-- Comprehensive visualizations and summary reports
-
-## Future Extensions
-
-The architecture supports easy addition of:
-- **Evolutionary Algorithms**: Genetic algorithms, evolution strategies
-- **Local Search**: 2-opt, 3-opt improvements
-- **Hybrid Approaches**: Combining different selection and routing strategies
-- **Multi-objective Optimization**: Pareto-optimal solutions
-- **Parameter Tuning**: Automated parameter optimization
-
-## Dependencies
-
-### Docker Only Setup (Recommended)
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) for Windows/Mac, or Docker Engine for Linux
-- Python 3.8+ with pip for analysis
-- Dependencies listed in `requirements.txt`
-
-### Local Installation (Alternative)
-#### Java (Maven)
-- Java 17 (LTS) - [Download from Adoptium](https://adoptium.net/temurin/releases/?version=17)
-- Maven 3.6+
-- Jackson for JSON processing
-- Apache Commons Math for statistics
-- JUnit for testing
-
-#### Python (Jupyter)
-- pandas, numpy for data analysis
-- matplotlib, seaborn for visualization  
-- scipy for statistical testing
-- jupyter, jupyterlab for interactive analysis
-
-*Install Python dependencies with: `pip install -r requirements.txt`*
 
 ## Data Format
 
