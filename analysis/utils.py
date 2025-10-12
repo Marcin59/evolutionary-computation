@@ -6,6 +6,7 @@ This module contains functions that can be shared between different analysis not
 """
 
 import json
+from typing import Iterable
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -270,12 +271,13 @@ def plot_best_solutions(data):
             print("\n")
 
 
-def plot_objective_distributions(data):
+def plot_objective_distributions(data, blocked_prefixes: Iterable[str] = None):
     """
     Plot objective value distributions for all algorithms and instances - one per row.
     
     Args:
         data (dict): Dictionary containing algorithm data
+        blocked_prefixes (Iterable[str], optional): List of algorithm name prefixes to exclude from plots
     """
     # Calculate number of rows - one per instance
     n_instances = len(data)
@@ -289,6 +291,9 @@ def plot_objective_distributions(data):
         
         # Create base algorithm column for grouping
         df_plot = df.copy()
+        if blocked_prefixes:
+            for prefix in blocked_prefixes:
+                df_plot = df_plot[~df_plot['algorithm'].str.startswith(prefix)]
         df_plot['base_algorithm'] = df_plot['algorithm'].str.replace(r'_start\d+', '', regex=True)
         
         # Combined box and violin plot
@@ -902,7 +907,7 @@ def get_available_instances(algorithm_folder="greedy", results_path=RESULTS_PATH
     Returns:
         list: List of instance names found in the folder
     """
-    folder_path = results_base_path / algorithm_folder
+    folder_path = results_path / algorithm_folder
     if not folder_path.exists():
         return []
     

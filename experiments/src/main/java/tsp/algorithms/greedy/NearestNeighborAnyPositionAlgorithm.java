@@ -86,7 +86,7 @@ public class NearestNeighborAnyPositionAlgorithm extends Algorithm {
         
         // Distance cost change
         long distanceChange;
-        
+
         if (currentRoute.size() == 1) {
             // Special case: only one node in route
             distanceChange = 2 * distMatrix.getDistance(currentRoute.get(0), newNode);
@@ -96,24 +96,20 @@ public class NearestNeighborAnyPositionAlgorithm extends Algorithm {
             
             if (position == 0) {
                 // Insert at beginning
-                prevNode = currentRoute.get(currentRoute.size() - 1); // Last node (cycle)
                 nextNode = currentRoute.get(0); // Current first node
+                distanceChange = distMatrix.getDistance(newNode, nextNode);
             } else if (position == currentRoute.size()) {
                 // Insert at end
                 prevNode = currentRoute.get(currentRoute.size() - 1); // Current last node
-                nextNode = currentRoute.get(0); // First node (cycle)
+                distanceChange = distMatrix.getDistance(prevNode, newNode);
             } else {
                 // Insert in middle
                 prevNode = currentRoute.get(position - 1);
                 nextNode = currentRoute.get(position);
+                distanceChange = distMatrix.getDistance(prevNode, newNode) +
+                                distMatrix.getDistance(newNode, nextNode) -
+                                distMatrix.getDistance(prevNode, nextNode);
             }
-            
-            // Calculate distance change
-            long removedDistance = distMatrix.getDistance(prevNode, nextNode);
-            long addedDistance = distMatrix.getDistance(prevNode, newNode) +
-                                 distMatrix.getDistance(newNode, nextNode);
-            
-            distanceChange = addedDistance - removedDistance;
         }
         
         return nodeCost + distanceChange;
