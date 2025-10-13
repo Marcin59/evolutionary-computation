@@ -1,5 +1,9 @@
 # Greedy Heuristics for TSP with Node Selection
 
+## Authors
+- Adam Tomys 156057
+- Marcin Kapiszewski 156048
+
 ## Problem Description
 
 Given a set of nodes with (x, y) coordinates and costs, the goal is to:
@@ -198,6 +202,7 @@ In additional to the validator created by us, all of the 4 best solutions were c
 ### Source Code
 
 The complete implementation is available in the project repository:
+- Github Link: https://github.com/Marcin59/evolutionary-computation
 - Java source code: `src/main/java/tsp/algorithms/greedyAlgorithms/`
 - This analysis notebook: `TSP_Greedy_Analysis.ipynb`
 
