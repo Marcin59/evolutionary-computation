@@ -43,13 +43,12 @@ public class SolutionChecker {
         
         // Check 5: Objective function calculation
         try {
-            double calculatedObjective = recalculateObjective(solution);
-            double reportedObjective = solution.getObjectiveValue();
-            double tolerance = 0.001;
+            long calculatedObjective = recalculateObjective(solution);
+            long reportedObjective = solution.getObjectiveValue();
             
-            if (Math.abs(calculatedObjective - reportedObjective) > tolerance) {
+            if (calculatedObjective != reportedObjective) {
                 result.addWarning(String.format(
-                    "Objective function mismatch: calculated=%.3f, reported=%.3f", 
+                    "Objective function mismatch: calculated=%d, reported=%d",
                     calculatedObjective, reportedObjective));
             }
         } catch (Exception e) {
@@ -62,13 +61,13 @@ public class SolutionChecker {
     /**
      * Recalculate objective function independently.
      */
-    private static double recalculateObjective(Solution solution) {
+    private static long recalculateObjective(Solution solution) {
         Instance instance = solution.getInstance();
         DistanceMatrix distMatrix = instance.getDistanceMatrix();
         List<Integer> route = solution.getRoute();
         
         // Calculate path length
-        double pathLength = 0.0;
+        long pathLength = 0;
         for (int i = 0; i < route.size(); i++) {
             int currentNode = route.get(i);
             int nextNode = route.get((i + 1) % route.size());
@@ -76,7 +75,7 @@ public class SolutionChecker {
         }
         
         // Calculate node costs
-        double nodeCosts = 0.0;
+        long nodeCosts = 0;
         for (Integer nodeId : solution.getSelectedNodes()) {
             nodeCosts += instance.getNode(nodeId).getCost();
         }

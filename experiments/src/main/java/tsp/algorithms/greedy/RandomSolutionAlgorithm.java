@@ -1,4 +1,4 @@
-package tsp.algorithms.greedyAlgorithms;
+package tsp.algorithms.greedy;
 
 import tsp.core.*;
 import java.util.*;

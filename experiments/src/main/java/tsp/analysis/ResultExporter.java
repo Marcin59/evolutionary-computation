@@ -44,7 +44,7 @@ public class ResultExporter {
         
         // Data rows
         for (AlgorithmResult result : results) {
-            csv.append(String.format("%s,%s,%.2f,%.2f,%.2f,%d,%d,%d\n",
+            csv.append(String.format("%s,%s,%d,%d,%d,%d,%d,%d\n",
                 result.getAlgorithmName(),
                 result.getInstanceName(),
                 result.getObjectiveValue(),

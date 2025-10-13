@@ -1,4 +1,4 @@
-package tsp.algorithms.greedyAlgorithms;
+package tsp.algorithms.greedy;
 
 import tsp.core.*;
 import java.util.*;
@@ -43,11 +43,11 @@ public class GreedyCycleAlgorithm extends Algorithm {
         // Step 2: Choose the nearest vertex and create incomplete cycle
         if (selectedNodes.size() < instance.getRequiredNodes()) {
             Integer nearestNode = null;
-            double nearestObjectiveChange = Double.MAX_VALUE;
+            long nearestObjectiveChange = Long.MAX_VALUE;
             
             // Find the nearest vertex based on objective function improvement
             for (Integer candidate : unselectedNodes) {
-                double objectiveChange = instance.getNode(candidate).getCost() + 
+                long objectiveChange = instance.getNode(candidate).getCost() +
                                        2 * distMatrix.getDistance(startNode, candidate);
                 
                 if (objectiveChange < nearestObjectiveChange) {
@@ -68,13 +68,13 @@ public class GreedyCycleAlgorithm extends Algorithm {
         while (selectedNodes.size() < instance.getRequiredNodes()) {
             Integer bestNode = null;
             int bestInsertionIndex = -1;
-            double bestObjectiveChange = Double.MAX_VALUE;
+            long bestObjectiveChange = Long.MAX_VALUE;
             
             // Try inserting each unselected node at each possible edge
             for (Integer candidate : unselectedNodes) {
                 // Try inserting after each node in current route
                 for (int i = 0; i < route.size(); i++) {
-                    double objectiveChange = calculateInsertionCost(
+                    long objectiveChange = calculateInsertionCost(
                         candidate, i, route, distMatrix);
                     
                     if (objectiveChange < bestObjectiveChange) {
@@ -101,23 +101,23 @@ public class GreedyCycleAlgorithm extends Algorithm {
      * This breaks the edge from route[index] to route[(index+1)%size] and 
      * creates two new edges: route[index] -> newNode -> route[(index+1)%size]
      */
-    private double calculateInsertionCost(int newNode, int afterIndex, 
+    private long calculateInsertionCost(int newNode, int afterIndex,
                                         List<Integer> currentRoute, DistanceMatrix distMatrix) {
         // Cost of adding the new node
-        double nodeCost = instance.getNode(newNode).getCost();
+        long nodeCost = instance.getNode(newNode).getCost();
         
         // Distance cost change
-        double distanceChange;
+        long distanceChange;
         
         // Normal case: inserting into an edge in the cycle
         int nodeA = currentRoute.get(afterIndex);
         int nodeB = currentRoute.get((afterIndex + 1) % currentRoute.size());
         
         // Remove edge A -> B
-        double removedDistance = distMatrix.getDistance(nodeA, nodeB);
+        long removedDistance = distMatrix.getDistance(nodeA, nodeB);
         
         // Add edges A -> newNode -> B
-        double addedDistance = distMatrix.getDistance(nodeA, newNode) + 
+        long addedDistance = distMatrix.getDistance(nodeA, newNode) +
                              distMatrix.getDistance(newNode, nodeB);
         
         distanceChange = addedDistance - removedDistance;

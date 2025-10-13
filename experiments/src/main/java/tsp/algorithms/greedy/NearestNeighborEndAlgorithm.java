@@ -1,4 +1,4 @@
-package tsp.algorithms.greedyAlgorithms;
+package tsp.algorithms.greedy;
 
 import tsp.core.*;
 import java.util.*;
@@ -44,7 +44,7 @@ public class NearestNeighborEndAlgorithm extends Algorithm {
         // Step 2: Repeat - add closest vertex to the last one added
         while (selectedNodes.size() < instance.getRequiredNodes()) {
             Integer closestNode = null;
-            double bestObjectiveChange = Double.MAX_VALUE;
+            long bestObjectiveChange = Long.MAX_VALUE;
             
             // Current last node in route
             int lastNode = route.get(route.size() - 1);
@@ -52,9 +52,9 @@ public class NearestNeighborEndAlgorithm extends Algorithm {
             // Find the closest node to the last added node
             for (Integer candidate : unselectedNodes) {
                 // Calculate the objective change (node cost + distance to last node)
-                double nodeCost = instance.getNode(candidate).getCost();
-                double distanceToLast = distMatrix.getDistance(lastNode, candidate);
-                double objectiveChange = nodeCost + distanceToLast;
+                long nodeCost = instance.getNode(candidate).getCost();
+                long distanceToLast = distMatrix.getDistance(lastNode, candidate);
+                long objectiveChange = nodeCost + distanceToLast;
                 
                 if (objectiveChange < bestObjectiveChange) {
                     bestObjectiveChange = objectiveChange;

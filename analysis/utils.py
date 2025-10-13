@@ -6,6 +6,7 @@ This module contains functions that can be shared between different analysis not
 """
 
 import json
+from typing import Iterable
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -22,6 +23,7 @@ warnings.filterwarnings('ignore')
 plt.style.use('seaborn-v0_8')
 sns.set_palette("husl")
 
+RESULTS_PATH = Path("results")
 
 # ==============================================================================
 # DATA LOADING FUNCTIONS
@@ -38,10 +40,9 @@ def load_algorithm_results(instance_name, algorithm_folder="greedy"):
     Returns:
         tuple: (results_df, viz_data, summary_data) or (None, None, None) if not found
     """
-    results_path = Path(f"results/{algorithm_folder}/{instance_name}_{algorithm_folder}_results.json")
-    viz_path = Path(f"results/{algorithm_folder}/{instance_name}_visualization.json")
-    summary_path = Path(f"results/{algorithm_folder}/{instance_name}_summary.json")
-    
+    results_path = RESULTS_PATH / algorithm_folder / f"{instance_name}_{algorithm_folder}_results.json"
+    viz_path = RESULTS_PATH / algorithm_folder / f"{instance_name}_visualization.json"
+    summary_path = RESULTS_PATH / algorithm_folder / f"{instance_name}_summary.json"
     if not results_path.exists():
         print(f"Results file not found: {results_path}")
         return None, None, None
@@ -101,18 +102,18 @@ def load_all_algorithm_results(algorithm_folder="greedy", instances=None):
     return all_data
 
 
-def load_results(instance_name, results_folder="results"):
+def load_results(instance_name, results_folder: Path = RESULTS_PATH):
     """
     Load experiment results for a given instance (legacy function for backward compatibility).
     
     Args:
         instance_name (str): Name of the TSP instance
-        results_folder (str): Path to results folder
+        results_folder (Path): Path to results folder
         
     Returns:
         tuple: (results_df, summary_data) or (None, None) if not found
     """
-    results_path = Path(f"{results_folder}/{instance_name}_results.json")
+    results_path = results_folder / f"{instance_name}_results.json"
     
     if not results_path.exists():
         print(f"Results file not found: {results_path}")
@@ -132,12 +133,12 @@ def load_results(instance_name, results_folder="results"):
     return df, summary
 
 
-def load_all_results(results_folder="results", instances=None):
+def load_all_results(results_folder: Path = RESULTS_PATH, instances=None):
     """
     Load results for all instances (legacy function for backward compatibility).
     
     Args:
-        results_folder (str): Path to results folder
+        results_folder (Path): Path to results folder
         instances (list): List of instance names to load
         
     Returns:
@@ -163,6 +164,7 @@ def load_all_results(results_folder="results", instances=None):
 def plot_best_solutions(data):
     """
     Create 2D visualizations of best solutions with node costs represented by color and size.
+    Each instance is plotted separately with algorithms displayed individually and node order printed after each.
     
     Args:
         data (dict): Dictionary containing algorithm data with visualization information
@@ -176,30 +178,27 @@ def plot_best_solutions(data):
         best_solutions = viz_data['best_solutions']
         nodes = viz_data['nodes']
         
-        # Create subplots for each algorithm - one per row
-        n_algorithms = len(best_solutions)
-        cols = 1  # One plot per row
-        rows = n_algorithms
-        
-        fig, axes = plt.subplots(rows, cols, figsize=(12, 8 * rows))
-        if rows == 1:
-            axes = [axes]  # Ensure axes is always a list
-        
-        fig.suptitle(f'Best Solutions - {instance_name}', fontsize=16, fontweight='bold')
-        
         # Prepare node data
         node_coords = {node['id']: (node['x'], node['y']) for node in nodes}
         node_costs = {node['id']: node['cost'] for node in nodes}
         max_cost = max(node['cost'] for node in nodes)
         min_cost = min(node['cost'] for node in nodes)
         
-        for idx, (algorithm, solution_data) in enumerate(best_solutions.items()):
-            ax = axes[idx]
+        print(f"\n{'='*80}")
+        print(f"{instance_name} - BEST SOLUTIONS")
+        print(f"{'='*80}\n")
+        
+        # Plot each algorithm separately
+        for algorithm, solution_data in best_solutions.items():
+            # Create individual plot for this algorithm
+            fig, ax = plt.subplots(1, 1, figsize=(12, 8))
             
             # Plot all nodes (unselected) in light gray
             for node in nodes:
                 x, y = node['x'], node['y']
-                ax.scatter(x, y, c='lightgray', s=20, alpha=0.5, zorder=1)
+                cost = node['cost']
+                size = 50 + 200 * (cost - min_cost) / (max_cost - min_cost)
+                ax.scatter(x, y, c='lightgray', s=size, alpha=0.5, zorder=1)
                 ax.text(x, y-50, str(node['id']), ha='center', va='top', 
                        fontsize=6, alpha=0.7)
             
@@ -237,39 +236,50 @@ def plot_best_solutions(data):
                 ax.annotate('', xy=(x1 + 0.7*dx, y1 + 0.7*dy), xytext=(x1 + 0.3*dx, y1 + 0.3*dy),
                            arrowprops=dict(arrowstyle='->', color='red', lw=1.5), zorder=4)
             
-            # Formatting
-            ax.set_title(f'{algorithm}\nObjective: {solution_data["objective_value"]:.2f}\n'
-                        f'Path: {solution_data["path_length"]:.2f}, Costs: {solution_data["node_costs"]:.2f}\n'
-                        f'Validated: {"YES" if solution_data["is_validated"] else "NO"}')
+            # Formatting for plot
+            validated_text = "✓ VALIDATED" if solution_data['is_validated'] else "✗ VALIDATION FAILED"
+            fig.suptitle(f'{instance_name} - {algorithm}', fontsize=16, fontweight='bold')
+            ax.set_title(f'Objective: {solution_data["objective_value"]:.2f} | '
+                        f'Path: {solution_data["path_length"]:.2f} | Costs: {solution_data["node_costs"]:.2f} | '
+                        f'{validated_text}')
             ax.set_xlabel('X Coordinate')
             ax.set_ylabel('Y Coordinate')
             ax.grid(True, alpha=0.3)
             ax.set_aspect('equal')
-        
-        # Add colorbar
-        sm = plt.cm.ScalarMappable(cmap='viridis', norm=plt.Normalize(vmin=min_cost, vmax=max_cost))
-        sm.set_array([])
-        cbar = fig.colorbar(sm, ax=axes, orientation='horizontal', pad=0.1, shrink=0.8)
-        cbar.set_label('Node Cost', fontsize=12)
-        
-        plt.tight_layout()
-        plt.show()
-        
-        # Print best solution node indices
-        print(f"\n{instance_name} - Best Solution Node Indices (0-based):")
-        print("-" * 60)
-        for algorithm, solution_data in best_solutions.items():
-            route = solution_data['route']
-            validated = "[VALIDATED]" if solution_data['is_validated'] else "[VALIDATION FAILED]"
-            print(f"{algorithm}: {route} {validated}")
+            
+            # Add colorbar
+            sm = plt.cm.ScalarMappable(cmap='viridis', norm=plt.Normalize(vmin=min_cost, vmax=max_cost))
+            sm.set_array([])
+            cbar = fig.colorbar(sm, ax=ax, orientation='horizontal', pad=0.1, shrink=0.8)
+            cbar.set_label('Node Cost', fontsize=12)
+            
+            plt.tight_layout()
+            plt.show()
+            
+            # Print node order information immediately after the graph
+            validated = "✓ VALIDATED" if solution_data['is_validated'] else "✗ VALIDATION FAILED"
+            
+            print(f"\n{algorithm}")
+            print("-" * 80)
+            print(f"Status: {validated}")
+            print(f"Objective Value: {solution_data['objective_value']:.2f}")
+            print(f"Path Length: {solution_data['path_length']:.2f}")
+            print(f"Node Costs: {solution_data['node_costs']:.2f}")
+            print(f"Selected Nodes: {len(selected_nodes)}")
+            print(f"\nNode Order (Route):")
+            
+            # Format route with line breaks for readability (10 nodes per line)
+            print(', '.join(str(node) for node in route))
+            print("\n")
 
 
-def plot_objective_distributions(data):
+def plot_objective_distributions(data, blocked_prefixes: Iterable[str] = None):
     """
     Plot objective value distributions for all algorithms and instances - one per row.
     
     Args:
         data (dict): Dictionary containing algorithm data
+        blocked_prefixes (Iterable[str], optional): List of algorithm name prefixes to exclude from plots
     """
     # Calculate number of rows - one per instance
     n_instances = len(data)
@@ -283,6 +293,9 @@ def plot_objective_distributions(data):
         
         # Create base algorithm column for grouping
         df_plot = df.copy()
+        if blocked_prefixes:
+            for prefix in blocked_prefixes:
+                df_plot = df_plot[~df_plot['algorithm'].str.startswith(prefix)]
         df_plot['base_algorithm'] = df_plot['algorithm'].str.replace(r'_start\d+', '', regex=True)
         
         # Combined box and violin plot
@@ -606,17 +619,17 @@ class VisualizationExporter:
     This class handles exporting of best solutions data, statistical summaries,
     and visualization plots for any algorithm type results.
     """
-    
-    def __init__(self, algorithm_folder="greedy", results_base_path="results"):
+
+    def __init__(self, algorithm_folder="greedy", results_base_path=RESULTS_PATH):
         """
         Initialize the visualization exporter.
         
         Args:
             algorithm_folder (str): Name of the algorithm folder to export from
-            results_base_path (str): Base path to the results directory
+            results_base_path (Path): Base path to the results directory
         """
         self.algorithm_folder = algorithm_folder
-        self.results_base_path = Path(results_base_path)
+        self.results_base_path = results_base_path
         self.output_dir = self.results_base_path / algorithm_folder
         self.output_dir.mkdir(parents=True, exist_ok=True)
     
@@ -868,17 +881,16 @@ def setup_plotting_style():
     plt.rcParams['figure.figsize'] = (12, 8)
 
 
-def get_available_algorithm_folders(results_base_path="results"):
+def get_available_algorithm_folders(results_path: Path=RESULTS_PATH):
     """
     Get list of available algorithm folders in the results directory.
     
     Args:
-        results_base_path (str): Base path to the results directory
+        results_path (Path): Base path to the results directory
         
     Returns:
         list: List of algorithm folder names
     """
-    results_path = Path(results_base_path)
     if not results_path.exists():
         return []
     
@@ -886,18 +898,18 @@ def get_available_algorithm_folders(results_base_path="results"):
     return sorted(algorithm_folders)
 
 
-def get_available_instances(algorithm_folder="greedy", results_base_path="results"):
+def get_available_instances(algorithm_folder="greedy", results_path=RESULTS_PATH):
     """
     Get list of available instances for a given algorithm folder.
     
     Args:
         algorithm_folder (str): Name of the algorithm folder
-        results_base_path (str): Base path to the results directory
+        results_path (Path): Base path to the results directory
         
     Returns:
         list: List of instance names found in the folder
     """
-    folder_path = Path(results_base_path) / algorithm_folder
+    folder_path = results_path / algorithm_folder
     if not folder_path.exists():
         return []
     
