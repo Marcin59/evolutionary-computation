@@ -40,7 +40,7 @@ public class GreedyCycleAlgorithm extends IterativeAlgorithm {
                 if (objectiveChange < bestObjectiveChange) {
                     bestObjectiveChange = objectiveChange;
                     bestNode = candidate;
-                    bestInsertionIndex = position + 1;
+                    bestInsertionIndex = position;
                 }
             }
         }
@@ -57,7 +57,7 @@ public class GreedyCycleAlgorithm extends IterativeAlgorithm {
      * This breaks the edge from route[index] to route[(index+1)%size] and 
      * creates two new edges: route[index] -> newNode -> route[(index+1)%size]
      */
-    private long calculateInsertionCost(int newNode, int afterIndex,
+    protected long calculateInsertionCost(int newNode, int afterIndex,
                                         List<Integer> currentRoute, DistanceMatrix distMatrix) {
         // Cost of adding the new node
         long nodeCost = instance.getNode(newNode).getCost();

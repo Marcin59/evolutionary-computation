@@ -58,7 +58,7 @@ public class NearestNeighborAnyPositionAlgorithm extends IterativeAlgorithm {
     /**
      * Calculate objective function change when inserting a node at a specific position.
      */
-    private long calculateObjectiveChangeAtPosition(int newNode, int position,
+    protected long calculateObjectiveChangeAtPosition(int newNode, int position,
                                                     List<Integer> currentRoute, DistanceMatrix distMatrix) {
         // Cost of adding the new node
         long nodeCost = instance.getNode(newNode).getCost();
