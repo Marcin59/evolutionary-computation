@@ -1,5 +1,6 @@
 package tsp.algorithms.greedy;
 
+import tsp.algorithms.IterativeAlgorithm;
 import tsp.core.*;
 import java.util.*;
 
@@ -14,88 +15,43 @@ import java.util.*;
  *      causing the smallest increase in cycle length
  *    Until all vertices have been added
  */
-public class GreedyCycleAlgorithm extends Algorithm {
-    private final int startNode;
-    
+public class GreedyCycleAlgorithm extends IterativeAlgorithm {
+
     public GreedyCycleAlgorithm(Instance instance, int startNode) {
-        super("GreedyCycle", instance);
-        this.startNode = startNode;
+        super("GreedyCycle", instance, startNode);
     }
     
     @Override
-    public Solution solve() {
-        List<Integer> route = new ArrayList<>();
-        Set<Integer> selectedNodes = new HashSet<>();
-        Set<Integer> unselectedNodes = new HashSet<>();
-        
-        // Initialize with all nodes as unselected
-        for (int i = 0; i < instance.getTotalNodes(); i++) {
-            unselectedNodes.add(i);
-        }
-        
-        DistanceMatrix distMatrix = instance.getDistanceMatrix();
-        
-        // Step 1: Select starting vertex (already provided via constructor)
-        route.add(startNode);
-        selectedNodes.add(startNode);
-        unselectedNodes.remove(startNode);
-        
-        // Step 2: Choose the nearest vertex and create incomplete cycle
-        if (selectedNodes.size() < instance.getRequiredNodes()) {
-            Integer nearestNode = null;
-            long nearestObjectiveChange = Long.MAX_VALUE;
-            
-            // Find the nearest vertex based on objective function improvement
-            for (Integer candidate : unselectedNodes) {
-                long objectiveChange = instance.getNode(candidate).getCost() +
-                                       2 * distMatrix.getDistance(startNode, candidate);
-                
-                if (objectiveChange < nearestObjectiveChange) {
-                    nearestObjectiveChange = objectiveChange;
-                    nearestNode = candidate;
+    protected Map.Entry<Integer, Integer> findBestNodeAndPosition(
+            Set<Integer> unselectedNodes, List<Integer> route
+    ) {
+        Integer bestNode = null;
+        int bestInsertionIndex = -1;
+        long bestObjectiveChange = Long.MAX_VALUE;
+
+        // Try inserting each unselected node at each possible edge
+        for (Integer candidate : unselectedNodes)
+        {
+            // Try inserting after each node in current route
+            for (int position = 0; position <= route.size(); position++) {
+                long objectiveChange = calculateInsertionCost(
+                        candidate, position, route, distanceMatrix);
+
+                if (objectiveChange < bestObjectiveChange) {
+                    bestObjectiveChange = objectiveChange;
+                    bestNode = candidate;
+                    bestInsertionIndex = position + 1;
                 }
             }
-            
-            // Add the nearest vertex to form initial incomplete cycle
-            if (nearestNode != null) {
-                route.add(nearestNode);
-                selectedNodes.add(nearestNode);
-                unselectedNodes.remove(nearestNode);
-            }
         }
-        
-        // Step 3: Repeat - insert vertices causing smallest increase in cycle length
-        while (selectedNodes.size() < instance.getRequiredNodes()) {
-            Integer bestNode = null;
-            int bestInsertionIndex = -1;
-            long bestObjectiveChange = Long.MAX_VALUE;
-            
-            // Try inserting each unselected node at each possible edge
-            for (Integer candidate : unselectedNodes) {
-                // Try inserting after each node in current route
-                for (int i = 0; i < route.size(); i++) {
-                    long objectiveChange = calculateInsertionCost(
-                        candidate, i, route, distMatrix);
-                    
-                    if (objectiveChange < bestObjectiveChange) {
-                        bestObjectiveChange = objectiveChange;
-                        bestNode = candidate;
-                        bestInsertionIndex = i;
-                    }
-                }
-            }
-            
-            // Insert best node at best position
-            if (bestNode != null) {
-                route.add(bestInsertionIndex + 1, bestNode);
-                selectedNodes.add(bestNode);
-                unselectedNodes.remove(bestNode);
-            }
+        if (bestNode != null) {
+            return new AbstractMap.SimpleEntry<>(bestNode, bestInsertionIndex);
+        } else {
+            return null;
         }
-        
-        return new TSPSolution(instance, selectedNodes, route);
     }
-    
+
+
     /**
      * Calculate the cost of inserting a node after the given index in the route.
      * This breaks the edge from route[index] to route[(index+1)%size] and 
@@ -110,7 +66,7 @@ public class GreedyCycleAlgorithm extends Algorithm {
         long distanceChange;
         
         // Normal case: inserting into an edge in the cycle
-        int nodeA = currentRoute.get(afterIndex);
+        int nodeA = currentRoute.get(afterIndex % currentRoute.size());
         int nodeB = currentRoute.get((afterIndex + 1) % currentRoute.size());
         
         // Remove edge A -> B

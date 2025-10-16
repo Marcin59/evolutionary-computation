@@ -1,5 +1,6 @@
 package tsp.algorithms.greedy;
 
+import tsp.algorithms.IterativeAlgorithm;
 import tsp.core.*;
 import java.util.*;
 
@@ -15,63 +16,41 @@ import java.util.*;
  * 
  * Note: "Closest" means the best improvement in objective function (distance + node cost).
  */
-public class NearestNeighborEndAlgorithm extends Algorithm {
-    private final int startNode;
-    
+public class NearestNeighborEndAlgorithm extends IterativeAlgorithm {
+
     public NearestNeighborEndAlgorithm(Instance instance, int startNode) {
-        super("NearestNeighborEnd", instance);
-        this.startNode = startNode;
+        super("NearestNeighborEnd", instance, startNode);
     }
     
     @Override
-    public Solution solve() {
-        List<Integer> route = new ArrayList<>();
-        Set<Integer> selectedNodes = new HashSet<>();
-        Set<Integer> unselectedNodes = new HashSet<>();
-        
-        // Initialize with all nodes as unselected
-        for (int i = 0; i < instance.getTotalNodes(); i++) {
-            unselectedNodes.add(i);
-        }
-        
-        // Step 1: Select starting vertex (already provided via constructor)
-        route.add(startNode);
-        selectedNodes.add(startNode);
-        unselectedNodes.remove(startNode);
-        
-        DistanceMatrix distMatrix = instance.getDistanceMatrix();
-        
-        // Step 2: Repeat - add closest vertex to the last one added
-        while (selectedNodes.size() < instance.getRequiredNodes()) {
-            Integer closestNode = null;
-            long bestObjectiveChange = Long.MAX_VALUE;
-            
-            // Current last node in route
-            int lastNode = route.get(route.size() - 1);
-            
-            // Find the closest node to the last added node
-            for (Integer candidate : unselectedNodes) {
-                // Calculate the objective change (node cost + distance to last node)
-                long nodeCost = instance.getNode(candidate).getCost();
-                long distanceToLast = distMatrix.getDistance(lastNode, candidate);
-                long objectiveChange = nodeCost + distanceToLast;
-                
-                if (objectiveChange < bestObjectiveChange) {
-                    bestObjectiveChange = objectiveChange;
-                    closestNode = candidate;
-                }
-            }
-            
-            // Add closest node to the route
-            if (closestNode != null) {
-                route.add(closestNode);
-                selectedNodes.add(closestNode);
-                unselectedNodes.remove(closestNode);
+    protected Map.Entry<Integer, Integer> findBestNodeAndPosition(
+            Set<Integer> unselectedNodes, List<Integer> route
+    ) {
+        Integer closestNode = null;
+        long bestObjectiveChange = Long.MAX_VALUE;
+
+        // Current last node in route
+        int lastNode = route.get(route.size() - 1);
+
+        // Find the closest node to the last added node
+        for (Integer candidate : unselectedNodes) {
+            // Calculate the objective change (node cost + distance to last node)
+            long nodeCost = instance.getNode(candidate).getCost();
+            long distanceToLast = distanceMatrix.getDistance(lastNode, candidate);
+            long objectiveChange = nodeCost + distanceToLast;
+
+            if (objectiveChange < bestObjectiveChange) {
+                bestObjectiveChange = objectiveChange;
+                closestNode = candidate;
             }
         }
-        
-        // Step 3: Edge from last to first vertex is automatically handled by TSPSolution
-        return new TSPSolution(instance, selectedNodes, route);
+
+        // Always add at the end of the route
+        if (closestNode != null) {
+            return new AbstractMap.SimpleEntry<>(closestNode, route.size());
+        } else {
+            return null;
+        }
     }
     
     @Override
