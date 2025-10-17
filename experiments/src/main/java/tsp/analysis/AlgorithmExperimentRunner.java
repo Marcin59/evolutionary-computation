@@ -39,6 +39,11 @@ public class AlgorithmExperimentRunner {
                 bestSolutions = GreedyExperimentRunner.analyzeBestSolutions(results);
                 break;
             
+            case "regret":
+                results = RegretExperimentRunner.runRegretExperiments(instance);
+                bestSolutions = RegretExperimentRunner.analyzeBestSolutions(results);
+                break;
+            
             // Future algorithm types can be added here:
             // case "genetic":
             //     results = GeneticExperimentRunner.runGeneticExperiments(instance);

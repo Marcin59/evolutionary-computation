@@ -70,7 +70,7 @@ public class NearestNeighborAnyPositionTwoRegretAlgorithm extends NearestNeighbo
             // Calculate regret (difference between second-best and best)
             long regret = 0;
             if (secondBestCost != Long.MAX_VALUE) {
-                regret = bestCost - secondBestCost;
+                regret = secondBestCost -bestCost;
             }
             
             // Calculate weighted score

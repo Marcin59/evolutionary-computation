@@ -71,7 +71,7 @@ public class GreedyCycleTwoRegretAlgorithm extends GreedyCycleAlgorithm {
             // Calculate regret (difference between second-best and best)
             long regret = 0;
             if (secondBestCost != Long.MAX_VALUE) {
-                regret = bestCost - secondBestCost;
+                regret = secondBestCost -bestCost;
             }
             
             double score = (weightInsertion * bestCost) - (weightRegret * regret);
