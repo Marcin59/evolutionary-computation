@@ -1,0 +1,47 @@
+{
+  "instance": "TSPA",
+  "algorithm_folder": "regret",
+  "export_timestamp": "20251018_182337",
+  "statistics": {
+    "GreedyCycle2Regret_w1_1": {
+      "count": 200,
+      "mean": 72148.225,
+      "std": 521.0769427602626,
+      "min": 71108.0,
+      "max": 73718.0,
+      "q1": 71750.0,
+      "q3": 72487.25,
+      "cv_percent": 0.722231132866072
+    },
+    "NearestNeighborAny2Regret_w1_1": {
+      "count": 200,
+      "mean": 72401.245,
+      "std": 1412.5298680437088,
+      "min": 70010.0,
+      "max": 75452.0,
+      "q1": 70913.25,
+      "q3": 73718.25,
+      "cv_percent": 1.9509745558155926
+    },
+    "GreedyCycle2Regret_w0_1": {
+      "count": 200,
+      "mean": 116681.18,
+      "std": 2531.6248357815048,
+      "min": 108804.0,
+      "max": 123447.0,
+      "q1": 115038.5,
+      "q3": 118254.5,
+      "cv_percent": 2.1696942349927424
+    },
+    "NearestNeighborAny2Regret_w0_1": {
+      "count": 200,
+      "mean": 117138.49,
+      "std": 3543.0977191062166,
+      "min": 108151.0,
+      "max": 124921.0,
+      "q1": 114878.25,
+      "q3": 119659.25,
+      "cv_percent": 3.0247083764749028
+    }
+  }
+}
