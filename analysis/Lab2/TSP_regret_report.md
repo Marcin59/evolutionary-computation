@@ -9,31 +9,134 @@
 ### 1. GreedyCycleTwoRegretAlgorithm
 **Pseudocode:**
 ```
-1. Select the starting vertex
-2. Choose the nearest vertex and create an incomplete cycle from these two vertices
-3. Repeat:
-   a. For each unselected node:
-      - Find best insertion position (minimum cycle increase)
-      - Find second-best insertion position
-      - Calculate regret = secondBestCost - bestCost
-      - Calculate score = weightInsertion * bestCost - weightRegret * regret
-   b. Select node with minimum score
-   c. Insert selected node at its best position in the cycle until all vertices have been added
+1. Initialize:
+   - Create empty route list
+   - Create set of selected nodes (initially empty)
+   - Create set of unselected nodes (initially contains all nodes 0 to totalNodes-1)
+   - Get distance matrix from instance
+
+2. Start the cycle:
+   - Add startNode to route
+   - Add startNode to selected nodes
+   - Remove startNode from unselected nodes
+
+3. While selected nodes count < required nodes count:
+   a. Initialize best selection variables:
+      - bestNode = null
+      - bestInsertionIndex = -1
+      - bestScore = infinity
+   
+   b. For each candidate node in unselected nodes:
+      i. Initialize position tracking:
+         - bestCost = infinity
+         - secondBestCost = infinity
+         - bestPosition = -1
+      
+      ii. For each position from 0 to route.size():
+          - Calculate insertion cost:
+            * Get nodeA at position (with wraparound using modulo)
+            * Get nodeB at (position + 1) with wraparound
+            * Get: nodeCost of candidate
+            * Get: removedDistance = distance(nodeA, nodeB)
+            * Get: addedDistance = distance(nodeA, candidate) + distance(candidate, nodeB)
+            * Get: insertionCost = nodeCost + (addedDistance - removedDistance)
+          
+          - Update best and second-best costs:
+            * If insertionCost < bestCost:
+              - Set secondBestCost = bestCost
+              - Set bestCost = insertionCost
+              - Set bestPosition = position
+            * Else if insertionCost < secondBestCost:
+              - Set secondBestCost = insertionCost
+      
+      iii. Calculate regret and score:
+           - regret = secondBestCost - bestCost
+           - score = (weightInsertion × bestCost) - (weightRegret × regret)
+      
+      iv. Update best node selection:
+          - If score < bestScore:
+            * bestScore = score
+            * bestNode = candidate
+            * bestInsertionIndex = bestPosition + 1
+   
+   c. Insert the selected node:
+      - Add bestNode to route at position bestInsertionIndex
+      - Add bestNode to selected nodes set
+      - Remove bestNode from unselected nodes set
+
+4. Return solution with selected nodes and route
 ```
 
 ### 2. NearestNeighborAnyPositionTwoRegretAlgorithm
 **Pseudocode:**
 ```
-1. Start with startNode in the route
-2. While route size < required nodes:
-    a. For each unselected node:
-       - Find best insertion position (minimum cost)
-       - Find second-best insertion position
-       - Calculate regret = secondBestCost - bestCost
-       - Calculate score = weightInsertion * bestCost - weightRegret * regret
-    b. Select node with minimum score
-    c. Insert selected node at its best position
-3. Return solution
+1. Initialize:
+   - Create empty route list
+   - Create set of selected nodes (initially empty)
+   - Create set of unselected nodes (initially contains all nodes 0 to totalNodes-1)
+   - Get distance matrix from instance
+
+2. Start the route:
+   - Add startNode to route
+   - Add startNode to selected nodes
+   - Remove startNode from unselected nodes
+
+3. While selected nodes count < required nodes count:
+   a. Initialize best selection variables:
+      - bestNode = null
+      - bestPosition = -1
+      - bestScore = infinity
+   
+   b. For each candidate node in unselected nodes:
+      i. Initialize position tracking:
+         - bestCost = infinity
+         - secondBestCost = infinity
+         - bestPos = -1
+      
+      ii. For each position from 0 to route.size() (inclusive):
+          - Calculate objective change:
+            * Get: nodeCost of candidate
+            * Calculate distance change based on position:
+              - If route has only 1 node:
+                * distanceChange = distance(route[0], candidate)
+              - Else if position == 0 (insert at beginning):
+                * Get nextNode = route[0]
+                * distanceChange = distance(candidate, nextNode)
+              - Else if position == route.size() (insert at end):
+                * Get prevNode = route[route.size() - 1]
+                * distanceChange = distance(prevNode, candidate)
+              - Else (insert in middle):
+                * Get prevNode = route[position - 1]
+                * Get nextNode = route[position]
+                * Calculate: removedDistance = distance(prevNode, nextNode)
+                * Calculate: addedDistance = distance(prevNode, candidate) + distance(candidate, nextNode)
+                * distanceChange = addedDistance - removedDistance
+            * Calculate: objectiveChange = nodeCost + distanceChange
+          
+          - Update best and second-best costs:
+            * If objectiveChange < bestCost:
+              - Set secondBestCost = bestCost
+              - Set bestCost = objectiveChange
+              - Set bestPos = position
+            * Else if objectiveChange < secondBestCost:
+              - Set secondBestCost = objectiveChange
+      
+      iii. Calculate regret and score:
+           - regret = secondBestCost - bestCost
+           - score = (weightInsertion × bestCost) - (weightRegret × regret)
+      
+      iv. Update best node selection:
+          - If score < bestScore:
+            * bestScore = score
+            * bestNode = candidate
+            * bestPosition = bestPos
+   
+   c. Insert the selected node:
+      - Add bestNode to route at position bestPosition
+      - Add bestNode to selected nodes set
+      - Remove bestNode from unselected nodes set
+
+4. Return solution with selected nodes and route
 ```
 
 ## Computational Experiment Results
@@ -136,3 +239,8 @@ In additional to the validator created by us, all of the 4 best solutions were c
 
 ## Algorithm Performance Comparison
 ![alt text](images/output8.png)
+
+# Conlusions
+- In general the introduction of regret as a part of the node choice is beneficial, with some exceptions.
+- NearestNeighborAny2Regret_w1_1 achieved new lowest score in TSPA
+- Generally good to be considered, since it does not impact the speed significantly (the same time complexity) 
