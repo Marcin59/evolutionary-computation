@@ -1,5 +1,6 @@
 package tsp.algorithms.greedy;
 
+import tsp.algorithms.IterativeAlgorithm;
 import tsp.core.*;
 import java.util.*;
 
@@ -18,68 +19,46 @@ import java.util.*;
  *    c. Insert selected node at best position
  * 3. Return solution
  */
-public class NearestNeighborAnyPositionAlgorithm extends Algorithm {
-    private final int startNode;
-    
+public class NearestNeighborAnyPositionAlgorithm extends IterativeAlgorithm {
+
     public NearestNeighborAnyPositionAlgorithm(Instance instance, int startNode) {
-        super("NearestNeighborAny", instance);
-        this.startNode = startNode;
+        super("NearestNeighborAny", instance, startNode);
     }
     
     @Override
-    public Solution solve() {
-        List<Integer> route = new ArrayList<>();
-        Set<Integer> selectedNodes = new HashSet<>();
-        Set<Integer> unselectedNodes = new HashSet<>();
-        
-        // Initialize with all nodes as unselected
-        for (int i = 0; i < instance.getTotalNodes(); i++) {
-            unselectedNodes.add(i);
-        }
-        
-        // Start with the given start node
-        route.add(startNode);
-        selectedNodes.add(startNode);
-        unselectedNodes.remove(startNode);
-        
-        DistanceMatrix distMatrix = instance.getDistanceMatrix();
-        
-        // Build route by adding nodes at best positions
-        while (selectedNodes.size() < instance.getRequiredNodes()) {
-            Integer bestNode = null;
-            int bestPosition = -1;
-            long bestObjectiveChange = Long.MAX_VALUE;
-            
-            // Try adding each unselected node at each possible position
-            for (Integer candidate : unselectedNodes) {
-                // Try all possible positions (0 to route.size())
-                for (int position = 0; position <= route.size(); position++) {
-                    long objectiveChange = calculateObjectiveChangeAtPosition(
-                        candidate, position, route, distMatrix);
-                    
-                    if (objectiveChange < bestObjectiveChange) {
-                        bestObjectiveChange = objectiveChange;
-                        bestNode = candidate;
-                        bestPosition = position;
-                    }
+    protected Map.Entry<Integer, Integer> findBestNodeAndPosition(
+            Set<Integer> unselectedNodes, List<Integer> route
+    ) {
+        Integer bestNode = null;
+        int bestPosition = -1;
+        long bestObjectiveChange = Long.MAX_VALUE;
+
+        // Try adding each unselected node at each possible position
+        for (Integer candidate : unselectedNodes) {
+            // Try all possible positions (0 to route.size())
+            for (int position = 0; position <= route.size(); position++) {
+                long objectiveChange = calculateObjectiveChangeAtPosition(
+                        candidate, position, route, distanceMatrix);
+
+                if (objectiveChange < bestObjectiveChange) {
+                    bestObjectiveChange = objectiveChange;
+                    bestNode = candidate;
+                    bestPosition = position;
                 }
             }
-            
-            // Insert best node at best position
-            if (bestNode != null) {
-                route.add(bestPosition, bestNode);
-                selectedNodes.add(bestNode);
-                unselectedNodes.remove(bestNode);
-            }
         }
         
-        return new TSPSolution(instance, selectedNodes, route);
+        if (bestNode != null) {
+            return new AbstractMap.SimpleEntry<>(bestNode, bestPosition);
+        } else {
+            return null;
+        }
     }
     
     /**
      * Calculate objective function change when inserting a node at a specific position.
      */
-    private long calculateObjectiveChangeAtPosition(int newNode, int position,
+    protected long calculateObjectiveChangeAtPosition(int newNode, int position,
                                                     List<Integer> currentRoute, DistanceMatrix distMatrix) {
         // Cost of adding the new node
         long nodeCost = instance.getNode(newNode).getCost();
