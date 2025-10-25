@@ -44,14 +44,6 @@ public class RandomSolutionAlgorithm extends Algorithm {
             allNodes.subList(0, instance.getRequiredNodes())
         );
         
-        // If startNode is not selected, replace a random selected node with startNode
-        if (!selectedNodes.contains(startNode)) {
-            Iterator<Integer> iter = selectedNodes.iterator();
-            iter.next(); // Remove first node
-            iter.remove();
-            selectedNodes.add(startNode);
-        }
-        
         // Create random route through selected nodes
         List<Integer> route = new ArrayList<>(selectedNodes);
         Collections.shuffle(route, random);
