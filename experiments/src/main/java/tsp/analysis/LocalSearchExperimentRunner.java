@@ -1,5 +1,6 @@
 package tsp.analysis;
 
+import tsp.algorithms.regret.*;
 import tsp.algorithms.greedy.*;
 import tsp.algorithms.localsearch.*;
 import tsp.core.*;
@@ -25,21 +26,21 @@ public class LocalSearchExperimentRunner {
         final String name;
         final boolean isSteepest;
         final LocalSearchAlgorithm.Neighborhood neighborhood;
-        final boolean useGreedyCycle;
+        final boolean useNearestNeighborAny2Regret_w1_1;
         
         LSConfiguration(String name, boolean isSteepest, 
                        LocalSearchAlgorithm.Neighborhood neighborhood, 
-                       boolean useGreedyCycle) {
+                       boolean useNearestNeighborAny2Regret_w1_1) {
             this.name = name;
             this.isSteepest = isSteepest;
             this.neighborhood = neighborhood;
-            this.useGreedyCycle = useGreedyCycle;
+            this.useNearestNeighborAny2Regret_w1_1 = useNearestNeighborAny2Regret_w1_1;
         }
         
         String getFullName() {
             String lsType = isSteepest ? "Steepest" : "Greedy";
             String moveType = neighborhood == LocalSearchAlgorithm.Neighborhood.NODE_SWAP ? "Nodes" : "Edges";
-            String initType = useGreedyCycle ? "GreedyCycle" : "Random";
+            String initType = useNearestNeighborAny2Regret_w1_1 ? "NearestNeighborAny2Regret_w1_1" : "Random";
             return String.format("%sLS_%s_%s", lsType, moveType, initType);
         }
     }
@@ -57,32 +58,32 @@ public class LocalSearchExperimentRunner {
             new LSConfiguration("SteepestLS_Nodes_Random", true, 
                 LocalSearchAlgorithm.Neighborhood.NODE_SWAP, false),
             
-            // Steepest + Nodes + GreedyCycle
-            new LSConfiguration("SteepestLS_Nodes_GreedyCycle", true, 
+            // Steepest + Nodes + NearestNeighborAny2Regret_w1_1
+            new LSConfiguration("SteepestLS_Nodes_NearestNeighborAny2Regret_w1_1", true, 
                 LocalSearchAlgorithm.Neighborhood.NODE_SWAP, true),
             
             // Steepest + Edges + Random
             new LSConfiguration("SteepestLS_Edges_Random", true, 
                 LocalSearchAlgorithm.Neighborhood.TWO_OPT, false),
             
-            // Steepest + Edges + GreedyCycle
-            new LSConfiguration("SteepestLS_Edges_GreedyCycle", true, 
+            // Steepest + Edges + NearestNeighborAny2Regret_w1_1
+            new LSConfiguration("SteepestLS_Edges_NearestNeighborAny2Regret_w1_1", true, 
                 LocalSearchAlgorithm.Neighborhood.TWO_OPT, true),
             
             // Greedy + Nodes + Random
             new LSConfiguration("GreedyLS_Nodes_Random", false, 
                 LocalSearchAlgorithm.Neighborhood.NODE_SWAP, false),
             
-            // Greedy + Nodes + GreedyCycle
-            new LSConfiguration("GreedyLS_Nodes_GreedyCycle", false, 
+            // Greedy + Nodes + NearestNeighborAny2Regret_w1_1
+            new LSConfiguration("GreedyLS_Nodes_NearestNeighborAny2Regret_w1_1", false, 
                 LocalSearchAlgorithm.Neighborhood.NODE_SWAP, true),
             
             // Greedy + Edges + Random
             new LSConfiguration("GreedyLS_Edges_Random", false, 
                 LocalSearchAlgorithm.Neighborhood.TWO_OPT, false),
             
-            // Greedy + Edges + GreedyCycle
-            new LSConfiguration("GreedyLS_Edges_GreedyCycle", false, 
+            // Greedy + Edges + NearestNeighborAny2Regret_w1_1
+            new LSConfiguration("GreedyLS_Edges_NearestNeighborAny2Regret_w1_1", false, 
                 LocalSearchAlgorithm.Neighborhood.TWO_OPT, true)
         );
         
@@ -93,8 +94,8 @@ public class LocalSearchExperimentRunner {
             for (int startNode = 0; startNode < instance.getTotalNodes(); startNode++) {
                 // Create initial solution algorithm
                 Algorithm initialAlgorithm;
-                if (config.useGreedyCycle) {
-                    initialAlgorithm = new GreedyCycleAlgorithm(instance, startNode);
+                if (config.useNearestNeighborAny2Regret_w1_1) {
+                    initialAlgorithm = new NearestNeighborAnyPositionTwoRegretAlgorithm(instance, startNode, 1, 1);
                 } else {
                     // Use seed for reproducibility
                     long seed = startNode * 1000L + config.hashCode();
