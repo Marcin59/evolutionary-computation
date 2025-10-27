@@ -403,3 +403,10 @@ Node Order (Route):
 
 ## Algorithm Performance Comparison
 ![alt text](images/output16.png)
+
+## Conclusions
+- Suprisingly in the end Greedy is slower than steepest, probably because the steepest algorithm converges easier
+- Swapping edges as a local change performs on average better than swapping nodes
+- Using a decent algorithm instead of random one as starting point, gives better results and is faster
+- On TSPA GreedyLS_Edges_NearestNeighborAny2Regret_w1_1 provided the best result but the steepest version was not far off
+- On TSPB GreedyLS_Edges_NearestNeighborAny2Regret_w1_1 and SteepestLS_Edges_NearestNeighborAny2Regret_w1_1 resulted in best solutions 
