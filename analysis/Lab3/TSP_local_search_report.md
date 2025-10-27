@@ -9,17 +9,230 @@
 ### 1. Local Search (Greedy implementation)
 **Pseudocode**
 ```
-In each iteration:
-1. Generate all possible moves and randomize their order
-2. Evaluate moves in the randomized order
-3. Apply the first move that improves the solution
-4. Repeat until no improving move is found (local optimum)
- 
-The randomization ensures different search trajectories in different runs, which is important for avoiding bias towards particular move types or positions.
-Neighborhood includes:
- - Node position swaps (intra-route)
- - 2-opt edge exchanges (inter-route)
+### Move Objects
+
+#### NodeSwapMove(pos1, pos2)
+Swaps two nodes at given positions in the route
+
+CalculateDelta(solution, distMatrix):
+    route ← solution.getRoute()
+    n ← route.size()
+    
+    // Handle adjacent positions separately
+    if |pos1 - pos2| == 1 or wrap-around case:
+        return calculateAdjacentSwapDelta()
+    
+    // Get nodes and their neighbors
+    node1 ← route[pos1]
+    node2 ← route[pos2]
+    prev1 ← route[(pos1 - 1 + n) mod n]
+    next1 ← route[(pos1 + 1) mod n]
+    prev2 ← route[(pos2 - 1 + n) mod n]
+    next2 ← route[(pos2 + 1) mod n]
+    
+    // Calculate old and new edge costs
+    oldDist ← dist(prev1, node1) + dist(node1, next1) + 
+              dist(prev2, node2) + dist(node2, next2)
+    newDist ← dist(prev1, node2) + dist(node2, next1) + 
+              dist(prev2, node1) + dist(node1, next2)
+    
+    return newDist - oldDist
+
+calculateAdjacentSwapDelta(route, distMatrix):
+    n ← route.size()
+    first ← min(pos1, pos2)
+    second ← max(pos1, pos2)
+    
+    // Handle wrap-around case (last and first positions)
+    if first == 0 and second == n-1:
+        first ← n-1
+        second ← 0
+    
+    // Get the nodes involved
+    node1 ← route[first]
+    node2 ← route[second]
+    prev ← route[(first - 1 + n) mod n]
+    next ← route[(second + 1) mod n]
+    
+    // Calculate old configuration: prev -> node1 -> node2 -> next
+    oldDist ← dist(prev, node1) + 
+              dist(node1, node2) +
+              dist(node2, next)
+    
+    // Calculate new configuration: prev -> node2 -> node1 -> next
+    newDist ← dist(prev, node2) + 
+              dist(node2, node1) +
+              dist(node1, next)
+    
+    return newDist - oldDist
+
+Apply(solution):
+    newRoute ← copy of solution.route
+    swap newRoute[pos1] with newRoute[pos2]
+    return new Solution(newRoute)
+
+#### TwoOptMove(i, j)
+Reverses a segment of the route between positions i+1 and j
+This exchanges edges (i, i+1) and (j, j+1) with (i, j) and (i+1, j+1)
+
+CalculateDelta(solution, distMatrix):
+    route ← solution.getRoute()
+    n ← route.size()
+    
+    // Get nodes at edge endpoints
+    node_i ← route[i]
+    node_i_plus_1 ← route[(i + 1) mod n]
+    node_j ← route[j]
+    node_j_plus_1 ← route[(j + 1) mod n]
+    
+    // Calculate change in edge costs
+    oldDist ← dist(node_i, node_i_plus_1) + dist(node_j, node_j_plus_1)
+    newDist ← dist(node_i, node_j) + dist(node_i_plus_1, node_j_plus_1)
+    
+    return newDist - oldDist
+
+Apply(solution):
+    newRoute ← copy of solution.route
+    // Reverse segment from i+1 to j (inclusive)
+    reverse newRoute[i+1...j]
+    return new Solution(newRoute)
+
+#### ReplaceNodeMove(pos, outsideNode)
+Replaces a node at position pos with a node not currently in the route
+
+CalculateDelta(solution, distMatrix):
+    route ← solution.getRoute()
+    n ← route.size()
+    oldNode ← route[pos]
+    
+    // Get neighbors of the position
+    prev ← route[(pos - 1 + n) mod n]
+    next ← route[(pos + 1) mod n]
+    
+    // Calculate edge cost change
+    oldEdges ← dist(prev, oldNode) + dist(oldNode, next)
+    newEdges ← dist(prev, outsideNode) + dist(outsideNode, next)
+    
+    // Calculate node cost change
+    oldCost ← nodeCost(oldNode)
+    newCost ← nodeCost(outsideNode)
+    
+    return (newEdges - oldEdges) + (newCost - oldCost)
+
+Apply(solution):
+    newRoute ← copy of solution.route
+    oldNode ← newRoute[pos]
+    newRoute[pos] ← outsideNode
+    
+    newSelected ← copy of solution.selectedNodes
+    remove oldNode from newSelected
+    add outsideNode to newSelected
+    
+    return new Solution(newSelected, newRoute)
+
+---
+
+### Base LocalSearchAlgorithm
+
+Parameters:
+    - initialSolutionAlgorithm: algorithm to generate starting solution
+    - neighborhoodChoice: NODE_SWAP or TWO_OPT
+    - random: random number generator for tie-breaking
+
+Solve():
+    currentSolution ← initialSolutionAlgorithm.solve()
+    iterationCount ← 0
+    improved ← true
+    
+    while improved:
+        improved ← performIteration()  // Implemented by subclass
+        iterationCount ← iterationCount + 1
+    
+    return currentSolution
+
+GenerateAllMoves():
+    moves ← empty list
+    route ← currentSolution.getRoute()
+    n ← route.size()
+    selected ← currentSolution.getSelectedNodes()
+    total ← instance.getTotalNodes()
+    
+    // Generate intra-route moves (based on neighborhood choice)
+    if neighborhoodChoice == NODE_SWAP:
+        for i ← 0 to n-1:
+            for j ← i+1 to n-1:
+                add NodeSwapMove(i, j) to moves
+    else:  // TWO_OPT
+        for i ← 0 to n-2:
+            for j ← i+2 to n-1:
+                // Avoid reversing entire route
+                if not (i == 0 and j == n-1):
+                    add TwoOptMove(i, j) to moves
+    
+    // Generate inter-route moves (node replacement)
+    for pos ← 0 to n-1:
+        for node ← 0 to total-1:
+            if node not in selected:
+                add ReplaceNodeMove(pos, node) to moves
+    
+    return moves
+
+CalculateMoveDelta(move):
+    return move.calculateDelta(currentSolution, distanceMatrix)
+
+ApplyMove(move):
+    return move.apply(currentSolution)
+
+---
+
+### Greedy Local Search (First Improvement)
+
+PerformIteration():
+    // Generate all possible moves
+    allMoves ← generateAllMoves()
+    
+    // Randomize order to avoid bias
+    shuffle(allMoves)
+    
+    // Find first improving move
+    for each move in allMoves:
+        delta ← calculateMoveDelta(move)
+        
+        if delta < 0:  // Improvement found
+            currentSolution ← applyMove(move)
+            return true
+    
+    // No improvement found - local optimum reached
+    return false
+
+---
+
+### Steepest Local Search (Best Improvement)
+
+PerformIteration():
+    // Generate all possible moves
+    allMoves ← generateAllMoves()
+    
+    // Find best improving move
+    bestMove ← null
+    bestDelta ← 0  // Only accept negative deltas (improvements)
+    
+    for each move in allMoves:
+        delta ← calculateMoveDelta(move)
+        
+        if delta < bestDelta:
+            bestDelta ← delta
+            bestMove ← move
+    
+    // Apply best move if found
+    if bestMove ≠ null:
+        currentSolution ← applyMove(bestMove)
+        return true
+    
+    // No improvement found - local optimum reached
+    return false
 ```
+
 
 
 ## Experiment Results
