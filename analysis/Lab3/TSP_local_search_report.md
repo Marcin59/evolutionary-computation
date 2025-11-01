@@ -9,110 +9,279 @@
 ### 1. Local Search (Greedy implementation)
 **Pseudocode**
 ```
-In each iteration:
-1. Generate all possible moves and randomize their order
-2. Evaluate moves in the randomized order
-3. Apply the first move that improves the solution
-4. Repeat until no improving move is found (local optimum)
- 
-The randomization ensures different search trajectories in different runs, which is important for avoiding bias towards particular move types or positions.
-Neighborhood includes:
- - Node position swaps (intra-route)
- - 2-opt edge exchanges (inter-route)
+### Move Objects
+
+#### NodeSwapMove(pos1, pos2)
+Swaps two nodes at given positions in the route
+
+CalculateDelta(solution, distMatrix):
+    route ← solution.getRoute()
+    n ← route.size()
+    
+    // Handle adjacent positions separately
+    if |pos1 - pos2| == 1 or wrap-around case:
+        return calculateAdjacentSwapDelta()
+    
+    // Get nodes and their neighbors
+    node1 ← route[pos1]
+    node2 ← route[pos2]
+    prev1 ← route[(pos1 - 1 + n) mod n]
+    next1 ← route[(pos1 + 1) mod n]
+    prev2 ← route[(pos2 - 1 + n) mod n]
+    next2 ← route[(pos2 + 1) mod n]
+    
+    // Calculate old and new edge costs
+    oldDist ← dist(prev1, node1) + dist(node1, next1) + 
+              dist(prev2, node2) + dist(node2, next2)
+    newDist ← dist(prev1, node2) + dist(node2, next1) + 
+              dist(prev2, node1) + dist(node1, next2)
+    
+    return newDist - oldDist
+
+calculateAdjacentSwapDelta(route, distMatrix):
+    n ← route.size()
+    first ← min(pos1, pos2)
+    second ← max(pos1, pos2)
+    
+    // Handle wrap-around case (last and first positions)
+    if first == 0 and second == n-1:
+        first ← n-1
+        second ← 0
+    
+    // Get the nodes involved
+    node1 ← route[first]
+    node2 ← route[second]
+    prev ← route[(first - 1 + n) mod n]
+    next ← route[(second + 1) mod n]
+    
+    // Calculate old configuration: prev -> node1 -> node2 -> next
+    oldDist ← dist(prev, node1) + 
+              dist(node1, node2) +
+              dist(node2, next)
+    
+    // Calculate new configuration: prev -> node2 -> node1 -> next
+    newDist ← dist(prev, node2) + 
+              dist(node2, node1) +
+              dist(node1, next)
+    
+    return newDist - oldDist
+
+Apply(solution):
+    newRoute ← copy of solution.route
+    swap newRoute[pos1] with newRoute[pos2]
+    return new Solution(newRoute)
+
+#### TwoOptMove(i, j)
+Reverses a segment of the route between positions i+1 and j
+This exchanges edges (i, i+1) and (j, j+1) with (i, j) and (i+1, j+1)
+
+CalculateDelta(solution, distMatrix):
+    route ← solution.getRoute()
+    n ← route.size()
+    
+    // Get nodes at edge endpoints
+    node_i ← route[i]
+    node_i_plus_1 ← route[(i + 1) mod n]
+    node_j ← route[j]
+    node_j_plus_1 ← route[(j + 1) mod n]
+    
+    // Calculate change in edge costs
+    oldDist ← dist(node_i, node_i_plus_1) + dist(node_j, node_j_plus_1)
+    newDist ← dist(node_i, node_j) + dist(node_i_plus_1, node_j_plus_1)
+    
+    return newDist - oldDist
+
+Apply(solution):
+    newRoute ← copy of solution.route
+    // Reverse segment from i+1 to j (inclusive)
+    reverse newRoute[i+1...j]
+    return new Solution(newRoute)
+
+#### ReplaceNodeMove(pos, outsideNode)
+Replaces a node at position pos with a node not currently in the route
+
+CalculateDelta(solution, distMatrix):
+    route ← solution.getRoute()
+    n ← route.size()
+    oldNode ← route[pos]
+    
+    // Get neighbors of the position
+    prev ← route[(pos - 1 + n) mod n]
+    next ← route[(pos + 1) mod n]
+    
+    // Calculate edge cost change
+    oldEdges ← dist(prev, oldNode) + dist(oldNode, next)
+    newEdges ← dist(prev, outsideNode) + dist(outsideNode, next)
+    
+    // Calculate node cost change
+    oldCost ← nodeCost(oldNode)
+    newCost ← nodeCost(outsideNode)
+    
+    return (newEdges - oldEdges) + (newCost - oldCost)
+
+Apply(solution):
+    newRoute ← copy of solution.route
+    oldNode ← newRoute[pos]
+    newRoute[pos] ← outsideNode
+    
+    newSelected ← copy of solution.selectedNodes
+    remove oldNode from newSelected
+    add outsideNode to newSelected
+    
+    return new Solution(newSelected, newRoute)
+
+---
+
+### Base LocalSearchAlgorithm
+
+Parameters:
+    - initialSolutionAlgorithm: algorithm to generate starting solution
+    - neighborhoodChoice: NODE_SWAP or TWO_OPT
+    - random: random number generator for tie-breaking
+
+Solve():
+    currentSolution ← initialSolutionAlgorithm.solve()
+    iterationCount ← 0
+    improved ← true
+    
+    while improved:
+        improved ← performIteration()  // Implemented by subclass
+        iterationCount ← iterationCount + 1
+    
+    return currentSolution
+
+GenerateAllMoves():
+    moves ← empty list
+    route ← currentSolution.getRoute()
+    n ← route.size()
+    selected ← currentSolution.getSelectedNodes()
+    total ← instance.getTotalNodes()
+    
+    // Generate intra-route moves (based on neighborhood choice)
+    if neighborhoodChoice == NODE_SWAP:
+        for i ← 0 to n-1:
+            for j ← i+1 to n-1:
+                add NodeSwapMove(i, j) to moves
+    else:  // TWO_OPT
+        for i ← 0 to n-2:
+            for j ← i+2 to n-1:
+                // Avoid reversing entire route
+                if not (i == 0 and j == n-1):
+                    add TwoOptMove(i, j) to moves
+    
+    // Generate inter-route moves (node replacement)
+    for pos ← 0 to n-1:
+        for node ← 0 to total-1:
+            if node not in selected:
+                add ReplaceNodeMove(pos, node) to moves
+    
+    return moves
+
+CalculateMoveDelta(move):
+    return move.calculateDelta(currentSolution, distanceMatrix)
+
+ApplyMove(move):
+    return move.apply(currentSolution)
+
+---
+
+### Greedy Local Search (First Improvement)
+
+PerformIteration():
+    // Generate all possible moves
+    allMoves ← generateAllMoves()
+    
+    // Randomize order to avoid bias
+    shuffle(allMoves)
+    
+    // Find first improving move
+    for each move in allMoves:
+        delta ← calculateMoveDelta(move)
+        
+        if delta < 0:  // Improvement found
+            currentSolution ← applyMove(move)
+            return true
+    
+    // No improvement found - local optimum reached
+    return false
+
+---
+
+### Steepest Local Search (Best Improvement)
+
+PerformIteration():
+    // Generate all possible moves
+    allMoves ← generateAllMoves()
+    
+    // Find best improving move
+    bestMove ← null
+    bestDelta ← 0  // Only accept negative deltas (improvements)
+    
+    for each move in allMoves:
+        delta ← calculateMoveDelta(move)
+        
+        if delta < bestDelta:
+            bestDelta ← delta
+            bestMove ← move
+    
+    // Apply best move if found
+    if bestMove ≠ null:
+        currentSolution ← applyMove(bestMove)
+        return true
+    
+    // No improvement found - local optimum reached
+    return false
 ```
+
 
 
 ## Experiment Results
 
 ### Objective function
 
-### Instance: TSPA
-
-| Algorithm            | Runs | Min        | Max        | Average    | Validated |
-|----------------------|------|------------|------------|------------|-----------|
-| Random Solution      | 200  | 238,849.00 | 288,140.00 | 265,165.54 | YES       |
-| Greedy Cycle         | 200  | 71,488.00  | 74,410.00  | 72,635.98  | YES       |
-| Nearest Neighbor Any | 200  | 71,179.00  | 75,450.00  | 73,178.55  | YES       |
-| Nearest Neighbor End | 200  | 83,182.00  | 89,433.00  | 85,108.51  | YES       |
-| NearestNeighborAny2Regret_w1_1 | 200  | 70,010.00  | 75,452.00   | 72,401.24   | YES  |
-| NearestNeighborAny2Regret_w0_1 | 200  | 108,151.00 | 124,921.00  | 117,138.49  | YES  |
-| GreedyCycle2Regret_w1_1 | 200         | 71,108.00  | 73,718.00   | 72,148.23   | YES  |
-| GreedyCycle2Regret_w0_1 | 200         | 108,804.00 | 123,447.00  | 116,681.18  | YES  |
-| SteepestLS_Edges_Random | 200      | 71576.00   | 78846.00   | 73842.79   | YES       |
-| SteepestLS_Nodes_NearestNeighborAny2Regret_w1_1 | 200      | 69801.00   | 75440.00   | 72010.01   | YES       |
-| GreedyLS_Nodes_NearestNeighborAny2Regret_w1_1 | 200      | 69801.00   | 75440.00   | 72001.06   | YES       |
-| SteepestLS_Nodes_Random | 200      | 80895.00   | 97487.00   | 88217.17   | YES       |
-| GreedyLS_Edges_Random | 200      | 71444.00   | 76883.00   | 73856.40   | YES       |
-| GreedyLS_Edges_NearestNeighborAny2Regret_w1_1 | 200      | 69497.00   | 72850.00   | 70936.85   | YES       |
-| GreedyLS_Nodes_Random | 200      | 80812.00   | 94777.00   | 86465.01   | YES       |
-| SteepestLS_Edges_NearestNeighborAny2Regret_w1_1 | 200      | 69540.00   | 72546.00   | 70722.29   | YES       |
+| Algorithm            | TSPA |  TSPB |
+|----------------------|------|-------|
+| Random Solution      | 265,165.54 (238,849.00 - 288,140.00) | 212,968.97 (194,376.00 - 245,960.00)|
+| Greedy Cycle         | 72,635.98 (71,488.00 - 74,410.00)  | 51,400.60 (49,001.00 - 57,324.00)|
+| Nearest Neighbor Any | 73,178.55 (71,179.00 - 75,450.00)  | 45,870.25 (44,417.00 - 53,438.00)|
+| Nearest Neighbor End | 85,108.51 (83,182.00 - 89,433.00)  | 54,390.43 (52,319.00 - 59,030.00)|
+| NearestNeighborAny2Regret_w1_1 | 72,401.24 (70,010.00 - 75,452.00) | 47,664.46 (44,891.00 - 55,247.00)|
+| NearestNeighborAny2Regret_w0_1 | 117,138.49 (108,151.00 - 124,921.00) | 74,444.46 (69,933.00 - 80,278.00)|
+| GreedyCycle2Regret_w1_1 | 72,148.23 (71,108.00 - 73,718.00) | 50,997.35 (47,144.00 - 56,747.00)|
+| GreedyCycle2Regret_w0_1 | 116,681.18 (108,804.00 - 123,447.00) | 70,264.65 (65,043.00 - 76,325.00)|
+| SteepestLS_Edges_Random | 73842.79 (71576.00 - 78846.00)    | 48374.04 (46064.00 - 52759.00) |
+| SteepestLS_Nodes_NearestNeighborAny2Regret_w1_1 | 72010.01 (69801.00 - 75440.00)    | 47137.03 (44488.00 - 54391.00) |
+| GreedyLS_Nodes_NearestNeighborAny2Regret_w1_1 | 72001.06 (69801.00 - 75440.00)    | 47103.65 (44456.00 - 52416.00) |
+| SteepestLS_Nodes_Random | 88217.17 (80895.00 - 97487.00)    | 63017.43 (54687.00 - 72635.00) |
+| GreedyLS_Edges_Random | 73856.40 (71444.00 - 76883.00)    | 48202.11 (45536.00 - 51754.00) |
+| GreedyLS_Edges_NearestNeighborAny2Regret_w1_1 | 70936.85 (69497.00 - 72850.00)    | 46397.24 (44320.00 - 51672.00) |
+| GreedyLS_Nodes_Random | 86465.01 (80812.00 - 94777.00)    | 60805.92 (53522.00 - 69566.00) |
+| SteepestLS_Edges_NearestNeighborAny2Regret_w1_1 | 70722.29 (69540.00 - 72546.00)    | 46342.04 (44320.00 - 51431.00) |
 
 ---
 
-### Instance: TSPB
-
-| Algorithm            | Runs | Min        | Max        | Average    | Validated |
-|----------------------|------|------------|------------|------------|-----------|
-| Random Solution      | 200  | 194,376.00 | 245,960.00 | 212,968.97 | YES       |
-| Greedy Cycle         | 200  | 49,001.00  | 57,324.00  | 51,400.60  | YES       |
-| Nearest Neighbor Any | 200  | 44,417.00  | 53,438.00  | 45,870.25  | YES       |
-| Nearest Neighbor End | 200  | 52,319.00  | 59,030.00  | 54,390.43  | YES       |
-| NearestNeighborAny2Regret_w1_1 | 200  | 44,891.00  | 55,247.00  | 47,664.46  | YES  |
-| NearestNeighborAny2Regret_w0_1 | 200  | 69,933.00  | 80,278.00  | 74,444.46  | YES  |
-| GreedyCycle2Regret_w1_1 | 200         | 47,144.00  | 56,747.00  | 50,997.35  | YES  |
-| GreedyCycle2Regret_w0_1 | 200         | 65,043.00  | 76,325.00  | 70,264.65  | YES  |
-| SteepestLS_Edges_Random | 200      | 46064.00   | 52759.00   | 48374.04   | YES       |
-| SteepestLS_Nodes_NearestNeighborAny2Regret_w1_1 | 200      | 44488.00   | 54391.00   | 47137.03   | YES       |
-| GreedyLS_Nodes_NearestNeighborAny2Regret_w1_1 | 200      | 44456.00   | 52416.00   | 47103.65   | YES       |
-| SteepestLS_Nodes_Random | 200      | 54687.00   | 72635.00   | 63017.43   | YES       |
-| GreedyLS_Edges_Random | 200      | 45536.00   | 51754.00   | 48202.11   | YES       |
-| GreedyLS_Edges_NearestNeighborAny2Regret_w1_1 | 200      | 44320.00   | 51672.00   | 46397.24   | YES       |
-| GreedyLS_Nodes_Random | 200      | 53522.00   | 69566.00   | 60805.92   | YES       |
-| SteepestLS_Edges_NearestNeighborAny2Regret_w1_1 | 200      | 44320.00   | 51431.00   | 46342.04   | YES       |
-
 ### Computation Times (ms)
 
-### Instance: TSPA
 
-| Algorithm                      | Mean   | Std    | Min | Max  |
-|--------------------------------|--------|--------|-----|------|
-| NearestNeighborAny2Regret_w0_1 | 2.83   | 0.60   | 2   | 6    |
-| NearestNeighborAny2Regret_w1_1 | 3.08   | 2.33   | 2   | 18   |
-| GreedyCycle2Regret_w0_1        | 3.82   | 0.50   | 3   | 5    |
-| GreedyCycle2Regret_w1_1        | 4.22   | 1.99   | 3   | 21   |
-| RandomSolution                 | 0.18   | 0.58   | 0   | 6    |
-| NearestNeighborEnd             | 0.36   | 0.52   | 0   | 2    |
-| NearestNeighborAny             | 2.81   | 4.38   | 1   | 57   |
-| GreedyCycle                    | 2.58   | 2.03   | 1   | 17   |
-| SteepestLS_Nodes_NearestNeighborAny2Regret_w1_1 | 5.07    | 2.92   | 3   | 26   |
-| SteepestLS_Edges_NearestNeighborAny2Regret_w1_1 | 6.30    | 2.09   | 3   | 12   |
-| GreedyLS_Nodes_NearestNeighborAny2Regret_w1_1   | 6.32    | 2.25   | 4  | 14   |
-| GreedyLS_Edges_NearestNeighborAny2Regret_w1_1   | 10.86   | 4.85   | 3   | 26   |
-| SteepestLS_Edges_Random                         | 59.24   | 3.70   | 51  | 80   |
-| SteepestLS_Nodes_Random                         | 69.33   | 8.85   | 54  | 134  |
-| GreedyLS_Edges_Random                           | 206.46  | 12.50  | 180 | 254  |
-| GreedyLS_Nodes_Random                           | 210.28  | 16.05  | 173 | 261  |
+| Algorithm                      | TSPA   | TSPb   |
+|--------------------------------|--------|--------|
+| NearestNeighborAny2Regret_w0_1 | 2.83 (2 - 6) | 2.71 (2 - 5) |
+| NearestNeighborAny2Regret_w1_1 | 3.08 (2 - 18) | 2.76 (2 - 6) |
+| GreedyCycle2Regret_w0_1        | 3.82 (3 - 5) | 4.02 (3 - 5) |
+| GreedyCycle2Regret_w1_1        | 4.22 (3 - 21) | 4.08 (3 - 5) |
+| RandomSolution                 | 0.18 (0 - 6) | 0.04 (0 - 1) |
+| NearestNeighborEnd             | 0.36 (0 - 2) | 0.15 (0 - 1) |
+| NearestNeighborAny             | 2.81 (1 - 57) | 2.04 (1 - 3) |
+| GreedyCycle                    | 2.58 (1 - 17) | 2.62 (1 - 54) |
+| SteepestLS_Nodes_NearestNeighborAny2Regret_w1_1 | 5.07 (3 - 26) | 6.48 (4 - 11) |
+| SteepestLS_Edges_NearestNeighborAny2Regret_w1_1 | 6.30 (3 - 12) | 8.11 (5 - 15) |
+| GreedyLS_Nodes_NearestNeighborAny2Regret_w1_1   | 6.32 (4 - 14) | 10.07 (5 - 26) |
+| GreedyLS_Edges_NearestNeighborAny2Regret_w1_1   | 10.86 (3 - 26) | 12.92 (6 - 27) |
+| SteepestLS_Edges_Random                         | 59.24 (51 - 80) | 56.47 (42 - 65) |
+| SteepestLS_Nodes_Random                         | 69.33 (54 - 134) | 68.87 (55 - 86) |
+| GreedyLS_Edges_Random                           | 206.46 (180 - 254) | 205.24 (172 - 231) |
+| GreedyLS_Nodes_Random                           | 210.28 (173 - 261) | 212.09 (167 - 257) |
 
-### Instance: TSPB
-
-| Algorithm                      | Mean   | Std    | Min | Max  |
-|--------------------------------|--------|--------|-----|------|
-| NearestNeighborAny2Regret_w1_1 | 2.71   | 0.49   | 2   | 5    |
-| NearestNeighborAny2Regret_w0_1 | 2.76   | 0.50   | 2   | 6    |
-| GreedyCycle2Regret_w1_1        | 4.02   | 0.28   | 3   | 5    |
-| GreedyCycle2Regret_w0_1        | 4.08   | 0.39   | 3   | 5    |
-| RandomSolution                 | 0.04   | 0.18   | 0   | 1    |
-| NearestNeighborEnd             | 0.15   | 0.36   | 0   | 1    |
-| NearestNeighborAny             | 2.04   | 0.34   | 1   | 3    |
-| GreedyCycle                    | 2.62   | 4.54   | 1   | 54   |
-| SteepestLS_Nodes_NearestNeighborAny2Regret_w1_1 | 6.48 | 1.16 | 4 | 11 |
-| SteepestLS_Edges_NearestNeighborAny2Regret_w1_1 | 8.11 | 1.94 | 5 | 15 |
-| GreedyLS_Nodes_NearestNeighborAny2Regret_w1_1 | 10.07 | 2.79 | 5 | 26 |
-| GreedyLS_Edges_NearestNeighborAny2Regret_w1_1 | 12.92 | 4.23 | 6 | 27 |
-| SteepestLS_Edges_Random | 56.47 | 3.04 | 42 | 65 |
-| SteepestLS_Nodes_Random | 68.87 | 6.37 | 55 | 86 |
-| GreedyLS_Edges_Random | 205.24 | 10.63 | 172 | 231 |
-| GreedyLS_Nodes_Random | 212.09 | 16.49 | 167 | 257 |
 
 ## 2D Visualization of Best Solution
 
@@ -234,3 +403,10 @@ Node Order (Route):
 
 ## Algorithm Performance Comparison
 ![alt text](images/output16.png)
+
+## Conclusions
+- Suprisingly in the end Greedy is slower than steepest, probably because the steepest algorithm converges easier
+- Swapping edges as a local change performs on average better than swapping nodes
+- Using a decent algorithm instead of random one as starting point, gives better results and is faster
+- On TSPA GreedyLS_Edges_NearestNeighborAny2Regret_w1_1 provided the best result but the steepest version was not far off
+- On TSPB GreedyLS_Edges_NearestNeighborAny2Regret_w1_1 and SteepestLS_Edges_NearestNeighborAny2Regret_w1_1 resulted in best solutions 
