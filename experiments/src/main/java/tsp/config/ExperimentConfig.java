@@ -7,8 +7,8 @@ package tsp.config;
 public class ExperimentConfig {
     
     // Algorithm type configuration
-    public static final String ALGORITHM_TYPE = "local_search"; // Change this to switch algorithm types
-    // Supported types: "greedy", "regret", "local_search"
+    public static final String ALGORITHM_TYPE = "candidate_moves"; // Change this to switch algorithm types
+    // Supported types: "greedy", "regret", "local_search", "candidate_moves"
     
     // Directory configuration
     public static final String DATA_DIR = "data";

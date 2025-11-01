@@ -49,6 +49,11 @@ public class AlgorithmExperimentRunner {
                 bestSolutions = LocalSearchExperimentRunner.analyzeBestSolutions(results);
                 break;
             
+            case "candidate_moves":
+                results = CandidateMovesExperimentRunner.runCandidateMovesExperiments(instance);
+                bestSolutions = CandidateMovesExperimentRunner.analyzeBestSolutions(results);
+                break;
+            
             // Future algorithm types can be added here:
             // case "genetic":
             //     results = GeneticExperimentRunner.runGeneticExperiments(instance);
