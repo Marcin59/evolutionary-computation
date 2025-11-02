@@ -126,6 +126,7 @@ public class CandidateMovesAlgorithm extends LocalSearchAlgorithm {
                         // Swap the next node with the candidate (unless next node IS the candidate)
                         if (candidate != nextNode) {
                             moves.add(new NodeSwapMove(nextPos, j));
+                            moves.add(new NodeSwapMove(prevPos, j)); // Also consider swapping with previous node
                         }
                     } else { // TWO_OPT
                         // For 2-OPT: create an edge between currentNode and candidate
@@ -135,7 +136,8 @@ public class CandidateMovesAlgorithm extends LocalSearchAlgorithm {
                             int pos1 = Math.min(i, j);
                             int pos2 = Math.max(i, j);
                             if (pos2 - pos1 > 1) {
-                                moves.add(new TwoOptMove(pos1, pos2));
+                                moves.add(new TwoOptMove(pos1, pos2)); // _ i _ _ j _ -> _ i j _ _ _
+                                moves.add(new TwoOptMove(pos1 - 1, pos2 - 1)); // _ _ i _ _ j -> _ _ _ _ _ i j
                             }
                         }
                     }
@@ -143,6 +145,7 @@ public class CandidateMovesAlgorithm extends LocalSearchAlgorithm {
                     // Candidate is not in the route - generate replace move
                     // Replace next neighbor - candidate will be adjacent to currentNode  
                     moves.add(new ReplaceNodeMove(nextPos, candidate));
+                    moves.add(new ReplaceNodeMove(prevPos, candidate));
                 }
             }
         }

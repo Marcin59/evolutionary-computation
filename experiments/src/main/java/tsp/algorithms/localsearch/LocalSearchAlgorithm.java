@@ -266,9 +266,9 @@ public abstract class LocalSearchAlgorithm extends Algorithm {
             int n = route.size();
             
             // Current edges: (i, i+1) and (j, j+1)
-            int node_i = route.get(i);
+            int node_i = route.get((i + n) % n); // handle wrap-around
             int node_i_plus_1 = route.get((i + 1) % n);
-            int node_j = route.get(j);
+            int node_j = route.get((j + n) % n);
             int node_j_plus_1 = route.get((j + 1) % n);
             
             // Old distance
