@@ -54,6 +54,11 @@ public class AlgorithmExperimentRunner {
                 bestSolutions = CandidateMovesExperimentRunner.analyzeBestSolutions(results);
                 break;
             
+            case "deltas":
+                results = DeltasExperimentRunner.runDeltasExperiments(instance);
+                bestSolutions = DeltasExperimentRunner.analyzeBestSolutions(results);
+                break;
+            
             // Future algorithm types can be added here:
             // case "genetic":
             //     results = GeneticExperimentRunner.runGeneticExperiments(instance);
