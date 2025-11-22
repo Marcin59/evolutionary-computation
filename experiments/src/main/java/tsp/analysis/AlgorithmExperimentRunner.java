@@ -43,6 +43,21 @@ public class AlgorithmExperimentRunner {
                 results = RegretExperimentRunner.runRegretExperiments(instance);
                 bestSolutions = RegretExperimentRunner.analyzeBestSolutions(results);
                 break;
+
+            case "local_search":
+                results = LocalSearchExperimentRunner.runLocalSearchExperiments(instance);
+                bestSolutions = LocalSearchExperimentRunner.analyzeBestSolutions(results);
+                break;
+            
+            case "candidate_moves":
+                results = CandidateMovesExperimentRunner.runCandidateMovesExperiments(instance);
+                bestSolutions = CandidateMovesExperimentRunner.analyzeBestSolutions(results);
+                break;
+            
+            case "deltas":
+                results = DeltasExperimentRunner.runDeltasExperiments(instance);
+                bestSolutions = DeltasExperimentRunner.analyzeBestSolutions(results);
+                break;
             
             // Future algorithm types can be added here:
             // case "genetic":
