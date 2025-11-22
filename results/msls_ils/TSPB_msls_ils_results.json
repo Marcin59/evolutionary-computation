@@ -1,0 +1,387 @@
+{
+  "summary" : {
+    "total_runs" : 40,
+    "algorithms" : {
+      "MSLS_STEEPEST_TWO_OPT" : {
+        "time_min_ms" : 10219,
+        "time_mean_ms" : 11085.05,
+        "time_max_ms" : 11643,
+        "objective_max" : 46329.0,
+        "runs" : 20,
+        "objective_mean" : 45771.6,
+        "objective_min" : 45148.0
+      },
+      "ILS_STEEPEST_TWO_OPT_pert10" : {
+        "time_min_ms" : 11085,
+        "time_mean_ms" : 11087.45,
+        "time_max_ms" : 11091,
+        "objective_max" : 44884.0,
+        "runs" : 20,
+        "objective_mean" : 44480.1,
+        "objective_min" : 44054.0
+      }
+    }
+  },
+  "results" : [ {
+    "node_costs" : 24853,
+    "computation_time_ms" : 10405,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21067,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45920
+  }, {
+    "node_costs" : 26302,
+    "computation_time_ms" : 11550,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19676,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45978
+  }, {
+    "node_costs" : 25493,
+    "computation_time_ms" : 11643,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20482,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45975
+  }, {
+    "node_costs" : 25303,
+    "computation_time_ms" : 10230,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20790,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 46093
+  }, {
+    "node_costs" : 25366,
+    "computation_time_ms" : 11460,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20074,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45440
+  }, {
+    "node_costs" : 24414,
+    "computation_time_ms" : 10403,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21119,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45533
+  }, {
+    "node_costs" : 25801,
+    "computation_time_ms" : 11572,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19752,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45553
+  }, {
+    "node_costs" : 25314,
+    "computation_time_ms" : 11622,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20089,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45403
+  }, {
+    "node_costs" : 24784,
+    "computation_time_ms" : 10410,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20364,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45148
+  }, {
+    "node_costs" : 25498,
+    "computation_time_ms" : 11568,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19996,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45494
+  }, {
+    "node_costs" : 25689,
+    "computation_time_ms" : 11538,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20010,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45699
+  }, {
+    "node_costs" : 25228,
+    "computation_time_ms" : 10327,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20701,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45929
+  }, {
+    "node_costs" : 26166,
+    "computation_time_ms" : 11571,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19850,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 46016
+  }, {
+    "node_costs" : 25204,
+    "computation_time_ms" : 10434,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20795,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45999
+  }, {
+    "node_costs" : 25971,
+    "computation_time_ms" : 11601,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20116,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 46087
+  }, {
+    "node_costs" : 25184,
+    "computation_time_ms" : 11641,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21145,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 46329
+  }, {
+    "node_costs" : 25382,
+    "computation_time_ms" : 10219,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19804,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45186
+  }, {
+    "node_costs" : 25370,
+    "computation_time_ms" : 11597,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20744,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 46114
+  }, {
+    "node_costs" : 25023,
+    "computation_time_ms" : 10427,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20585,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45608
+  }, {
+    "node_costs" : 25843,
+    "computation_time_ms" : 11483,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20085,
+    "algorithm" : "MSLS_STEEPEST_TWO_OPT",
+    "objective_value" : 45928
+  }, {
+    "node_costs" : 25270,
+    "computation_time_ms" : 11085,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19342,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44612
+  }, {
+    "node_costs" : 24310,
+    "computation_time_ms" : 11086,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20375,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44685
+  }, {
+    "node_costs" : 24266,
+    "computation_time_ms" : 11085,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20618,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44884
+  }, {
+    "node_costs" : 24497,
+    "computation_time_ms" : 11087,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20185,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44682
+  }, {
+    "node_costs" : 24863,
+    "computation_time_ms" : 11086,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19285,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44148
+  }, {
+    "node_costs" : 24051,
+    "computation_time_ms" : 11088,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20449,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44500
+  }, {
+    "node_costs" : 24718,
+    "computation_time_ms" : 11087,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19466,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44184
+  }, {
+    "node_costs" : 25174,
+    "computation_time_ms" : 11089,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19463,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44637
+  }, {
+    "node_costs" : 24888,
+    "computation_time_ms" : 11089,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19562,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44450
+  }, {
+    "node_costs" : 26385,
+    "computation_time_ms" : 11088,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 17952,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44337
+  }, {
+    "node_costs" : 24925,
+    "computation_time_ms" : 11086,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19678,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44603
+  }, {
+    "node_costs" : 25254,
+    "computation_time_ms" : 11090,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19016,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44270
+  }, {
+    "node_costs" : 24166,
+    "computation_time_ms" : 11086,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20269,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44435
+  }, {
+    "node_costs" : 24306,
+    "computation_time_ms" : 11090,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20417,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44723
+  }, {
+    "node_costs" : 24404,
+    "computation_time_ms" : 11091,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20187,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44591
+  }, {
+    "node_costs" : 24082,
+    "computation_time_ms" : 11088,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20194,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44276
+  }, {
+    "node_costs" : 25522,
+    "computation_time_ms" : 11086,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18864,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44386
+  }, {
+    "node_costs" : 25157,
+    "computation_time_ms" : 11088,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19164,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44321
+  }, {
+    "node_costs" : 24620,
+    "computation_time_ms" : 11088,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19434,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44054
+  }, {
+    "node_costs" : 24698,
+    "computation_time_ms" : 11086,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20126,
+    "algorithm" : "ILS_STEEPEST_TWO_OPT_pert10",
+    "objective_value" : 44824
+  } ],
+  "timestamp" : "2025-11-22T19:01:31.893643869"
+}
