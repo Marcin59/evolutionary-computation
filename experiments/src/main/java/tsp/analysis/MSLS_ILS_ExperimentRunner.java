@@ -30,16 +30,30 @@ public class MSLS_ILS_ExperimentRunner {
         final String algorithmType; // "MSLS" or "ILS"
         final String localSearchType; // "STEEPEST" or "GREEDY"
         final LocalSearchAlgorithm.Neighborhood neighborhood;
+        final int perturbationStrength; // For ILS intra-route perturbation
+        final int externalPerturbationStrength; // For ILS inter-route perturbation
         
         ExperimentConfig(String algorithmType, String localSearchType, 
                         LocalSearchAlgorithm.Neighborhood neighborhood) {
+            this(algorithmType, localSearchType, neighborhood, 0, 0);
+        }
+        
+        ExperimentConfig(String algorithmType, String localSearchType, 
+                        LocalSearchAlgorithm.Neighborhood neighborhood,
+                        int perturbationStrength, int externalPerturbationStrength) {
             this.algorithmType = algorithmType;
             this.localSearchType = localSearchType;
             this.neighborhood = neighborhood;
+            this.perturbationStrength = perturbationStrength;
+            this.externalPerturbationStrength = externalPerturbationStrength;
         }
         
         String getFullName() {
             String moveType = neighborhood == LocalSearchAlgorithm.Neighborhood.NODE_SWAP ? "Nodes" : "Edges";
+            if (algorithmType.equals("ILS")) {
+                return String.format("%s_%s_%s_P%d_E%d", algorithmType, localSearchType, moveType, 
+                    perturbationStrength, externalPerturbationStrength);
+            }
             return String.format("%s_%s_%s", algorithmType, localSearchType, moveType);
         }
     }
@@ -87,9 +101,19 @@ public class MSLS_ILS_ExperimentRunner {
         System.out.println(String.format("\n=== Average MSLS runtime: %.2f seconds ===", avgMSLSRuntime / 1000.0));
         System.out.println(String.format("=== ILS time limit set to: %.2f seconds ===\n", ilsTimeLimit / 1000.0));
         
-        // Define ILS configurations - only Steepest with edge exchange (TWO_OPT)
+        // Define ILS configurations with grid of perturbation strengths
+        // Grid: 5, 10, 15 for both intra-route and inter-route perturbations (9 combinations)
         List<ExperimentConfig> ilsConfigurations = new ArrayList<>();
-        ilsConfigurations.add(new ExperimentConfig("ILS", "STEEPEST", LocalSearchAlgorithm.Neighborhood.TWO_OPT));
+        int[] perturbationValues = {1, 3, 5, 10, 15};
+        
+        for (int intraPert : perturbationValues) {
+            for (int externalPert : perturbationValues) {
+                ilsConfigurations.add(new ExperimentConfig("ILS", "STEEPEST", 
+                    LocalSearchAlgorithm.Neighborhood.TWO_OPT, intraPert, externalPert));
+            }
+        }
+        
+        System.out.println(String.format("=== Running %d ILS configurations (3x3 grid) ===\n", ilsConfigurations.size()));
         
         // Run ILS experiments
         System.out.println("\n=== Phase 2: Running ILS experiments ===");
@@ -162,14 +186,13 @@ public class MSLS_ILS_ExperimentRunner {
                 ? AlgorithmILS.LocalSearchType.STEEPEST 
                 : AlgorithmILS.LocalSearchType.GREEDY;
             
-            // Perturbation strength: use a reasonable value (e.g., 10% of route length)
-            int perturbationStrength = Math.max(5, instance.getRequiredNodes() / 10);
-            
+            // Use the configured perturbation strengths from the grid
             Algorithm algorithm = new AlgorithmILS(
                 instance,
                 lsType,
                 config.neighborhood,
-                perturbationStrength,
+                config.perturbationStrength,
+                config.externalPerturbationStrength,
                 timeLimit,
                 seed
             );
@@ -178,9 +201,11 @@ public class MSLS_ILS_ExperimentRunner {
             AlgorithmResult result = ExperimentRunner.runSingle(algorithm);
             results.add(result);
             
-            System.out.printf("Objective: %d, Time: %.2fs\n", 
+            System.out.printf("Objective: %d, Time: %.2fs, Intra-Pert: %d, External-Pert: %d\n", 
                 result.getObjectiveValue(), 
-                result.getComputationTimeMs() / 1000.0);
+                result.getComputationTimeMs() / 1000.0,
+                config.perturbationStrength,
+                config.externalPerturbationStrength);
         }
         
         return results;

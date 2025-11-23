@@ -142,7 +142,7 @@ public abstract class LocalSearchAlgorithm extends Algorithm {
     /**
      * Interface for neighborhood moves.
      */
-    protected interface Move {
+    public interface Move {
         /**
          * Calculate the change in objective value if this move is applied.
          */
@@ -157,7 +157,7 @@ public abstract class LocalSearchAlgorithm extends Algorithm {
     /**
      * Swap two nodes at given positions in the route.
      */
-    protected static class NodeSwapMove implements Move {
+    public static class NodeSwapMove implements Move {
         private final int pos1;
         private final int pos2;
         
@@ -251,7 +251,7 @@ public abstract class LocalSearchAlgorithm extends Algorithm {
      * 2-opt move: reverse a segment of the route.
      * This exchanges two edges in the cycle.
      */
-    protected static class TwoOptMove implements Move {
+    public static class TwoOptMove implements Move {
         private final int i;
         private final int j;
         
@@ -311,7 +311,7 @@ public abstract class LocalSearchAlgorithm extends Algorithm {
     /**
      * Replace a node at position `pos` in the route with an outside node (not currently selected).
      */
-    protected static class ReplaceNodeMove implements Move {
+    public static class ReplaceNodeMove implements Move {
         private final int pos;
         private final int outsideNode;
 

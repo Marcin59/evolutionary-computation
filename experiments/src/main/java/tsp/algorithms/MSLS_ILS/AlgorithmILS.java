@@ -27,6 +27,7 @@ public class AlgorithmILS extends Algorithm {
     private final LocalSearchType localSearchType;
     private final LocalSearchAlgorithm.Neighborhood neighborhood;
     private final int perturbationStrength;
+    private final int externalPerturbationStrength;
     private final long timeLimitMs;
     private final Random random;
     private Solution bestSolution;
@@ -44,17 +45,19 @@ public class AlgorithmILS extends Algorithm {
      * @param instance TSP instance to solve
      * @param localSearchType Type of local search (STEEPEST or GREEDY)
      * @param neighborhood Type of neighborhood (NODE_SWAP or TWO_OPT)
-     * @param perturbationStrength Number of random moves for perturbation
+     * @param perturbationStrength Number of random moves for perturbation (intra-route)
+     * @param externalPerturbationStrength Number of random node replacements (inter-route)
      * @param timeLimitMs Time limit in milliseconds
      * @param seed Random seed for reproducibility
      */
     public AlgorithmILS(Instance instance, LocalSearchType localSearchType, 
-                        LocalSearchAlgorithm.Neighborhood neighborhood, int perturbationStrength, 
-                        long timeLimitMs, long seed) {
+                        LocalSearchAlgorithm.Neighborhood neighborhood, int perturbationStrength,
+                        int externalPerturbationStrength, long timeLimitMs, long seed) {
         super("ILS", instance);
         this.localSearchType = localSearchType;
         this.neighborhood = neighborhood;
         this.perturbationStrength = perturbationStrength;
+        this.externalPerturbationStrength = externalPerturbationStrength;
         this.timeLimitMs = timeLimitMs;
         this.random = new Random(seed);
         this.iterationCount = 0;
@@ -64,9 +67,10 @@ public class AlgorithmILS extends Algorithm {
      * Constructor without explicit seed (uses system time).
      */
     public AlgorithmILS(Instance instance, LocalSearchType localSearchType, 
-                        LocalSearchAlgorithm.Neighborhood neighborhood, int perturbationStrength, 
-                        long timeLimitMs) {
-        this(instance, localSearchType, neighborhood, perturbationStrength, timeLimitMs, System.nanoTime());
+                        LocalSearchAlgorithm.Neighborhood neighborhood, int perturbationStrength,
+                        int externalPerturbationStrength, long timeLimitMs) {
+        this(instance, localSearchType, neighborhood, perturbationStrength, 
+             externalPerturbationStrength, timeLimitMs, System.nanoTime());
     }
     
     @Override
@@ -127,46 +131,94 @@ public class AlgorithmILS extends Algorithm {
     }
     
     /**
-     * Perturb the solution by applying random moves.
+     * Perturb the solution by applying random moves using the implemented move classes.
      * This helps escape local optima.
+     * 
+     * Applies two types of perturbations:
+     * 1. Intra-route moves (NODE_SWAP or TWO_OPT) - based on neighborhood type
+     * 2. Inter-route moves (ReplaceNode) - replacing nodes with external ones
      */
     private Solution perturbSolution(Solution solution) {
-        List<Integer> route = new ArrayList<>(solution.getRoute());
-        Set<Integer> selectedNodes = new HashSet<>(solution.getSelectedNodes());
-        int n = route.size();
+        Solution currentSol = solution;
         
-        // Apply multiple random perturbations
+        // Apply random intra-route perturbations (based on neighborhood type)
         for (int i = 0; i < perturbationStrength; i++) {
-            if (neighborhood == LocalSearchAlgorithm.Neighborhood.NODE_SWAP) {
-                // Random node swap
-                int pos1 = random.nextInt(n);
-                int pos2 = random.nextInt(n);
-                if (pos1 != pos2) {
-                    int temp = route.get(pos1);
-                    route.set(pos1, route.get(pos2));
-                    route.set(pos2, temp);
-                }
-            } else if (neighborhood == LocalSearchAlgorithm.Neighborhood.TWO_OPT) {
-                // Random 2-opt move (edge exchange)
-                int i1 = random.nextInt(n - 1);
-                int i2 = i1 + 1 + random.nextInt(n - i1 - 1);
-                if (!(i1 == 0 && i2 == n - 1)) {
-                    // Reverse segment
-                    int left = i1 + 1;
-                    int right = i2;
-                    while (left < right) {
-                        int temp = route.get(left);
-                        route.set(left, route.get(right));
-                        route.set(right, temp);
-                        left++;
-                        right--;
-                    }
-                }
+            LocalSearchAlgorithm.Move move = generateRandomIntraRouteMove(currentSol);
+            if (move != null) {
+                currentSol = move.apply(currentSol);
             }
         }
         
-        // Create and return perturbed solution with consistent selected nodes and route
-        return new TSPSolution(instance, selectedNodes, route);
+        // Apply random inter-route perturbations (node replacements)
+        for (int i = 0; i < externalPerturbationStrength; i++) {
+            LocalSearchAlgorithm.Move move = generateRandomReplaceNodeMove(currentSol);
+            if (move != null) {
+                currentSol = move.apply(currentSol);
+            }
+        }
+        
+        return currentSol;
+    }
+    
+    /**
+     * Generate a random intra-route move based on the neighborhood type.
+     */
+    private LocalSearchAlgorithm.Move generateRandomIntraRouteMove(Solution solution) {
+        List<Integer> route = solution.getRoute();
+        int n = route.size();
+        
+        if (n < 2) return null;
+        
+        if (neighborhood == LocalSearchAlgorithm.Neighborhood.NODE_SWAP) {
+            // Random node swap
+            int pos1 = random.nextInt(n);
+            int pos2 = random.nextInt(n);
+            if (pos1 != pos2) {
+                return new LocalSearchAlgorithm.NodeSwapMove(pos1, pos2);
+            }
+        } else if (neighborhood == LocalSearchAlgorithm.Neighborhood.TWO_OPT) {
+            // Random 2-opt move (edge exchange)
+            if (n < 3) return null;
+            
+            int i1 = random.nextInt(n - 1);
+            int i2 = i1 + 1 + random.nextInt(n - i1 - 1);
+            
+            // Avoid reversing the entire route
+            if (!(i1 == 0 && i2 == n - 1)) {
+                return new LocalSearchAlgorithm.TwoOptMove(i1, i2);
+            }
+        }
+        
+        return null;
+    }
+    
+    /**
+     * Generate a random node replacement move (replace a selected node with an unselected one).
+     */
+    private LocalSearchAlgorithm.Move generateRandomReplaceNodeMove(Solution solution) {
+        List<Integer> route = solution.getRoute();
+        Set<Integer> selected = solution.getSelectedNodes();
+        int totalNodes = instance.getTotalNodes();
+        
+        // Find all unselected nodes
+        List<Integer> unselectedNodes = new ArrayList<>();
+        for (int node = 0; node < totalNodes; node++) {
+            if (!selected.contains(node)) {
+                unselectedNodes.add(node);
+            }
+        }
+        
+        if (unselectedNodes.isEmpty() || route.isEmpty()) {
+            return null;
+        }
+        
+        // Pick a random position in the route
+        int pos = random.nextInt(route.size());
+        
+        // Pick a random unselected node
+        int outsideNode = unselectedNodes.get(random.nextInt(unselectedNodes.size()));
+        
+        return new LocalSearchAlgorithm.ReplaceNodeMove(pos, outsideNode);
     }
     
     public int getIterationCount() {
@@ -175,6 +227,7 @@ public class AlgorithmILS extends Algorithm {
     
     @Override
     public String getName() {
-        return "ILS_" + localSearchType + "_" + neighborhood + "_pert" + perturbationStrength;
+        return "ILS_" + localSearchType + "_" + neighborhood + 
+               "_pert" + perturbationStrength + "_ext" + externalPerturbationStrength;
     }
 }
