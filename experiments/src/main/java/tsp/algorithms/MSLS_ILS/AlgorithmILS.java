@@ -33,6 +33,7 @@ public class AlgorithmILS extends Algorithm {
     private Solution bestSolution;
     private Solution currentSolution;
     private int iterationCount;
+    private int localSearchCallCount;
     
     public enum LocalSearchType {
         STEEPEST,
@@ -61,6 +62,7 @@ public class AlgorithmILS extends Algorithm {
         this.timeLimitMs = timeLimitMs;
         this.random = new Random(seed);
         this.iterationCount = 0;
+        this.localSearchCallCount = 0;
     }
     
     /**
@@ -86,6 +88,7 @@ public class AlgorithmILS extends Algorithm {
         currentSolution = applyLocalSearch(randomAlgorithm);
         bestSolution = currentSolution;
         iterationCount = 0;
+        localSearchCallCount = 1; // Count the initial local search
         
         // Main ILS loop
         while (System.currentTimeMillis() - startTime < timeLimitMs) {
@@ -102,6 +105,7 @@ public class AlgorithmILS extends Algorithm {
             
             // Apply local search to perturbed solution
             currentSolution = applyLocalSearch(perturbedAlgorithm);
+            localSearchCallCount++; // Increment counter
             
             // Accept if better (or with some probability for diversification)
             if (currentSolution.getObjectiveValue() < bestSolution.getObjectiveValue()) {
@@ -223,6 +227,10 @@ public class AlgorithmILS extends Algorithm {
     
     public int getIterationCount() {
         return iterationCount;
+    }
+    
+    public int getLocalSearchCallCount() {
+        return localSearchCallCount;
     }
     
     @Override

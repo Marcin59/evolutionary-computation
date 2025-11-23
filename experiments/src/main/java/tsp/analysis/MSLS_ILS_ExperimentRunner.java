@@ -23,6 +23,9 @@ public class MSLS_ILS_ExperimentRunner {
     // Number of runs per configuration per instance
     private static final int RUNS_PER_CONFIG = 20;
     
+    // Map to store local search call counts for ILS results
+    private static final Map<AlgorithmResult, Integer> ilsLocalSearchCalls = new HashMap<>();
+    
     /**
      * Configuration for MSLS/ILS experiments.
      */
@@ -104,10 +107,11 @@ public class MSLS_ILS_ExperimentRunner {
         // Define ILS configurations with grid of perturbation strengths
         // Grid: 5, 10, 15 for both intra-route and inter-route perturbations (9 combinations)
         List<ExperimentConfig> ilsConfigurations = new ArrayList<>();
-        int[] perturbationValues = {1, 3, 5, 10, 15};
+        int[] perturbationValues = {15};
+        int[] extrnalValues = {1, 3};
         
         for (int intraPert : perturbationValues) {
-            for (int externalPert : perturbationValues) {
+            for (int externalPert : extrnalValues) {
                 ilsConfigurations.add(new ExperimentConfig("ILS", "STEEPEST", 
                     LocalSearchAlgorithm.Neighborhood.TWO_OPT, intraPert, externalPert));
             }
@@ -201,9 +205,16 @@ public class MSLS_ILS_ExperimentRunner {
             AlgorithmResult result = ExperimentRunner.runSingle(algorithm);
             results.add(result);
             
-            System.out.printf("Objective: %d, Time: %.2fs, Intra-Pert: %d, External-Pert: %d\n", 
+            // Get local search call count if it's an ILS algorithm
+            int lsCallCount = 0;
+            if (algorithm instanceof AlgorithmILS) {
+                lsCallCount = ((AlgorithmILS) algorithm).getLocalSearchCallCount();
+                ilsLocalSearchCalls.put(result, lsCallCount); // Store for later analysis
+            }
+            
+            System.out.printf("Objective: %d, LS Calls: %d, Intra-Pert: %d, External-Pert: %d\n", 
                 result.getObjectiveValue(), 
-                result.getComputationTimeMs() / 1000.0,
+                lsCallCount,
                 config.perturbationStrength,
                 config.externalPerturbationStrength);
         }
@@ -229,7 +240,34 @@ public class MSLS_ILS_ExperimentRunner {
         System.out.printf("  Min Score: %.0f\n", minScore);
         System.out.printf("  Max Score: %.0f\n", maxScore);
         System.out.printf("  Avg Score: %.2f\n", avgScore);
-        System.out.printf("  Avg Time: %.2f seconds\n", avgTime / 1000.0);
+        
+        // Check if these are ILS results (have local search call counts)
+        boolean hasLSCalls = results.stream().anyMatch(ilsLocalSearchCalls::containsKey);
+        if (hasLSCalls) {
+            // Show LS call statistics for ILS
+            double avgLSCalls = results.stream()
+                .filter(ilsLocalSearchCalls::containsKey)
+                .mapToInt(ilsLocalSearchCalls::get)
+                .average()
+                .orElse(0);
+            int minLSCalls = results.stream()
+                .filter(ilsLocalSearchCalls::containsKey)
+                .mapToInt(ilsLocalSearchCalls::get)
+                .min()
+                .orElse(0);
+            int maxLSCalls = results.stream()
+                .filter(ilsLocalSearchCalls::containsKey)
+                .mapToInt(ilsLocalSearchCalls::get)
+                .max()
+                .orElse(0);
+            System.out.printf("  Avg LS Calls: %.2f\n", avgLSCalls);
+            System.out.printf("  Min LS Calls: %d\n", minLSCalls);
+            System.out.printf("  Max LS Calls: %d\n", maxLSCalls);
+        } else {
+            // Show time for MSLS
+            System.out.printf("  Avg Time: %.2f seconds\n", avgTime / 1000.0);
+        }
+        
         System.out.printf("  Total Runs: %d\n", results.size());
     }
     
@@ -281,5 +319,20 @@ public class MSLS_ILS_ExperimentRunner {
             return fullName.substring(0, lastUnderscore);
         }
         return fullName;
+    }
+    
+    /**
+     * Get the local search call count for a specific ILS result.
+     * Returns null if the result is not an ILS result.
+     */
+    public static Integer getLocalSearchCalls(AlgorithmResult result) {
+        return ilsLocalSearchCalls.get(result);
+    }
+    
+    /**
+     * Get all local search call counts.
+     */
+    public static Map<AlgorithmResult, Integer> getAllLocalSearchCalls() {
+        return new HashMap<>(ilsLocalSearchCalls);
     }
 }
