@@ -7,8 +7,8 @@ package tsp.config;
 public class ExperimentConfig {
     
     // Algorithm type configuration
-    public static final String ALGORITHM_TYPE = "deltas"; // Change this to switch algorithm types
-    // Supported types: "greedy", "regret", "local_search", "candidate_moves", "deltas"
+    public static final String ALGORITHM_TYPE = "msls_ils"; // Change this to switch algorithm types
+    // Supported types: "greedy", "regret", "local_search", "candidate_moves", "deltas", "msls_ils"
     
     // Directory configuration
     public static final String DATA_DIR = "data";

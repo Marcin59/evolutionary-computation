@@ -3,6 +3,7 @@ package tsp.analysis;
 import tsp.core.Algorithm;
 import tsp.core.Instance;
 import tsp.core.Solution;
+import tsp.algorithms.MSLS_ILS.AlgorithmILS;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
@@ -21,7 +22,13 @@ public class ExperimentRunner {
         long endTime = System.currentTimeMillis();
         
         long computationTime = endTime - startTime;
-        
+
+        // If this is an ILS algorithm, use the number of basic local search calls
+        // as the reported "computation time" (keeps the CSV column name unchanged).
+        if (algorithm instanceof AlgorithmILS) {
+            computationTime = ((AlgorithmILS) algorithm).getLocalSearchCallCount();
+        }
+
         return new AlgorithmResult(
             algorithm.getName(),
             algorithm.getInstance().getName(),

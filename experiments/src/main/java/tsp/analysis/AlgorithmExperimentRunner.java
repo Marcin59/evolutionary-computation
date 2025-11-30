@@ -59,6 +59,11 @@ public class AlgorithmExperimentRunner {
                 bestSolutions = DeltasExperimentRunner.analyzeBestSolutions(results);
                 break;
             
+            case "msls_ils":
+                results = MSLS_ILS_ExperimentRunner.runAllExperiments(instance);
+                bestSolutions = MSLS_ILS_ExperimentRunner.analyzeBestSolutions(results);
+                break;
+            
             // Future algorithm types can be added here:
             // case "genetic":
             //     results = GeneticExperimentRunner.runGeneticExperiments(instance);
