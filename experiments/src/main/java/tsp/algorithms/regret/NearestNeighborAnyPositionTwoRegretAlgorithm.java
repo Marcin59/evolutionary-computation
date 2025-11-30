@@ -29,12 +29,85 @@ import java.util.*;
 public class NearestNeighborAnyPositionTwoRegretAlgorithm extends NearestNeighborAnyPositionAlgorithm {
     private final int weightInsertion;
     private final int weightRegret;
+    
+    // For partial solution repair
+    private List<Integer> initialRoute;
+    private Set<Integer> initialSelectedNodes;
+    private int targetRouteSize;
 
     public NearestNeighborAnyPositionTwoRegretAlgorithm(Instance instance, int startNode, 
                                                          int weightInsertion, int weightRegret) {
         super(instance, startNode);
         this.weightInsertion = weightInsertion;
         this.weightRegret = weightRegret;
+        this.initialRoute = null;
+        this.initialSelectedNodes = null;
+        this.targetRouteSize = -1;
+    }
+    
+    /**
+     * Constructor for repairing a partial solution.
+     * Considers ALL unselected nodes for insertion (not just specific nodes).
+     * @param instance The TSP instance.
+     * @param partialRoute The existing partial route to extend.
+     * @param targetRouteSize The target size of the route (typically instance.getRequiredNodes()).
+     * @param weightInsertion Weight for insertion cost.
+     * @param weightRegret Weight for regret value.
+     */
+    public NearestNeighborAnyPositionTwoRegretAlgorithm(Instance instance, List<Integer> partialRoute,
+                                                         int targetRouteSize,
+                                                         int weightInsertion, int weightRegret) {
+        super(instance, partialRoute.isEmpty() ? 0 : partialRoute.get(0));
+        this.weightInsertion = weightInsertion;
+        this.weightRegret = weightRegret;
+        this.initialRoute = new ArrayList<>(partialRoute);
+        this.initialSelectedNodes = new HashSet<>(partialRoute);
+        this.targetRouteSize = targetRouteSize;
+    }
+    
+    @Override
+    public Solution solve() {
+        // If we have a partial solution to repair, use custom logic
+        if (initialRoute != null) {
+            return solveFromPartialSolution();
+        }
+        // Otherwise, use the standard solve from parent
+        return super.solve();
+    }
+    
+    /**
+     * Solve by extending a partial solution until target size is reached.
+     * Considers all nodes not in the current route for insertion.
+     */
+    private Solution solveFromPartialSolution() {
+        List<Integer> route = new ArrayList<>(initialRoute);
+        Set<Integer> selectedNodes = new HashSet<>(initialSelectedNodes);
+        
+        // Build unselected nodes from ALL nodes not in the partial route
+        Set<Integer> unselectedNodes = new HashSet<>();
+        for (int i = 0; i < instance.getTotalNodes(); i++) {
+            if (!selectedNodes.contains(i)) {
+                unselectedNodes.add(i);
+            }
+        }
+        
+        distanceMatrix = instance.getDistanceMatrix();
+        
+        // Insert nodes until we reach the target route size
+        while (selectedNodes.size() < targetRouteSize && !unselectedNodes.isEmpty()) {
+            Map.Entry<Integer, Integer> bestEntry = findBestNodeAndPosition(unselectedNodes, route);
+            if (bestEntry != null) {
+                int bestNode = bestEntry.getKey();
+                int bestPosition = bestEntry.getValue();
+                route.add(bestPosition, bestNode);
+                selectedNodes.add(bestNode);
+                unselectedNodes.remove(bestNode);
+            } else {
+                break;
+            }
+        }
+        
+        return new TSPSolution(instance, selectedNodes, route);
     }
     
     @Override

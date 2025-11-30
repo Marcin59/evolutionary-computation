@@ -23,7 +23,7 @@ warnings.filterwarnings('ignore')
 plt.style.use('seaborn-v0_8')
 sns.set_palette("husl")
 
-RESULTS_PATH = Path("results")
+RESULTS_PATH = Path("../results")
 
 # ==============================================================================
 # DATA LOADING FUNCTIONS

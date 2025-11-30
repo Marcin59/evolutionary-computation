@@ -26,21 +26,19 @@ public class LNSExperimentRunner {
     private static class LNSConfig {
         final double destructionRate;
         final LNSAlgorithm.DestroyHeuristic destroyHeuristic;
-        final LNSAlgorithm.RepairHeuristic repairHeuristic;
         final boolean useLocalSearchAfterRepair;
         final LocalSearchAlgorithm.Neighborhood neighborhood = LocalSearchAlgorithm.Neighborhood.TWO_OPT; // Best one generally
 
         LNSConfig(double destructionRate, LNSAlgorithm.DestroyHeuristic destroyHeuristic,
-                         LNSAlgorithm.RepairHeuristic repairHeuristic, boolean useLocalSearchAfterRepair) {
+                         boolean useLocalSearchAfterRepair) {
             this.destructionRate = destructionRate;
             this.destroyHeuristic = destroyHeuristic;
-            this.repairHeuristic = repairHeuristic;
             this.useLocalSearchAfterRepair = useLocalSearchAfterRepair;
         }
 
         String getFullName() {
-            return String.format("LNS_d-%.2f_%s_%s_ls-%s",
-                    destructionRate, destroyHeuristic, repairHeuristic, useLocalSearchAfterRepair ? "On" : "Off");
+            return String.format("LNS_d-%.2f_%s_ls-%s",
+                    destructionRate, destroyHeuristic, useLocalSearchAfterRepair ? "On" : "Off");
         }
     }
 
@@ -81,14 +79,13 @@ public class LNSExperimentRunner {
             LNSAlgorithm.DestroyHeuristic.RANDOM_REMOVAL,
             LNSAlgorithm.DestroyHeuristic.LONGEST_EDGE_REMOVAL
         };
-        LNSAlgorithm.RepairHeuristic repairHeuristic = LNSAlgorithm.RepairHeuristic.REGRET_INSERTION;
 
         for (double rate : destructionRates) {
             for (LNSAlgorithm.DestroyHeuristic destroy : destroyHeuristics) {
                 // Version with local search after repair
-                configurations.add(new LNSConfig(rate, destroy, repairHeuristic, true));
+                configurations.add(new LNSConfig(rate, destroy, true));
                 // Version without local search after repair
-                configurations.add(new LNSConfig(rate, destroy, repairHeuristic, false));
+                configurations.add(new LNSConfig(rate, destroy, false));
             }
         }
         
@@ -120,7 +117,6 @@ public class LNSExperimentRunner {
                     timeLimit,
                     config.useLocalSearchAfterRepair,
                     config.neighborhood,
-                    config.repairHeuristic,
                     config.destroyHeuristic,
                     seed);
             

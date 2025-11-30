@@ -2,2276 +2,2276 @@
   "summary" : {
     "total_runs" : 240,
     "algorithms" : {
-      "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT" : {
-        "time_min_ms" : 7387,
-        "time_mean_ms" : 7812.55,
-        "time_max_ms" : 8066,
-        "objective_max" : 50230.0,
+      "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 7591,
+        "time_mean_ms" : 7708.45,
+        "time_max_ms" : 7838,
+        "objective_max" : 45118.0,
         "runs" : 20,
-        "objective_mean" : 48166.8,
-        "objective_min" : 45521.0
+        "objective_mean" : 44270.9,
+        "objective_min" : 43671.0
       },
-      "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT" : {
-        "time_min_ms" : 5472,
-        "time_mean_ms" : 5623.0,
-        "time_max_ms" : 5855,
-        "objective_max" : 49137.0,
+      "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 5215,
+        "time_mean_ms" : 6586.0,
+        "time_max_ms" : 7734,
+        "objective_max" : 44932.0,
         "runs" : 20,
-        "objective_mean" : 47770.45,
-        "objective_min" : 46657.0
+        "objective_mean" : 44260.95,
+        "objective_min" : 43565.0
       },
-      "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT" : {
-        "time_min_ms" : 3513,
-        "time_mean_ms" : 3607.15,
-        "time_max_ms" : 3781,
-        "objective_max" : 49945.0,
+      "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 2935,
+        "time_mean_ms" : 3530.7,
+        "time_max_ms" : 3879,
+        "objective_max" : 44623.0,
         "runs" : 20,
-        "objective_mean" : 47638.45,
-        "objective_min" : 46221.0
+        "objective_mean" : 44026.4,
+        "objective_min" : 43509.0
       },
-      "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT" : {
-        "time_min_ms" : 3505,
-        "time_mean_ms" : 3692.55,
-        "time_max_ms" : 3880,
-        "objective_max" : 50250.0,
+      "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 3702,
+        "time_mean_ms" : 4892.2,
+        "time_max_ms" : 5755,
+        "objective_max" : 45727.0,
         "runs" : 20,
-        "objective_mean" : 48018.5,
-        "objective_min" : 46137.0
+        "objective_mean" : 44810.4,
+        "objective_min" : 43899.0
       },
-      "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT" : {
-        "time_min_ms" : 4366,
-        "time_mean_ms" : 4547.45,
-        "time_max_ms" : 4746,
-        "objective_max" : 48560.0,
+      "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 3687,
+        "time_mean_ms" : 4550.55,
+        "time_max_ms" : 4960,
+        "objective_max" : 45362.0,
         "runs" : 20,
-        "objective_mean" : 46737.2,
-        "objective_min" : 44630.0
+        "objective_mean" : 44292.9,
+        "objective_min" : 43484.0
       },
-      "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT" : {
-        "time_min_ms" : 5547,
-        "time_mean_ms" : 5669.75,
-        "time_max_ms" : 5920,
-        "objective_max" : 48550.0,
+      "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 5782,
+        "time_mean_ms" : 5868.3,
+        "time_max_ms" : 5957,
+        "objective_max" : 45756.0,
         "runs" : 20,
-        "objective_mean" : 47190.45,
-        "objective_min" : 46020.0
+        "objective_mean" : 44945.05,
+        "objective_min" : 43997.0
       },
-      "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT" : {
-        "time_min_ms" : 7770,
-        "time_mean_ms" : 7872.15,
-        "time_max_ms" : 8036,
-        "objective_max" : 49571.0,
+      "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 7579,
+        "time_mean_ms" : 7712.75,
+        "time_max_ms" : 7830,
+        "objective_max" : 46066.0,
         "runs" : 20,
-        "objective_mean" : 46839.3,
-        "objective_min" : 45050.0
+        "objective_mean" : 45190.15,
+        "objective_min" : 44316.0
       },
-      "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT" : {
-        "time_min_ms" : 2849,
-        "time_mean_ms" : 3079.85,
-        "time_max_ms" : 3211,
-        "objective_max" : 50291.0,
+      "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 4356,
+        "time_mean_ms" : 6326.45,
+        "time_max_ms" : 7704,
+        "objective_max" : 47494.0,
         "runs" : 20,
-        "objective_mean" : 47004.6,
-        "objective_min" : 44819.0
+        "objective_mean" : 45526.65,
+        "objective_min" : 44392.0
       },
-      "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT" : {
-        "time_min_ms" : 2979,
-        "time_mean_ms" : 3103.4,
-        "time_max_ms" : 3217,
-        "objective_max" : 48331.0,
+      "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 10964,
+        "time_mean_ms" : 11388.0,
+        "time_max_ms" : 11644,
+        "objective_max" : 47835.0,
         "runs" : 20,
-        "objective_mean" : 46271.35,
-        "objective_min" : 44823.0
+        "objective_mean" : 45864.65,
+        "objective_min" : 44572.0
       },
-      "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT" : {
-        "time_min_ms" : 11103,
-        "time_mean_ms" : 11461.8,
-        "time_max_ms" : 11813,
-        "objective_max" : 49298.0,
+      "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 11169,
+        "time_mean_ms" : 11378.25,
+        "time_max_ms" : 11565,
+        "objective_max" : 45730.0,
         "runs" : 20,
-        "objective_mean" : 47537.7,
-        "objective_min" : 45436.0
+        "objective_mean" : 44412.5,
+        "objective_min" : 43602.0
       },
-      "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT" : {
-        "time_min_ms" : 10660,
-        "time_mean_ms" : 11004.5,
-        "time_max_ms" : 11346,
-        "objective_max" : 50433.0,
+      "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 3105,
+        "time_mean_ms" : 3702.55,
+        "time_max_ms" : 4580,
+        "objective_max" : 45976.0,
         "runs" : 20,
-        "objective_mean" : 47763.5,
-        "objective_min" : 46152.0
+        "objective_mean" : 44682.0,
+        "objective_min" : 43894.0
       },
-      "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT" : {
-        "time_min_ms" : 4360,
-        "time_mean_ms" : 4621.1,
-        "time_max_ms" : 4801,
-        "objective_max" : 49588.0,
+      "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 5823,
+        "time_mean_ms" : 5920.5,
+        "time_max_ms" : 6006,
+        "objective_max" : 44832.0,
         "runs" : 20,
-        "objective_mean" : 47617.0,
-        "objective_min" : 45600.0
+        "objective_mean" : 44199.95,
+        "objective_min" : 43602.0
       }
     }
   },
   "results" : [ {
-    "node_costs" : 27320,
-    "computation_time_ms" : 7789,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19253,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46573
-  }, {
-    "node_costs" : 25957,
-    "computation_time_ms" : 7873,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20879,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46836
-  }, {
-    "node_costs" : 28536,
-    "computation_time_ms" : 7894,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21035,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 49571
-  }, {
-    "node_costs" : 27020,
-    "computation_time_ms" : 7869,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19926,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46946
-  }, {
-    "node_costs" : 25151,
-    "computation_time_ms" : 7824,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19899,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45050
-  }, {
-    "node_costs" : 26769,
-    "computation_time_ms" : 7986,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20830,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47599
-  }, {
-    "node_costs" : 26294,
-    "computation_time_ms" : 7903,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19958,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46252
-  }, {
-    "node_costs" : 25254,
-    "computation_time_ms" : 7799,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20993,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46247
-  }, {
-    "node_costs" : 27136,
-    "computation_time_ms" : 7891,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20013,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47149
-  }, {
-    "node_costs" : 27076,
-    "computation_time_ms" : 7926,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19861,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46937
-  }, {
-    "node_costs" : 26641,
-    "computation_time_ms" : 7773,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20366,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47007
-  }, {
-    "node_costs" : 27891,
-    "computation_time_ms" : 8035,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19054,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46945
-  }, {
-    "node_costs" : 25755,
-    "computation_time_ms" : 7801,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20764,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46519
-  }, {
-    "node_costs" : 26536,
-    "computation_time_ms" : 7846,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20477,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47013
-  }, {
-    "node_costs" : 27923,
-    "computation_time_ms" : 7795,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19939,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47862
-  }, {
-    "node_costs" : 26590,
-    "computation_time_ms" : 7778,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20034,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46624
-  }, {
-    "node_costs" : 26737,
-    "computation_time_ms" : 7888,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20298,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47035
-  }, {
-    "node_costs" : 26108,
-    "computation_time_ms" : 7770,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20570,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46678
-  }, {
-    "node_costs" : 27242,
-    "computation_time_ms" : 8036,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19009,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46251
-  }, {
-    "node_costs" : 26245,
-    "computation_time_ms" : 7967,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19447,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45692
-  }, {
-    "node_costs" : 27096,
-    "computation_time_ms" : 11155,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20773,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47869
-  }, {
-    "node_costs" : 26400,
-    "computation_time_ms" : 11275,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20646,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47046
-  }, {
-    "node_costs" : 28198,
-    "computation_time_ms" : 11536,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19877,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48075
-  }, {
-    "node_costs" : 27471,
-    "computation_time_ms" : 11112,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19624,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47095
-  }, {
-    "node_costs" : 26608,
-    "computation_time_ms" : 11663,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20123,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46731
-  }, {
-    "node_costs" : 28142,
-    "computation_time_ms" : 11133,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20014,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48156
-  }, {
-    "node_costs" : 29364,
-    "computation_time_ms" : 11762,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19660,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 49024
-  }, {
-    "node_costs" : 27869,
-    "computation_time_ms" : 11494,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20826,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48695
-  }, {
-    "node_costs" : 27308,
-    "computation_time_ms" : 11441,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20760,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48068
-  }, {
-    "node_costs" : 28253,
-    "computation_time_ms" : 11813,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19180,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47433
-  }, {
-    "node_costs" : 27390,
-    "computation_time_ms" : 11103,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19253,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46643
-  }, {
-    "node_costs" : 27766,
-    "computation_time_ms" : 11598,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20163,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47929
-  }, {
-    "node_costs" : 28153,
-    "computation_time_ms" : 11465,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 18966,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47119
-  }, {
-    "node_costs" : 26111,
-    "computation_time_ms" : 11451,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20186,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46297
-  }, {
-    "node_costs" : 25190,
-    "computation_time_ms" : 11208,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21530,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46720
-  }, {
-    "node_costs" : 26757,
-    "computation_time_ms" : 11644,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20431,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47188
-  }, {
-    "node_costs" : 25946,
-    "computation_time_ms" : 11520,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20821,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46767
-  }, {
-    "node_costs" : 28860,
-    "computation_time_ms" : 11583,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20438,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 49298
-  }, {
-    "node_costs" : 25229,
-    "computation_time_ms" : 11736,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20207,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 45436
-  }, {
-    "node_costs" : 27761,
-    "computation_time_ms" : 11544,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21404,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 49165
-  }, {
-    "node_costs" : 26735,
-    "computation_time_ms" : 7835,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20004,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46739
-  }, {
-    "node_costs" : 28169,
-    "computation_time_ms" : 7818,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20344,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48513
-  }, {
-    "node_costs" : 29691,
-    "computation_time_ms" : 7960,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20539,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 50230
-  }, {
-    "node_costs" : 28369,
-    "computation_time_ms" : 7987,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20804,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 49173
-  }, {
-    "node_costs" : 28068,
-    "computation_time_ms" : 8036,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19937,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48005
-  }, {
-    "node_costs" : 28514,
-    "computation_time_ms" : 7893,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19824,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48338
-  }, {
-    "node_costs" : 26950,
-    "computation_time_ms" : 7917,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19237,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46187
-  }, {
-    "node_costs" : 28449,
-    "computation_time_ms" : 7832,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19957,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48406
-  }, {
-    "node_costs" : 26637,
-    "computation_time_ms" : 8066,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 18884,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45521
-  }, {
-    "node_costs" : 27280,
-    "computation_time_ms" : 7750,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21747,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 49027
-  }, {
-    "node_costs" : 27035,
-    "computation_time_ms" : 7776,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20560,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47595
-  }, {
-    "node_costs" : 27163,
-    "computation_time_ms" : 7863,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21384,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48547
-  }, {
-    "node_costs" : 27371,
-    "computation_time_ms" : 7842,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21561,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48932
-  }, {
-    "node_costs" : 26117,
-    "computation_time_ms" : 7707,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21670,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47787
-  }, {
-    "node_costs" : 27863,
-    "computation_time_ms" : 7787,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21648,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 49511
-  }, {
-    "node_costs" : 25551,
-    "computation_time_ms" : 7854,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21076,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46627
-  }, {
-    "node_costs" : 27020,
-    "computation_time_ms" : 7560,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21656,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48676
-  }, {
-    "node_costs" : 27772,
-    "computation_time_ms" : 7387,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21401,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 49173
-  }, {
-    "node_costs" : 28377,
-    "computation_time_ms" : 7621,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20146,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48523
-  }, {
-    "node_costs" : 26898,
-    "computation_time_ms" : 7760,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20928,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47826
-  }, {
-    "node_costs" : 27265,
-    "computation_time_ms" : 11019,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21221,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48486
-  }, {
-    "node_costs" : 25764,
-    "computation_time_ms" : 11059,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21409,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47173
-  }, {
-    "node_costs" : 28762,
-    "computation_time_ms" : 11076,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21671,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 50433
-  }, {
-    "node_costs" : 25920,
-    "computation_time_ms" : 10904,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21275,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47195
-  }, {
-    "node_costs" : 24935,
-    "computation_time_ms" : 10707,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21217,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46152
-  }, {
-    "node_costs" : 26611,
-    "computation_time_ms" : 10855,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21118,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47729
-  }, {
-    "node_costs" : 26706,
-    "computation_time_ms" : 10796,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19965,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46671
-  }, {
-    "node_costs" : 29183,
-    "computation_time_ms" : 11081,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20214,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 49397
-  }, {
-    "node_costs" : 27355,
-    "computation_time_ms" : 10990,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20156,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47511
-  }, {
-    "node_costs" : 26963,
-    "computation_time_ms" : 10942,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19800,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46763
-  }, {
-    "node_costs" : 27191,
-    "computation_time_ms" : 10944,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21069,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48260
-  }, {
-    "node_costs" : 28044,
-    "computation_time_ms" : 11346,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19424,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47468
-  }, {
-    "node_costs" : 27345,
-    "computation_time_ms" : 11228,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20059,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47404
-  }, {
-    "node_costs" : 28306,
-    "computation_time_ms" : 11074,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20123,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48429
-  }, {
-    "node_costs" : 25760,
-    "computation_time_ms" : 10660,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21311,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47071
-  }, {
-    "node_costs" : 26918,
-    "computation_time_ms" : 10894,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20934,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47852
-  }, {
-    "node_costs" : 26541,
-    "computation_time_ms" : 11140,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 22101,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48642
-  }, {
-    "node_costs" : 30422,
-    "computation_time_ms" : 11226,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19353,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 49775
-  }, {
-    "node_costs" : 26845,
-    "computation_time_ms" : 11150,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19753,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46598
-  }, {
-    "node_costs" : 25207,
-    "computation_time_ms" : 10999,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21054,
-    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46261
-  }, {
-    "node_costs" : 26485,
-    "computation_time_ms" : 4473,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19130,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45615
-  }, {
-    "node_costs" : 25691,
-    "computation_time_ms" : 4544,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19548,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45239
-  }, {
-    "node_costs" : 27009,
-    "computation_time_ms" : 4490,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20632,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47641
-  }, {
-    "node_costs" : 25717,
-    "computation_time_ms" : 4443,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20902,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46619
-  }, {
-    "node_costs" : 26966,
-    "computation_time_ms" : 4509,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20545,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47511
-  }, {
-    "node_costs" : 25179,
-    "computation_time_ms" : 4498,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19451,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 44630
-  }, {
-    "node_costs" : 25699,
-    "computation_time_ms" : 4561,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21013,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46712
-  }, {
-    "node_costs" : 26881,
-    "computation_time_ms" : 4543,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19603,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46484
-  }, {
-    "node_costs" : 27882,
-    "computation_time_ms" : 4366,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19486,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47368
-  }, {
-    "node_costs" : 27065,
-    "computation_time_ms" : 4546,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19802,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46867
-  }, {
-    "node_costs" : 27772,
-    "computation_time_ms" : 4549,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20032,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47804
-  }, {
-    "node_costs" : 27720,
-    "computation_time_ms" : 4602,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 18497,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46217
-  }, {
-    "node_costs" : 27827,
-    "computation_time_ms" : 4537,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19683,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47510
-  }, {
-    "node_costs" : 25606,
-    "computation_time_ms" : 4630,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20774,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46380
-  }, {
-    "node_costs" : 27636,
-    "computation_time_ms" : 4560,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20027,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47663
-  }, {
-    "node_costs" : 26197,
-    "computation_time_ms" : 4683,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19924,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46121
-  }, {
-    "node_costs" : 26676,
-    "computation_time_ms" : 4746,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20229,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46905
-  }, {
-    "node_costs" : 25986,
-    "computation_time_ms" : 4647,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20303,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46289
-  }, {
-    "node_costs" : 26407,
-    "computation_time_ms" : 4520,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20202,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46609
-  }, {
-    "node_costs" : 27888,
-    "computation_time_ms" : 4502,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20672,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48560
-  }, {
-    "node_costs" : 26814,
-    "computation_time_ms" : 5652,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20436,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47250
-  }, {
-    "node_costs" : 26952,
-    "computation_time_ms" : 5689,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20324,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47276
-  }, {
-    "node_costs" : 27869,
-    "computation_time_ms" : 5586,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19752,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47621
-  }, {
-    "node_costs" : 26690,
-    "computation_time_ms" : 5628,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20062,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46752
-  }, {
-    "node_costs" : 27586,
-    "computation_time_ms" : 5694,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20624,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48210
-  }, {
-    "node_costs" : 26037,
-    "computation_time_ms" : 5616,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20177,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46214
-  }, {
-    "node_costs" : 26682,
-    "computation_time_ms" : 5662,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19371,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46053
-  }, {
-    "node_costs" : 24678,
-    "computation_time_ms" : 5557,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21518,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46196
-  }, {
-    "node_costs" : 27238,
-    "computation_time_ms" : 5635,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21088,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48326
-  }, {
-    "node_costs" : 26149,
-    "computation_time_ms" : 5643,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21019,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47168
-  }, {
-    "node_costs" : 26105,
-    "computation_time_ms" : 5547,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21392,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47497
-  }, {
-    "node_costs" : 27263,
-    "computation_time_ms" : 5675,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20286,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47549
-  }, {
-    "node_costs" : 28793,
-    "computation_time_ms" : 5835,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 18679,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47472
-  }, {
-    "node_costs" : 27480,
-    "computation_time_ms" : 5622,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21070,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48550
-  }, {
-    "node_costs" : 24573,
-    "computation_time_ms" : 5770,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21447,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46020
-  }, {
-    "node_costs" : 26584,
-    "computation_time_ms" : 5667,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19780,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46364
-  }, {
-    "node_costs" : 27934,
-    "computation_time_ms" : 5920,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20040,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47974
-  }, {
-    "node_costs" : 26029,
-    "computation_time_ms" : 5740,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20497,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46526
-  }, {
-    "node_costs" : 27320,
-    "computation_time_ms" : 5608,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20184,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47504
-  }, {
-    "node_costs" : 26930,
-    "computation_time_ms" : 5649,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20357,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47287
-  }, {
-    "node_costs" : 27382,
-    "computation_time_ms" : 4406,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20893,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48275
-  }, {
-    "node_costs" : 29469,
-    "computation_time_ms" : 4611,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20119,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 49588
-  }, {
-    "node_costs" : 25383,
-    "computation_time_ms" : 4610,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20217,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45600
-  }, {
-    "node_costs" : 28138,
-    "computation_time_ms" : 4690,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19434,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47572
-  }, {
-    "node_costs" : 27612,
-    "computation_time_ms" : 4752,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20533,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48145
-  }, {
-    "node_costs" : 27718,
-    "computation_time_ms" : 4686,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19269,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46987
-  }, {
-    "node_costs" : 28146,
-    "computation_time_ms" : 4716,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20642,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48788
-  }, {
-    "node_costs" : 26947,
-    "computation_time_ms" : 4617,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20648,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47595
-  }, {
-    "node_costs" : 27065,
-    "computation_time_ms" : 4573,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19552,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46617
-  }, {
-    "node_costs" : 27927,
-    "computation_time_ms" : 4801,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19370,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47297
-  }, {
-    "node_costs" : 27262,
-    "computation_time_ms" : 4753,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20803,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48065
-  }, {
-    "node_costs" : 26228,
-    "computation_time_ms" : 4678,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20436,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46664
-  }, {
-    "node_costs" : 29048,
-    "computation_time_ms" : 4360,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20434,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 49482
-  }, {
-    "node_costs" : 26674,
-    "computation_time_ms" : 4663,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19128,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45802
-  }, {
-    "node_costs" : 28235,
-    "computation_time_ms" : 4666,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19317,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47552
-  }, {
-    "node_costs" : 28506,
-    "computation_time_ms" : 4432,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19816,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48322
-  }, {
-    "node_costs" : 26324,
-    "computation_time_ms" : 4622,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21249,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47573
-  }, {
-    "node_costs" : 25358,
-    "computation_time_ms" : 4661,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20439,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45797
-  }, {
-    "node_costs" : 26631,
-    "computation_time_ms" : 4493,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20884,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47515
-  }, {
-    "node_costs" : 28366,
-    "computation_time_ms" : 4632,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20738,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 49104
-  }, {
-    "node_costs" : 26481,
-    "computation_time_ms" : 5765,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20176,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46657
-  }, {
-    "node_costs" : 28824,
-    "computation_time_ms" : 5564,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20313,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 49137
-  }, {
-    "node_costs" : 24752,
-    "computation_time_ms" : 5564,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 22413,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47165
-  }, {
-    "node_costs" : 27322,
-    "computation_time_ms" : 5595,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21150,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48472
-  }, {
-    "node_costs" : 26840,
-    "computation_time_ms" : 5510,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21326,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48166
-  }, {
-    "node_costs" : 27010,
-    "computation_time_ms" : 5678,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21267,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48277
-  }, {
-    "node_costs" : 26467,
-    "computation_time_ms" : 5565,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20746,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47213
-  }, {
-    "node_costs" : 26694,
-    "computation_time_ms" : 5619,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20803,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47497
-  }, {
-    "node_costs" : 27641,
-    "computation_time_ms" : 5482,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20392,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48033
-  }, {
-    "node_costs" : 27819,
-    "computation_time_ms" : 5599,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20753,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48572
-  }, {
-    "node_costs" : 27945,
-    "computation_time_ms" : 5651,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19392,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47337
-  }, {
-    "node_costs" : 26486,
-    "computation_time_ms" : 5568,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21463,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47949
-  }, {
-    "node_costs" : 27559,
-    "computation_time_ms" : 5855,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20789,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48348
-  }, {
-    "node_costs" : 25852,
-    "computation_time_ms" : 5836,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21921,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47773
-  }, {
-    "node_costs" : 27142,
-    "computation_time_ms" : 5539,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19939,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47081
-  }, {
-    "node_costs" : 26272,
-    "computation_time_ms" : 5678,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20771,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47043
-  }, {
-    "node_costs" : 26546,
-    "computation_time_ms" : 5605,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20911,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47457
-  }, {
-    "node_costs" : 26712,
-    "computation_time_ms" : 5626,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20912,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47624
-  }, {
-    "node_costs" : 27515,
-    "computation_time_ms" : 5689,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 21028,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48543
-  }, {
-    "node_costs" : 27864,
-    "computation_time_ms" : 5472,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19201,
-    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47065
-  }, {
-    "node_costs" : 26094,
-    "computation_time_ms" : 2979,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19988,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46082
-  }, {
-    "node_costs" : 25476,
-    "computation_time_ms" : 3019,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19469,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 44945
-  }, {
-    "node_costs" : 26942,
-    "computation_time_ms" : 3056,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20386,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47328
-  }, {
-    "node_costs" : 26925,
-    "computation_time_ms" : 3130,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19610,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46535
-  }, {
-    "node_costs" : 27720,
-    "computation_time_ms" : 3123,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19316,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47036
-  }, {
-    "node_costs" : 29367,
-    "computation_time_ms" : 3053,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 18964,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48331
-  }, {
-    "node_costs" : 26130,
-    "computation_time_ms" : 3139,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 18926,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45056
-  }, {
-    "node_costs" : 27563,
-    "computation_time_ms" : 3140,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19352,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46915
-  }, {
-    "node_costs" : 25978,
-    "computation_time_ms" : 3167,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19513,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45491
-  }, {
-    "node_costs" : 26813,
-    "computation_time_ms" : 3000,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19570,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46383
-  }, {
-    "node_costs" : 25561,
-    "computation_time_ms" : 3158,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19910,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45471
-  }, {
-    "node_costs" : 25837,
-    "computation_time_ms" : 3186,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19130,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 44967
-  }, {
-    "node_costs" : 26718,
-    "computation_time_ms" : 3015,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20096,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46814
-  }, {
-    "node_costs" : 27493,
-    "computation_time_ms" : 3163,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19605,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47098
-  }, {
-    "node_costs" : 26799,
-    "computation_time_ms" : 3004,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20574,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47373
-  }, {
-    "node_costs" : 26914,
-    "computation_time_ms" : 3104,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19334,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46248
-  }, {
-    "node_costs" : 25680,
-    "computation_time_ms" : 3123,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19874,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45554
-  }, {
-    "node_costs" : 27209,
-    "computation_time_ms" : 3128,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 20236,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47445
-  }, {
-    "node_costs" : 26054,
-    "computation_time_ms" : 3164,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19478,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45532
-  }, {
-    "node_costs" : 25889,
-    "computation_time_ms" : 3217,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 18934,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 44823
-  }, {
-    "node_costs" : 29058,
-    "computation_time_ms" : 3597,
-    "instance" : "TSPB",
-    "selected_nodes_count" : 100,
-    "total_nodes" : 200,
-    "path_length" : 19662,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48720
-  }, {
-    "node_costs" : 27777,
-    "computation_time_ms" : 3642,
+    "node_costs" : 24898,
+    "computation_time_ms" : 7734,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
     "path_length" : 19747,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47524
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44645
   }, {
-    "node_costs" : 27312,
-    "computation_time_ms" : 3563,
+    "node_costs" : 23749,
+    "computation_time_ms" : 7314,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20114,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47426
+    "path_length" : 20659,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44408
   }, {
-    "node_costs" : 25746,
-    "computation_time_ms" : 3532,
+    "node_costs" : 23694,
+    "computation_time_ms" : 6561,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20781,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46527
+    "path_length" : 20604,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44298
   }, {
-    "node_costs" : 26366,
-    "computation_time_ms" : 3561,
+    "node_costs" : 24510,
+    "computation_time_ms" : 6744,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19855,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46221
+    "path_length" : 20422,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44932
   }, {
-    "node_costs" : 27031,
-    "computation_time_ms" : 3638,
+    "node_costs" : 24741,
+    "computation_time_ms" : 6295,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20696,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47727
+    "path_length" : 20095,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44836
   }, {
-    "node_costs" : 26265,
-    "computation_time_ms" : 3560,
+    "node_costs" : 24417,
+    "computation_time_ms" : 6427,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21222,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47487
+    "path_length" : 19991,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44408
   }, {
-    "node_costs" : 28434,
-    "computation_time_ms" : 3628,
+    "node_costs" : 24376,
+    "computation_time_ms" : 6824,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21076,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 49510
+    "path_length" : 19735,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44111
   }, {
-    "node_costs" : 28140,
-    "computation_time_ms" : 3611,
+    "node_costs" : 24218,
+    "computation_time_ms" : 7013,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19904,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48044
+    "path_length" : 19347,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43565
   }, {
-    "node_costs" : 26266,
-    "computation_time_ms" : 3691,
+    "node_costs" : 23850,
+    "computation_time_ms" : 5215,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20669,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46935
+    "path_length" : 21067,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44917
   }, {
-    "node_costs" : 27269,
-    "computation_time_ms" : 3576,
+    "node_costs" : 24110,
+    "computation_time_ms" : 6069,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20691,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47960
+    "path_length" : 20378,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44488
   }, {
-    "node_costs" : 26212,
-    "computation_time_ms" : 3582,
+    "node_costs" : 23927,
+    "computation_time_ms" : 6569,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20341,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46553
+    "path_length" : 20070,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43997
   }, {
-    "node_costs" : 25758,
-    "computation_time_ms" : 3597,
+    "node_costs" : 24841,
+    "computation_time_ms" : 6721,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21464,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47222
+    "path_length" : 18912,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43753
   }, {
-    "node_costs" : 26465,
-    "computation_time_ms" : 3680,
+    "node_costs" : 24512,
+    "computation_time_ms" : 5298,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19960,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46425
+    "path_length" : 19764,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44276
   }, {
-    "node_costs" : 27826,
-    "computation_time_ms" : 3781,
+    "node_costs" : 23975,
+    "computation_time_ms" : 6794,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19633,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47459
+    "path_length" : 20487,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44462
   }, {
-    "node_costs" : 28284,
-    "computation_time_ms" : 3649,
+    "node_costs" : 24888,
+    "computation_time_ms" : 6556,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20355,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48639
+    "path_length" : 19749,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44637
   }, {
-    "node_costs" : 25658,
-    "computation_time_ms" : 3578,
+    "node_costs" : 24614,
+    "computation_time_ms" : 6695,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21222,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46880
+    "path_length" : 19250,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43864
   }, {
-    "node_costs" : 26693,
-    "computation_time_ms" : 3636,
+    "node_costs" : 24675,
+    "computation_time_ms" : 6718,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20599,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47292
+    "path_length" : 19490,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44165
   }, {
-    "node_costs" : 28922,
-    "computation_time_ms" : 3513,
+    "node_costs" : 23612,
+    "computation_time_ms" : 6967,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21023,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 49945
+    "path_length" : 20165,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43777
   }, {
-    "node_costs" : 26991,
-    "computation_time_ms" : 3528,
+    "node_costs" : 24361,
+    "computation_time_ms" : 6302,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21282,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48273
+    "path_length" : 19235,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43596
   }, {
-    "node_costs" : 26920,
-    "computation_time_ms" : 3012,
+    "node_costs" : 24482,
+    "computation_time_ms" : 6904,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20310,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47230
+    "path_length" : 19602,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44084
   }, {
-    "node_costs" : 26408,
-    "computation_time_ms" : 3007,
+    "node_costs" : 24312,
+    "computation_time_ms" : 11412,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21447,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47855
+    "path_length" : 20201,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44513
   }, {
-    "node_costs" : 25141,
-    "computation_time_ms" : 3160,
+    "node_costs" : 24218,
+    "computation_time_ms" : 11565,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20557,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45698
+    "path_length" : 20413,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44631
   }, {
-    "node_costs" : 26759,
-    "computation_time_ms" : 2965,
+    "node_costs" : 24372,
+    "computation_time_ms" : 11407,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19489,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46248
+    "path_length" : 19299,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43671
   }, {
-    "node_costs" : 25763,
-    "computation_time_ms" : 3077,
+    "node_costs" : 23847,
+    "computation_time_ms" : 11426,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19319,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45082
+    "path_length" : 20122,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43969
   }, {
-    "node_costs" : 28726,
-    "computation_time_ms" : 2849,
+    "node_costs" : 23734,
+    "computation_time_ms" : 11397,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20655,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 49381
+    "path_length" : 20465,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44199
   }, {
-    "node_costs" : 26687,
-    "computation_time_ms" : 3096,
+    "node_costs" : 24093,
+    "computation_time_ms" : 11374,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19527,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46214
+    "path_length" : 19509,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43602
   }, {
-    "node_costs" : 27418,
-    "computation_time_ms" : 3137,
+    "node_costs" : 25205,
+    "computation_time_ms" : 11235,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20448,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47866
+    "path_length" : 18711,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43916
   }, {
-    "node_costs" : 28600,
-    "computation_time_ms" : 3121,
+    "node_costs" : 24275,
+    "computation_time_ms" : 11480,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 18929,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47529
+    "path_length" : 21273,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45548
   }, {
-    "node_costs" : 29766,
-    "computation_time_ms" : 3063,
+    "node_costs" : 24694,
+    "computation_time_ms" : 11426,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20525,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 50291
+    "path_length" : 20422,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45116
   }, {
-    "node_costs" : 26679,
-    "computation_time_ms" : 3211,
+    "node_costs" : 24120,
+    "computation_time_ms" : 11317,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19544,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46223
+    "path_length" : 19510,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43630
   }, {
-    "node_costs" : 26627,
-    "computation_time_ms" : 3100,
+    "node_costs" : 24952,
+    "computation_time_ms" : 11414,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20467,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47094
+    "path_length" : 19278,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44230
   }, {
-    "node_costs" : 27102,
-    "computation_time_ms" : 2965,
+    "node_costs" : 23833,
+    "computation_time_ms" : 11373,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19827,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46929
+    "path_length" : 20573,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44406
   }, {
-    "node_costs" : 27212,
-    "computation_time_ms" : 3172,
+    "node_costs" : 23857,
+    "computation_time_ms" : 11169,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19224,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46436
+    "path_length" : 21041,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44898
   }, {
-    "node_costs" : 25099,
-    "computation_time_ms" : 3130,
+    "node_costs" : 23868,
+    "computation_time_ms" : 11261,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19720,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 44819
+    "path_length" : 21542,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45410
   }, {
-    "node_costs" : 24563,
-    "computation_time_ms" : 3112,
+    "node_costs" : 23965,
+    "computation_time_ms" : 11434,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20673,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 45236
+    "path_length" : 20089,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44054
   }, {
-    "node_costs" : 28159,
-    "computation_time_ms" : 3171,
+    "node_costs" : 23833,
+    "computation_time_ms" : 11406,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19495,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 47654
+    "path_length" : 20573,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44406
   }, {
-    "node_costs" : 27976,
-    "computation_time_ms" : 3036,
+    "node_costs" : 24120,
+    "computation_time_ms" : 11345,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20921,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 48897
+    "path_length" : 19510,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43630
   }, {
-    "node_costs" : 25974,
-    "computation_time_ms" : 3151,
+    "node_costs" : 24259,
+    "computation_time_ms" : 11193,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20781,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46755
+    "path_length" : 19488,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43747
   }, {
-    "node_costs" : 25944,
-    "computation_time_ms" : 3062,
+    "node_costs" : 24362,
+    "computation_time_ms" : 11375,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20711,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
-    "objective_value" : 46655
+    "path_length" : 20582,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44944
   }, {
-    "node_costs" : 28363,
-    "computation_time_ms" : 3595,
+    "node_costs" : 24319,
+    "computation_time_ms" : 11556,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21411,
+    "algorithm" : "LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45730
+  }, {
+    "node_costs" : 25902,
+    "computation_time_ms" : 6553,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19884,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45786
+  }, {
+    "node_costs" : 25829,
+    "computation_time_ms" : 6179,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19213,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45042
+  }, {
+    "node_costs" : 26498,
+    "computation_time_ms" : 5232,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19727,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 46225
+  }, {
+    "node_costs" : 24388,
+    "computation_time_ms" : 6781,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20468,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44856
+  }, {
+    "node_costs" : 26128,
+    "computation_time_ms" : 4995,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20870,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 46998
+  }, {
+    "node_costs" : 26395,
+    "computation_time_ms" : 7592,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18729,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45124
+  }, {
+    "node_costs" : 24211,
+    "computation_time_ms" : 6862,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21478,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45689
+  }, {
+    "node_costs" : 25796,
+    "computation_time_ms" : 5981,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19361,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45157
+  }, {
+    "node_costs" : 24797,
+    "computation_time_ms" : 6198,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20321,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45118
+  }, {
+    "node_costs" : 25335,
+    "computation_time_ms" : 7600,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19057,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44392
+  }, {
+    "node_costs" : 25550,
+    "computation_time_ms" : 4356,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20349,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45899
+  }, {
+    "node_costs" : 25461,
+    "computation_time_ms" : 7026,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22033,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 47494
+  }, {
+    "node_costs" : 25714,
+    "computation_time_ms" : 6944,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19024,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44738
+  }, {
+    "node_costs" : 26287,
+    "computation_time_ms" : 4468,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18440,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44727
+  }, {
+    "node_costs" : 25970,
+    "computation_time_ms" : 7704,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19303,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45273
+  }, {
+    "node_costs" : 25747,
+    "computation_time_ms" : 4665,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20988,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 46735
+  }, {
+    "node_costs" : 25874,
+    "computation_time_ms" : 7406,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19386,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45260
+  }, {
+    "node_costs" : 24874,
+    "computation_time_ms" : 6358,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19691,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44565
+  }, {
+    "node_costs" : 25465,
+    "computation_time_ms" : 6559,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20800,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 46265
+  }, {
+    "node_costs" : 25795,
+    "computation_time_ms" : 7070,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19395,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45190
+  }, {
+    "node_costs" : 25811,
+    "computation_time_ms" : 11580,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19870,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45681
+  }, {
+    "node_costs" : 24001,
+    "computation_time_ms" : 11236,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21710,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45711
+  }, {
+    "node_costs" : 26005,
+    "computation_time_ms" : 11219,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19876,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45881
+  }, {
+    "node_costs" : 26886,
+    "computation_time_ms" : 11511,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19614,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 46500
+  }, {
+    "node_costs" : 26507,
+    "computation_time_ms" : 11551,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18940,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45447
+  }, {
+    "node_costs" : 25633,
+    "computation_time_ms" : 11522,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20451,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 46084
+  }, {
+    "node_costs" : 25167,
+    "computation_time_ms" : 11341,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19991,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45158
+  }, {
+    "node_costs" : 27119,
+    "computation_time_ms" : 11292,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20055,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 47174
+  }, {
+    "node_costs" : 26080,
+    "computation_time_ms" : 10964,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19505,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45585
+  }, {
+    "node_costs" : 26658,
+    "computation_time_ms" : 11544,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20046,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 46704
+  }, {
+    "node_costs" : 24867,
+    "computation_time_ms" : 11506,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19743,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44610
+  }, {
+    "node_costs" : 25635,
+    "computation_time_ms" : 11269,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19658,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45293
+  }, {
+    "node_costs" : 26721,
+    "computation_time_ms" : 11644,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19826,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 46547
+  }, {
+    "node_costs" : 25602,
+    "computation_time_ms" : 11475,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19332,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44934
+  }, {
+    "node_costs" : 25633,
+    "computation_time_ms" : 11541,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19982,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45615
+  }, {
+    "node_costs" : 24832,
+    "computation_time_ms" : 11210,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20024,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44856
+  }, {
+    "node_costs" : 25223,
+    "computation_time_ms" : 11379,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19349,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44572
+  }, {
+    "node_costs" : 26552,
+    "computation_time_ms" : 11417,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21283,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 47835
+  }, {
+    "node_costs" : 25566,
+    "computation_time_ms" : 11148,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20176,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45742
+  }, {
+    "node_costs" : 25745,
+    "computation_time_ms" : 11411,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21619,
+    "algorithm" : "LNS_d-0.20_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 47364
+  }, {
+    "node_costs" : 23968,
+    "computation_time_ms" : 4859,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20167,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44135
+  }, {
+    "node_costs" : 24370,
+    "computation_time_ms" : 4294,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20081,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44451
+  }, {
+    "node_costs" : 24753,
+    "computation_time_ms" : 4646,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19462,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44215
+  }, {
+    "node_costs" : 24415,
+    "computation_time_ms" : 4517,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19942,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44357
+  }, {
+    "node_costs" : 23867,
+    "computation_time_ms" : 4554,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20677,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44544
+  }, {
+    "node_costs" : 23717,
+    "computation_time_ms" : 3750,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21441,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45158
+  }, {
+    "node_costs" : 24032,
+    "computation_time_ms" : 4654,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20356,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44388
+  }, {
+    "node_costs" : 24231,
+    "computation_time_ms" : 4589,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19253,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43484
+  }, {
+    "node_costs" : 24696,
+    "computation_time_ms" : 4775,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19120,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43816
+  }, {
+    "node_costs" : 24657,
+    "computation_time_ms" : 4758,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19878,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44535
+  }, {
+    "node_costs" : 24282,
+    "computation_time_ms" : 4960,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20242,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44524
+  }, {
+    "node_costs" : 24297,
+    "computation_time_ms" : 4706,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19881,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44178
+  }, {
+    "node_costs" : 24668,
+    "computation_time_ms" : 4810,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19871,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44539
+  }, {
+    "node_costs" : 24154,
+    "computation_time_ms" : 4881,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19847,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44001
+  }, {
+    "node_costs" : 23905,
+    "computation_time_ms" : 4558,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20113,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44018
+  }, {
+    "node_costs" : 24662,
+    "computation_time_ms" : 4405,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19213,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43875
+  }, {
+    "node_costs" : 24087,
+    "computation_time_ms" : 4663,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20044,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44131
+  }, {
+    "node_costs" : 24091,
+    "computation_time_ms" : 4508,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19899,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43990
+  }, {
+    "node_costs" : 24400,
+    "computation_time_ms" : 4437,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19757,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44157
+  }, {
+    "node_costs" : 23580,
+    "computation_time_ms" : 3687,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21782,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45362
+  }, {
+    "node_costs" : 24126,
+    "computation_time_ms" : 7667,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19942,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44068
+  }, {
+    "node_costs" : 24840,
+    "computation_time_ms" : 7800,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19895,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44735
+  }, {
+    "node_costs" : 25058,
+    "computation_time_ms" : 7661,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18963,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44021
+  }, {
+    "node_costs" : 24373,
+    "computation_time_ms" : 7810,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20627,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45000
+  }, {
+    "node_costs" : 23936,
+    "computation_time_ms" : 7607,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20213,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44149
+  }, {
+    "node_costs" : 24197,
+    "computation_time_ms" : 7613,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19881,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44078
+  }, {
+    "node_costs" : 25257,
+    "computation_time_ms" : 7674,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19861,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45118
+  }, {
+    "node_costs" : 24372,
+    "computation_time_ms" : 7832,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19299,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43671
+  }, {
+    "node_costs" : 24003,
+    "computation_time_ms" : 7778,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20623,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44626
+  }, {
+    "node_costs" : 24147,
+    "computation_time_ms" : 7608,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20421,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44568
+  }, {
+    "node_costs" : 24560,
+    "computation_time_ms" : 7749,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19889,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44449
+  }, {
+    "node_costs" : 24515,
+    "computation_time_ms" : 7701,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19762,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44277
+  }, {
+    "node_costs" : 24823,
+    "computation_time_ms" : 7684,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19985,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44808
+  }, {
+    "node_costs" : 23809,
+    "computation_time_ms" : 7738,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20021,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43830
+  }, {
+    "node_costs" : 23866,
+    "computation_time_ms" : 7690,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20220,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44086
+  }, {
+    "node_costs" : 24783,
+    "computation_time_ms" : 7591,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19212,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43995
+  }, {
+    "node_costs" : 24142,
+    "computation_time_ms" : 7716,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20073,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44215
+  }, {
+    "node_costs" : 24342,
+    "computation_time_ms" : 7687,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19579,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43921
+  }, {
+    "node_costs" : 24542,
+    "computation_time_ms" : 7725,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
     "path_length" : 19226,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47589
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43768
   }, {
-    "node_costs" : 26494,
-    "computation_time_ms" : 3505,
+    "node_costs" : 23996,
+    "computation_time_ms" : 7838,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21020,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47514
+    "path_length" : 20039,
+    "algorithm" : "LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44035
   }, {
-    "node_costs" : 29443,
-    "computation_time_ms" : 3880,
+    "node_costs" : 26003,
+    "computation_time_ms" : 4135,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19544,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48987
+    "path_length" : 19724,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45727
   }, {
-    "node_costs" : 26437,
-    "computation_time_ms" : 3752,
+    "node_costs" : 25385,
+    "computation_time_ms" : 3702,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 19700,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46137
+    "path_length" : 19485,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44870
   }, {
-    "node_costs" : 28487,
-    "computation_time_ms" : 3769,
+    "node_costs" : 25234,
+    "computation_time_ms" : 4438,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20420,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48907
+    "path_length" : 19591,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44825
   }, {
-    "node_costs" : 28436,
-    "computation_time_ms" : 3507,
+    "node_costs" : 25329,
+    "computation_time_ms" : 4485,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20599,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 49035
+    "path_length" : 19752,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45081
   }, {
-    "node_costs" : 27228,
-    "computation_time_ms" : 3682,
+    "node_costs" : 25207,
+    "computation_time_ms" : 4967,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20446,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47674
+    "path_length" : 19534,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44741
   }, {
-    "node_costs" : 28009,
-    "computation_time_ms" : 3664,
+    "node_costs" : 24980,
+    "computation_time_ms" : 4844,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20977,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48986
+    "path_length" : 19753,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44733
   }, {
-    "node_costs" : 27389,
-    "computation_time_ms" : 3638,
+    "node_costs" : 25302,
+    "computation_time_ms" : 4703,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21762,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 49151
+    "path_length" : 19697,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44999
   }, {
-    "node_costs" : 26376,
-    "computation_time_ms" : 3861,
+    "node_costs" : 25524,
+    "computation_time_ms" : 4504,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20545,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46921
+    "path_length" : 19309,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44833
   }, {
-    "node_costs" : 25754,
-    "computation_time_ms" : 3695,
+    "node_costs" : 25696,
+    "computation_time_ms" : 5487,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20564,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46318
+    "path_length" : 18789,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44485
   }, {
-    "node_costs" : 29411,
-    "computation_time_ms" : 3686,
+    "node_costs" : 26427,
+    "computation_time_ms" : 5109,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20633,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 50044
+    "path_length" : 18851,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45278
   }, {
-    "node_costs" : 27359,
+    "node_costs" : 25061,
+    "computation_time_ms" : 4134,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20154,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45215
+  }, {
+    "node_costs" : 25587,
+    "computation_time_ms" : 5370,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18760,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44347
+  }, {
+    "node_costs" : 24007,
+    "computation_time_ms" : 5024,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20679,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44686
+  }, {
+    "node_costs" : 25320,
+    "computation_time_ms" : 4979,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18659,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43979
+  }, {
+    "node_costs" : 25273,
+    "computation_time_ms" : 5701,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18814,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44087
+  }, {
+    "node_costs" : 25727,
+    "computation_time_ms" : 5755,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18599,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44326
+  }, {
+    "node_costs" : 25255,
+    "computation_time_ms" : 5421,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20224,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45479
+  }, {
+    "node_costs" : 25043,
+    "computation_time_ms" : 5715,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18856,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43899
+  }, {
+    "node_costs" : 25264,
+    "computation_time_ms" : 4630,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19904,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45168
+  }, {
+    "node_costs" : 26261,
+    "computation_time_ms" : 4741,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19189,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45450
+  }, {
+    "node_costs" : 27230,
+    "computation_time_ms" : 7670,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18460,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45690
+  }, {
+    "node_costs" : 26703,
+    "computation_time_ms" : 7669,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18764,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45467
+  }, {
+    "node_costs" : 26172,
+    "computation_time_ms" : 7781,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19052,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45224
+  }, {
+    "node_costs" : 24039,
+    "computation_time_ms" : 7674,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20277,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44316
+  }, {
+    "node_costs" : 25427,
+    "computation_time_ms" : 7762,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19825,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45252
+  }, {
+    "node_costs" : 24372,
+    "computation_time_ms" : 7647,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20524,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44896
+  }, {
+    "node_costs" : 25438,
+    "computation_time_ms" : 7732,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19721,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45159
+  }, {
+    "node_costs" : 25350,
+    "computation_time_ms" : 7749,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20262,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45612
+  }, {
+    "node_costs" : 25768,
+    "computation_time_ms" : 7798,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19854,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45622
+  }, {
+    "node_costs" : 24109,
+    "computation_time_ms" : 7740,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20325,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44434
+  }, {
+    "node_costs" : 25389,
+    "computation_time_ms" : 7746,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19466,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44855
+  }, {
+    "node_costs" : 25451,
+    "computation_time_ms" : 7685,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19971,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45422
+  }, {
+    "node_costs" : 25920,
+    "computation_time_ms" : 7692,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19245,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45165
+  }, {
+    "node_costs" : 25458,
+    "computation_time_ms" : 7643,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19033,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44491
+  }, {
+    "node_costs" : 27177,
+    "computation_time_ms" : 7784,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18889,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 46066
+  }, {
+    "node_costs" : 25788,
+    "computation_time_ms" : 7734,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20262,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 46050
+  }, {
+    "node_costs" : 26237,
+    "computation_time_ms" : 7830,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18658,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44895
+  }, {
+    "node_costs" : 26515,
+    "computation_time_ms" : 7654,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18647,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45162
+  }, {
+    "node_costs" : 25221,
+    "computation_time_ms" : 7686,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19171,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44392
+  }, {
+    "node_costs" : 25689,
+    "computation_time_ms" : 7579,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19944,
+    "algorithm" : "LNS_d-0.30_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45633
+  }, {
+    "node_costs" : 23722,
+    "computation_time_ms" : 3530,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20608,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44330
+  }, {
+    "node_costs" : 24150,
+    "computation_time_ms" : 3879,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19841,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43991
+  }, {
+    "node_costs" : 23936,
+    "computation_time_ms" : 3204,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20064,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44000
+  }, {
+    "node_costs" : 24657,
+    "computation_time_ms" : 3623,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18998,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43655
+  }, {
+    "node_costs" : 23790,
+    "computation_time_ms" : 2935,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20798,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44588
+  }, {
+    "node_costs" : 24260,
     "computation_time_ms" : 3685,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
+    "path_length" : 19249,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43509
+  }, {
+    "node_costs" : 23257,
+    "computation_time_ms" : 3521,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21077,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44334
+  }, {
+    "node_costs" : 24425,
+    "computation_time_ms" : 3811,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19205,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43630
+  }, {
+    "node_costs" : 24635,
+    "computation_time_ms" : 3780,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
     "path_length" : 19597,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46956
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44232
   }, {
-    "node_costs" : 29819,
-    "computation_time_ms" : 3765,
+    "node_costs" : 23905,
+    "computation_time_ms" : 3410,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20431,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 50250
+    "path_length" : 20113,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44018
   }, {
-    "node_costs" : 27478,
-    "computation_time_ms" : 3620,
+    "node_costs" : 24284,
+    "computation_time_ms" : 3239,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20869,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48347
+    "path_length" : 19720,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44004
   }, {
-    "node_costs" : 26070,
-    "computation_time_ms" : 3718,
+    "node_costs" : 24129,
+    "computation_time_ms" : 3211,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21306,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47376
+    "path_length" : 19670,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43799
   }, {
-    "node_costs" : 26650,
-    "computation_time_ms" : 3701,
+    "node_costs" : 24441,
+    "computation_time_ms" : 3650,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20522,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47172
+    "path_length" : 19318,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43759
   }, {
-    "node_costs" : 27588,
-    "computation_time_ms" : 3736,
+    "node_costs" : 24150,
+    "computation_time_ms" : 3580,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 20407,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 47995
+    "path_length" : 19841,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43991
   }, {
-    "node_costs" : 25722,
-    "computation_time_ms" : 3733,
+    "node_costs" : 23800,
+    "computation_time_ms" : 3279,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21003,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 46725
+    "path_length" : 20823,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44623
   }, {
-    "node_costs" : 26292,
-    "computation_time_ms" : 3659,
+    "node_costs" : 24287,
+    "computation_time_ms" : 3770,
     "instance" : "TSPB",
     "selected_nodes_count" : 100,
     "total_nodes" : 200,
-    "path_length" : 21994,
-    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
-    "objective_value" : 48286
+    "path_length" : 19806,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44093
+  }, {
+    "node_costs" : 24328,
+    "computation_time_ms" : 3667,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19392,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43720
+  }, {
+    "node_costs" : 24859,
+    "computation_time_ms" : 3719,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19343,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44202
+  }, {
+    "node_costs" : 24517,
+    "computation_time_ms" : 3246,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19786,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44303
+  }, {
+    "node_costs" : 24642,
+    "computation_time_ms" : 3875,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19105,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43747
+  }, {
+    "node_costs" : 24227,
+    "computation_time_ms" : 5839,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20605,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44832
+  }, {
+    "node_costs" : 24287,
+    "computation_time_ms" : 5954,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20138,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44425
+  }, {
+    "node_costs" : 24595,
+    "computation_time_ms" : 5943,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19470,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44065
+  }, {
+    "node_costs" : 24093,
+    "computation_time_ms" : 5912,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19509,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43602
+  }, {
+    "node_costs" : 23883,
+    "computation_time_ms" : 5862,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20578,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44461
+  }, {
+    "node_costs" : 24480,
+    "computation_time_ms" : 5878,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20239,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44719
+  }, {
+    "node_costs" : 24798,
+    "computation_time_ms" : 5995,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19591,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44389
+  }, {
+    "node_costs" : 24372,
+    "computation_time_ms" : 6004,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19299,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43671
+  }, {
+    "node_costs" : 24466,
+    "computation_time_ms" : 5856,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19778,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44244
+  }, {
+    "node_costs" : 24296,
+    "computation_time_ms" : 5929,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19832,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44128
+  }, {
+    "node_costs" : 23885,
+    "computation_time_ms" : 5844,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20112,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43997
+  }, {
+    "node_costs" : 25068,
+    "computation_time_ms" : 5857,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18829,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43897
+  }, {
+    "node_costs" : 23883,
+    "computation_time_ms" : 5952,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20269,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44152
+  }, {
+    "node_costs" : 24268,
+    "computation_time_ms" : 5913,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19566,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43834
+  }, {
+    "node_costs" : 24770,
+    "computation_time_ms" : 6006,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19428,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44198
+  }, {
+    "node_costs" : 24593,
+    "computation_time_ms" : 5967,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19669,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44262
+  }, {
+    "node_costs" : 24542,
+    "computation_time_ms" : 5953,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19226,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43768
+  }, {
+    "node_costs" : 24591,
+    "computation_time_ms" : 5823,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20067,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44658
+  }, {
+    "node_costs" : 24723,
+    "computation_time_ms" : 5918,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19503,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44226
+  }, {
+    "node_costs" : 24843,
+    "computation_time_ms" : 6005,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19628,
+    "algorithm" : "LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44471
+  }, {
+    "node_costs" : 23958,
+    "computation_time_ms" : 3697,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20492,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44450
+  }, {
+    "node_costs" : 24575,
+    "computation_time_ms" : 3444,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19659,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44234
+  }, {
+    "node_costs" : 25615,
+    "computation_time_ms" : 3105,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19812,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45427
+  }, {
+    "node_costs" : 24754,
+    "computation_time_ms" : 3219,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21222,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45976
+  }, {
+    "node_costs" : 24513,
+    "computation_time_ms" : 3291,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19674,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44187
+  }, {
+    "node_costs" : 24185,
+    "computation_time_ms" : 3691,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19973,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44158
+  }, {
+    "node_costs" : 24574,
+    "computation_time_ms" : 3605,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19641,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44215
+  }, {
+    "node_costs" : 24044,
+    "computation_time_ms" : 4480,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20009,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44053
+  }, {
+    "node_costs" : 25564,
+    "computation_time_ms" : 3898,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19088,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44652
+  }, {
+    "node_costs" : 24127,
+    "computation_time_ms" : 3336,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21223,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45350
+  }, {
+    "node_costs" : 25715,
+    "computation_time_ms" : 3589,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20147,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45862
+  }, {
+    "node_costs" : 25389,
+    "computation_time_ms" : 4099,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19682,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45071
+  }, {
+    "node_costs" : 25466,
+    "computation_time_ms" : 4054,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19038,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44504
+  }, {
+    "node_costs" : 24326,
+    "computation_time_ms" : 4580,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19568,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 43894
+  }, {
+    "node_costs" : 24790,
+    "computation_time_ms" : 3539,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19529,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44319
+  }, {
+    "node_costs" : 25659,
+    "computation_time_ms" : 4046,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19426,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 45085
+  }, {
+    "node_costs" : 24821,
+    "computation_time_ms" : 4106,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19485,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44306
+  }, {
+    "node_costs" : 25325,
+    "computation_time_ms" : 3597,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19320,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44645
+  }, {
+    "node_costs" : 24556,
+    "computation_time_ms" : 3261,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20114,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44670
+  }, {
+    "node_costs" : 24037,
+    "computation_time_ms" : 3414,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20545,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 44582
+  }, {
+    "node_costs" : 25863,
+    "computation_time_ms" : 5874,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19350,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45213
+  }, {
+    "node_costs" : 25803,
+    "computation_time_ms" : 5944,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19953,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45756
+  }, {
+    "node_costs" : 25840,
+    "computation_time_ms" : 5882,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19548,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45388
+  }, {
+    "node_costs" : 24733,
+    "computation_time_ms" : 5829,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19722,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44455
+  }, {
+    "node_costs" : 25498,
+    "computation_time_ms" : 5889,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18814,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44312
+  }, {
+    "node_costs" : 26299,
+    "computation_time_ms" : 5806,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18723,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45022
+  }, {
+    "node_costs" : 25182,
+    "computation_time_ms" : 5880,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20010,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45192
+  }, {
+    "node_costs" : 25020,
+    "computation_time_ms" : 5868,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20012,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45032
+  }, {
+    "node_costs" : 25914,
+    "computation_time_ms" : 5815,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19088,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45002
+  }, {
+    "node_costs" : 25664,
+    "computation_time_ms" : 5855,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19563,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45227
+  }, {
+    "node_costs" : 25111,
+    "computation_time_ms" : 5818,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19974,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45085
+  }, {
+    "node_costs" : 24673,
+    "computation_time_ms" : 5904,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19711,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44384
+  }, {
+    "node_costs" : 25601,
+    "computation_time_ms" : 5957,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 18396,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 43997
+  }, {
+    "node_costs" : 24609,
+    "computation_time_ms" : 5889,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19676,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44285
+  }, {
+    "node_costs" : 24927,
+    "computation_time_ms" : 5881,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20345,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45272
+  }, {
+    "node_costs" : 25301,
+    "computation_time_ms" : 5782,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19542,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 44843
+  }, {
+    "node_costs" : 26133,
+    "computation_time_ms" : 5901,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19131,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45264
+  }, {
+    "node_costs" : 25754,
+    "computation_time_ms" : 5887,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 19279,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45033
+  }, {
+    "node_costs" : 24949,
+    "computation_time_ms" : 5849,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20086,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45035
+  }, {
+    "node_costs" : 24735,
+    "computation_time_ms" : 5856,
+    "instance" : "TSPB",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20369,
+    "algorithm" : "LNS_d-0.40_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 45104
   } ],
-  "timestamp" : "2025-11-30T14:24:36.983357024"
+  "timestamp" : "2025-11-30T16:38:33.330231239"
 }

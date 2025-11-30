@@ -4,9 +4,9 @@ import tsp.core.Algorithm;
 import tsp.algorithms.greedy.RandomSolutionAlgorithm;
 import tsp.algorithms.localsearch.LocalSearchAlgorithm;
 import tsp.algorithms.localsearch.SteepestLocalSearch;
+import tsp.algorithms.regret.NearestNeighborAnyPositionTwoRegretAlgorithm;
 import tsp.core.Instance;
 import tsp.core.Solution;
-import tsp.core.TSPSolution;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,17 +33,11 @@ public class LNSAlgorithm extends Algorithm {
     private final long timeLimitMs;
     private final boolean useLocalSearchAfterRepair;
     private final LocalSearchAlgorithm.Neighborhood neighborhood;
-    private final RepairHeuristic repairHeuristic;
     private final DestroyHeuristic destroyHeuristic;
     private final Random random;
 
     private Solution bestSolution;
     private int iterationCount;
-
-    public enum RepairHeuristic {
-        GREEDY_INSERTION, // Best-insertion
-        REGRET_INSERTION  // Regret-k heuristic
-    }
 
     public enum DestroyHeuristic {
         RANDOM_REMOVAL,
@@ -58,19 +52,17 @@ public class LNSAlgorithm extends Algorithm {
      * @param timeLimitMs The time limit in milliseconds.
      * @param useLocalSearchAfterRepair Whether to apply local search after repairing.
      * @param neighborhood The neighborhood for local search.
-     * @param repairHeuristic The heuristic for the repair phase.
      * @param destroyHeuristic The heuristic for the destroy phase.
      * @param seed The random seed.
      */
     public LNSAlgorithm(Instance instance, double destructionRate, long timeLimitMs,
                         boolean useLocalSearchAfterRepair, LocalSearchAlgorithm.Neighborhood neighborhood,
-                        RepairHeuristic repairHeuristic, DestroyHeuristic destroyHeuristic, long seed) {
+                        DestroyHeuristic destroyHeuristic, long seed) {
         super("LNS", instance);
         this.destructionRate = destructionRate;
         this.timeLimitMs = timeLimitMs;
         this.useLocalSearchAfterRepair = useLocalSearchAfterRepair;
         this.neighborhood = neighborhood;
-        this.repairHeuristic = repairHeuristic;
         this.destroyHeuristic = destroyHeuristic;
         this.random = new Random(seed);
         this.iterationCount = 0;
@@ -81,9 +73,9 @@ public class LNSAlgorithm extends Algorithm {
      */
     public LNSAlgorithm(Instance instance, double destructionRate, long timeLimitMs,
                         boolean useLocalSearchAfterRepair, LocalSearchAlgorithm.Neighborhood neighborhood,
-                        RepairHeuristic repairHeuristic, DestroyHeuristic destroyHeuristic) {
+                        DestroyHeuristic destroyHeuristic) {
         this(instance, destructionRate, timeLimitMs, useLocalSearchAfterRepair, neighborhood,
-             repairHeuristic, destroyHeuristic, System.nanoTime());
+             destroyHeuristic, System.nanoTime());
     }
 
     @Override
@@ -109,7 +101,7 @@ public class LNSAlgorithm extends Algorithm {
             List<Integer> partialTour = new ArrayList<>(x.getRoute());
             destroy(partialTour, removedNodes);
 
-            // 5. Repair
+            // 5. Repair using 2-regret heuristic
             Solution y = repair(partialTour, removedNodes);
 
             // 6. Optional Local Search
@@ -204,129 +196,21 @@ public class LNSAlgorithm extends Algorithm {
         tour.removeAll(removedNodes);
     }
 
+    /**
+     * Repair the partial tour by inserting nodes using 2-regret heuristic (w1_1).
+     * Considers ALL unselected nodes for insertion, not just the removed ones.
+     * Reuses NearestNeighborAnyPositionTwoRegretAlgorithm with weights 1 and 1.
+     */
     private Solution repair(List<Integer> partialTour, List<Integer> removedNodes) {
-        switch (repairHeuristic) {
-            case GREEDY_INSERTION:
-                return repairGreedy(partialTour, removedNodes);
-            case REGRET_INSERTION:
-                return repairRegret(partialTour, removedNodes);
-            default:
-                throw new IllegalStateException("Unknown repair heuristic: " + repairHeuristic);
-        }
-    }
-
-    private Solution repairGreedy(List<Integer> partialTour, List<Integer> removedNodes) {
-        List<Integer> tour = new ArrayList<>(partialTour);
-        List<Integer> toInsert = new ArrayList<>(removedNodes);
-        
-        while (!toInsert.isEmpty()) {
-            double bestCostIncrease = Double.POSITIVE_INFINITY;
-            int bestNodeIndex = -1;
-            int bestPosition = -1;
-            
-            for (int i = 0; i < toInsert.size(); i++) {
-                int nodeToInsert = toInsert.get(i);
-                for (int j = 0; j <= tour.size(); j++) {
-                    double costIncrease = calculateInsertionCost(tour, nodeToInsert, j);
-                    if (costIncrease < bestCostIncrease) {
-                        bestCostIncrease = costIncrease;
-                        bestNodeIndex = i;
-                        bestPosition = j;
-                    }
-                }
-            }
-            
-            if (bestNodeIndex != -1) {
-                tour.add(bestPosition, toInsert.get(bestNodeIndex));
-                toInsert.remove(bestNodeIndex);
-            } else {
-                break;
-            }
-        }
-        
-        return new TSPSolution(instance, new HashSet<>(tour), tour);
-    }
-
-    private Solution repairRegret(List<Integer> partialTour, List<Integer> removedNodes) {
-        List<Integer> tour = new ArrayList<>(partialTour);
-        List<Integer> toInsert = new ArrayList<>(removedNodes);
-        int regretK = 2;
-
-        while (!toInsert.isEmpty()) {
-            double maxRegret = Double.NEGATIVE_INFINITY;
-            int bestNodeIndex = -1;
-            int bestPosition = -1;
-
-            for (int i = 0; i < toInsert.size(); i++) {
-                int node = toInsert.get(i);
-                List<InsertionCost> costs = new ArrayList<>();
-                for (int j = 0; j <= tour.size(); j++) {
-                    costs.add(new InsertionCost(j, calculateInsertionCost(tour, node, j)));
-                }
-                Collections.sort(costs);
-
-                double regret = 0;
-                if (costs.size() >= regretK) {
-                    regret = costs.get(1).getCost() - costs.get(0).getCost();
-                } else if (!costs.isEmpty()) {
-                    regret = costs.get(0).getCost();
-                }
-                
-                if (regret > maxRegret) {
-                    maxRegret = regret;
-                    bestNodeIndex = i;
-                    bestPosition = costs.get(0).getPosition();
-                }
-            }
-
-            if (bestNodeIndex != -1) {
-                tour.add(bestPosition, toInsert.get(bestNodeIndex));
-                toInsert.remove(bestNodeIndex);
-            } else {
-                break;
-            }
-        }
-        
-        return new TSPSolution(instance, new HashSet<>(tour), tour);
-    }
-
-    private double calculateInsertionCost(List<Integer> tour, int nodeToInsert, int position) {
-        if (tour.isEmpty()) {
-            return 0;
-        }
-        int prev, next;
-        if (tour.size() == 1) {
-            prev = tour.get(0);
-            next = tour.get(0);
-            return instance.getDistanceMatrix().getDistance(prev, nodeToInsert) * 2;
-        }
-        if (position == tour.size()) {
-             prev = tour.get(tour.size()-1);
-             next = tour.get(0);
-        } else {
-            prev = tour.get((position - 1 + tour.size()) % tour.size());
-            next = tour.get(position);
-        }
-
-        return instance.getDistanceMatrix().getDistance(prev, nodeToInsert) + instance.getDistanceMatrix().getDistance(nodeToInsert, next) - instance.getDistanceMatrix().getDistance(prev, next);
-    }
-    
-    private static class InsertionCost implements Comparable<InsertionCost> {
-        private final int position;
-        private final double cost;
-        
-        public InsertionCost(int position, double cost) {
-            this.position = position;
-            this.cost = cost;
-        }
-        
-        public int getPosition() { return position; }
-        public double getCost() { return cost; }
-        
-        @Override
-        public int compareTo(InsertionCost other) {
-            return Double.compare(this.cost, other.cost);
-        }
+        NearestNeighborAnyPositionTwoRegretAlgorithm regretAlgorithm = 
+            new NearestNeighborAnyPositionTwoRegretAlgorithm(
+                instance, 
+                partialTour, 
+                instance.getRequiredNodes(),  // target route size
+                1,  // weightInsertion
+                1   // weightRegret
+            );
+        return regretAlgorithm.solve();
     }
     
     private static class Edge {
@@ -358,8 +242,8 @@ public class LNSAlgorithm extends Algorithm {
     
     @Override
     public String getName() {
-        return String.format("LNS_d-%.2f_%s_%s_ls-%s_hood-%s",
-                destructionRate, repairHeuristic, destroyHeuristic,
+        return String.format("LNS_d-%.2f_%s_ls-%s_hood-%s",
+                destructionRate, destroyHeuristic,
                 useLocalSearchAfterRepair ? "On" : "Off", neighborhood);
     }
 
