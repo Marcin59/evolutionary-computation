@@ -1,0 +1,2277 @@
+{
+  "summary" : {
+    "total_runs" : 240,
+    "algorithms" : {
+      "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 7595,
+        "time_mean_ms" : 7893.6,
+        "time_max_ms" : 8161,
+        "objective_max" : 76047.0,
+        "runs" : 20,
+        "objective_mean" : 73311.8,
+        "objective_min" : 71458.0
+      },
+      "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 5486,
+        "time_mean_ms" : 5702.5,
+        "time_max_ms" : 5970,
+        "objective_max" : 73776.0,
+        "runs" : 20,
+        "objective_mean" : 72956.75,
+        "objective_min" : 71786.0
+      },
+      "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 3508,
+        "time_mean_ms" : 3590.55,
+        "time_max_ms" : 3679,
+        "objective_max" : 75292.0,
+        "runs" : 20,
+        "objective_mean" : 72460.7,
+        "objective_min" : 70917.0
+      },
+      "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 3360,
+        "time_mean_ms" : 3493.65,
+        "time_max_ms" : 3632,
+        "objective_max" : 75943.0,
+        "runs" : 20,
+        "objective_mean" : 73289.95,
+        "objective_min" : 71089.0
+      },
+      "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 4491,
+        "time_mean_ms" : 4687.15,
+        "time_max_ms" : 4838,
+        "objective_max" : 73842.0,
+        "runs" : 20,
+        "objective_mean" : 72176.15,
+        "objective_min" : 71071.0
+      },
+      "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 5511,
+        "time_mean_ms" : 5698.2,
+        "time_max_ms" : 5804,
+        "objective_max" : 77941.0,
+        "runs" : 20,
+        "objective_mean" : 73244.65,
+        "objective_min" : 71120.0
+      },
+      "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 7685,
+        "time_mean_ms" : 7960.25,
+        "time_max_ms" : 8153,
+        "objective_max" : 73780.0,
+        "runs" : 20,
+        "objective_mean" : 72166.55,
+        "objective_min" : 71049.0
+      },
+      "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 2891,
+        "time_mean_ms" : 3083.0,
+        "time_max_ms" : 3245,
+        "objective_max" : 74319.0,
+        "runs" : 20,
+        "objective_mean" : 72699.95,
+        "objective_min" : 71027.0
+      },
+      "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 3045,
+        "time_mean_ms" : 3135.85,
+        "time_max_ms" : 3216,
+        "objective_max" : 74823.0,
+        "runs" : 20,
+        "objective_mean" : 71712.85,
+        "objective_min" : 70288.0
+      },
+      "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 11001,
+        "time_mean_ms" : 11459.5,
+        "time_max_ms" : 11864,
+        "objective_max" : 75165.0,
+        "runs" : 20,
+        "objective_mean" : 72473.1,
+        "objective_min" : 71062.0
+      },
+      "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT" : {
+        "time_min_ms" : 11005,
+        "time_mean_ms" : 11436.6,
+        "time_max_ms" : 11868,
+        "objective_max" : 75243.0,
+        "runs" : 20,
+        "objective_mean" : 73492.4,
+        "objective_min" : 71714.0
+      },
+      "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT" : {
+        "time_min_ms" : 4152,
+        "time_mean_ms" : 4679.65,
+        "time_max_ms" : 4866,
+        "objective_max" : 73850.0,
+        "runs" : 20,
+        "objective_mean" : 72488.4,
+        "objective_min" : 70558.0
+      }
+    }
+  },
+  "results" : [ {
+    "node_costs" : 49809,
+    "computation_time_ms" : 7685,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22689,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72498
+  }, {
+    "node_costs" : 51791,
+    "computation_time_ms" : 8027,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20777,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72568
+  }, {
+    "node_costs" : 48783,
+    "computation_time_ms" : 7998,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22308,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71091
+  }, {
+    "node_costs" : 50604,
+    "computation_time_ms" : 7944,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22189,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72793
+  }, {
+    "node_costs" : 48464,
+    "computation_time_ms" : 7976,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22585,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71049
+  }, {
+    "node_costs" : 48934,
+    "computation_time_ms" : 7968,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22794,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71728
+  }, {
+    "node_costs" : 49991,
+    "computation_time_ms" : 8011,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22913,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72904
+  }, {
+    "node_costs" : 51018,
+    "computation_time_ms" : 8080,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21476,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72494
+  }, {
+    "node_costs" : 48562,
+    "computation_time_ms" : 8030,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22659,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71221
+  }, {
+    "node_costs" : 50528,
+    "computation_time_ms" : 7922,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22740,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73268
+  }, {
+    "node_costs" : 50171,
+    "computation_time_ms" : 8153,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21308,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71479
+  }, {
+    "node_costs" : 49498,
+    "computation_time_ms" : 8022,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22125,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71623
+  }, {
+    "node_costs" : 49038,
+    "computation_time_ms" : 7798,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22402,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71440
+  }, {
+    "node_costs" : 50329,
+    "computation_time_ms" : 7992,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22468,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72797
+  }, {
+    "node_costs" : 50014,
+    "computation_time_ms" : 7884,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23015,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73029
+  }, {
+    "node_costs" : 49301,
+    "computation_time_ms" : 7893,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22133,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71434
+  }, {
+    "node_costs" : 51127,
+    "computation_time_ms" : 7850,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21729,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72856
+  }, {
+    "node_costs" : 49688,
+    "computation_time_ms" : 8050,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21750,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71438
+  }, {
+    "node_costs" : 50935,
+    "computation_time_ms" : 8000,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22845,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73780
+  }, {
+    "node_costs" : 49862,
+    "computation_time_ms" : 7922,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21979,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71841
+  }, {
+    "node_costs" : 49813,
+    "computation_time_ms" : 11631,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22166,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71979
+  }, {
+    "node_costs" : 49093,
+    "computation_time_ms" : 11474,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23186,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72279
+  }, {
+    "node_costs" : 49623,
+    "computation_time_ms" : 11527,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23016,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72639
+  }, {
+    "node_costs" : 50084,
+    "computation_time_ms" : 11327,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21587,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71671
+  }, {
+    "node_costs" : 50140,
+    "computation_time_ms" : 11340,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23117,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73257
+  }, {
+    "node_costs" : 51565,
+    "computation_time_ms" : 11864,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22629,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74194
+  }, {
+    "node_costs" : 51653,
+    "computation_time_ms" : 11639,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21391,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73044
+  }, {
+    "node_costs" : 51149,
+    "computation_time_ms" : 11759,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20909,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72058
+  }, {
+    "node_costs" : 50424,
+    "computation_time_ms" : 11651,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21703,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72127
+  }, {
+    "node_costs" : 49483,
+    "computation_time_ms" : 11575,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22278,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71761
+  }, {
+    "node_costs" : 51637,
+    "computation_time_ms" : 11665,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21364,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73001
+  }, {
+    "node_costs" : 51941,
+    "computation_time_ms" : 11610,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21356,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73297
+  }, {
+    "node_costs" : 49115,
+    "computation_time_ms" : 11382,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22295,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71410
+  }, {
+    "node_costs" : 50572,
+    "computation_time_ms" : 11191,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21433,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72005
+  }, {
+    "node_costs" : 48912,
+    "computation_time_ms" : 11001,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23416,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72328
+  }, {
+    "node_costs" : 49410,
+    "computation_time_ms" : 11241,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21652,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71062
+  }, {
+    "node_costs" : 48602,
+    "computation_time_ms" : 11478,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22966,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71568
+  }, {
+    "node_costs" : 49543,
+    "computation_time_ms" : 11350,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22970,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72513
+  }, {
+    "node_costs" : 49207,
+    "computation_time_ms" : 11437,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22897,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72104
+  }, {
+    "node_costs" : 52553,
+    "computation_time_ms" : 11048,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22612,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 75165
+  }, {
+    "node_costs" : 52560,
+    "computation_time_ms" : 7595,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23487,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 76047
+  }, {
+    "node_costs" : 50140,
+    "computation_time_ms" : 7935,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23754,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73894
+  }, {
+    "node_costs" : 51755,
+    "computation_time_ms" : 7913,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22782,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 74537
+  }, {
+    "node_costs" : 48681,
+    "computation_time_ms" : 7845,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23884,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72565
+  }, {
+    "node_costs" : 53107,
+    "computation_time_ms" : 7946,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22224,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 75331
+  }, {
+    "node_costs" : 48304,
+    "computation_time_ms" : 7845,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23154,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71458
+  }, {
+    "node_costs" : 50863,
+    "computation_time_ms" : 8025,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22351,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73214
+  }, {
+    "node_costs" : 50112,
+    "computation_time_ms" : 7896,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23052,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73164
+  }, {
+    "node_costs" : 51016,
+    "computation_time_ms" : 8015,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21982,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72998
+  }, {
+    "node_costs" : 51613,
+    "computation_time_ms" : 7666,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22717,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 74330
+  }, {
+    "node_costs" : 48571,
+    "computation_time_ms" : 8069,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23275,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71846
+  }, {
+    "node_costs" : 49059,
+    "computation_time_ms" : 7664,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22415,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71474
+  }, {
+    "node_costs" : 50377,
+    "computation_time_ms" : 7840,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22903,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73280
+  }, {
+    "node_costs" : 49580,
+    "computation_time_ms" : 7885,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22873,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72453
+  }, {
+    "node_costs" : 51555,
+    "computation_time_ms" : 8060,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21573,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73128
+  }, {
+    "node_costs" : 50122,
+    "computation_time_ms" : 8161,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22418,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72540
+  }, {
+    "node_costs" : 50168,
+    "computation_time_ms" : 7685,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 24331,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 74499
+  }, {
+    "node_costs" : 50135,
+    "computation_time_ms" : 7652,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22608,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72743
+  }, {
+    "node_costs" : 48832,
+    "computation_time_ms" : 8082,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23334,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72166
+  }, {
+    "node_costs" : 52723,
+    "computation_time_ms" : 8093,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21846,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 74569
+  }, {
+    "node_costs" : 49321,
+    "computation_time_ms" : 11533,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23239,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72560
+  }, {
+    "node_costs" : 49126,
+    "computation_time_ms" : 11209,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22588,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71714
+  }, {
+    "node_costs" : 50309,
+    "computation_time_ms" : 11447,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23579,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73888
+  }, {
+    "node_costs" : 49471,
+    "computation_time_ms" : 11162,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23471,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72942
+  }, {
+    "node_costs" : 50730,
+    "computation_time_ms" : 11300,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 24198,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74928
+  }, {
+    "node_costs" : 49380,
+    "computation_time_ms" : 11360,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23745,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73125
+  }, {
+    "node_costs" : 52092,
+    "computation_time_ms" : 11274,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23151,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 75243
+  }, {
+    "node_costs" : 49641,
+    "computation_time_ms" : 11656,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 24076,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73717
+  }, {
+    "node_costs" : 49240,
+    "computation_time_ms" : 11005,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 24164,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73404
+  }, {
+    "node_costs" : 50622,
+    "computation_time_ms" : 11263,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22473,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73095
+  }, {
+    "node_costs" : 51543,
+    "computation_time_ms" : 11675,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22040,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73583
+  }, {
+    "node_costs" : 51099,
+    "computation_time_ms" : 11769,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22667,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73766
+  }, {
+    "node_costs" : 51253,
+    "computation_time_ms" : 11759,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21238,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72491
+  }, {
+    "node_costs" : 49662,
+    "computation_time_ms" : 11868,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22979,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72641
+  }, {
+    "node_costs" : 49946,
+    "computation_time_ms" : 11664,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23125,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73071
+  }, {
+    "node_costs" : 50333,
+    "computation_time_ms" : 11015,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23756,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74089
+  }, {
+    "node_costs" : 49585,
+    "computation_time_ms" : 11382,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23574,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73159
+  }, {
+    "node_costs" : 51308,
+    "computation_time_ms" : 11413,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23468,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74776
+  }, {
+    "node_costs" : 50507,
+    "computation_time_ms" : 11343,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23454,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73961
+  }, {
+    "node_costs" : 51025,
+    "computation_time_ms" : 11635,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22670,
+    "algorithm" : "LNS_d-0.20_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73695
+  }, {
+    "node_costs" : 50017,
+    "computation_time_ms" : 4491,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22056,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72073
+  }, {
+    "node_costs" : 49247,
+    "computation_time_ms" : 4698,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22378,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71625
+  }, {
+    "node_costs" : 50937,
+    "computation_time_ms" : 4805,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21164,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72101
+  }, {
+    "node_costs" : 52076,
+    "computation_time_ms" : 4593,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21766,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73842
+  }, {
+    "node_costs" : 48971,
+    "computation_time_ms" : 4826,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22147,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71118
+  }, {
+    "node_costs" : 50142,
+    "computation_time_ms" : 4507,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22626,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72768
+  }, {
+    "node_costs" : 50071,
+    "computation_time_ms" : 4721,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21954,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72025
+  }, {
+    "node_costs" : 49415,
+    "computation_time_ms" : 4727,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22671,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72086
+  }, {
+    "node_costs" : 48619,
+    "computation_time_ms" : 4648,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22452,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71071
+  }, {
+    "node_costs" : 49247,
+    "computation_time_ms" : 4614,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21982,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71229
+  }, {
+    "node_costs" : 51672,
+    "computation_time_ms" : 4721,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20691,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72363
+  }, {
+    "node_costs" : 50312,
+    "computation_time_ms" : 4838,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21579,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71891
+  }, {
+    "node_costs" : 49739,
+    "computation_time_ms" : 4538,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22140,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71879
+  }, {
+    "node_costs" : 49930,
+    "computation_time_ms" : 4579,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23602,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73532
+  }, {
+    "node_costs" : 50065,
+    "computation_time_ms" : 4750,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21615,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71680
+  }, {
+    "node_costs" : 50042,
+    "computation_time_ms" : 4634,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22046,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72088
+  }, {
+    "node_costs" : 50621,
+    "computation_time_ms" : 4820,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21714,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72335
+  }, {
+    "node_costs" : 48851,
+    "computation_time_ms" : 4743,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22613,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71464
+  }, {
+    "node_costs" : 50871,
+    "computation_time_ms" : 4741,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21828,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72699
+  }, {
+    "node_costs" : 52492,
+    "computation_time_ms" : 4749,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21162,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73654
+  }, {
+    "node_costs" : 50104,
+    "computation_time_ms" : 5655,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22039,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72143
+  }, {
+    "node_costs" : 49526,
+    "computation_time_ms" : 5681,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22116,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71642
+  }, {
+    "node_costs" : 50103,
+    "computation_time_ms" : 5795,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22480,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72583
+  }, {
+    "node_costs" : 51344,
+    "computation_time_ms" : 5780,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21782,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73126
+  }, {
+    "node_costs" : 56876,
+    "computation_time_ms" : 5728,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21065,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 77941
+  }, {
+    "node_costs" : 54232,
+    "computation_time_ms" : 5784,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21306,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 75538
+  }, {
+    "node_costs" : 51640,
+    "computation_time_ms" : 5804,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22364,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74004
+  }, {
+    "node_costs" : 54046,
+    "computation_time_ms" : 5742,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21924,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 75970
+  }, {
+    "node_costs" : 48399,
+    "computation_time_ms" : 5769,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23093,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71492
+  }, {
+    "node_costs" : 49908,
+    "computation_time_ms" : 5686,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22470,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72378
+  }, {
+    "node_costs" : 48831,
+    "computation_time_ms" : 5688,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23370,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72201
+  }, {
+    "node_costs" : 50206,
+    "computation_time_ms" : 5614,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22228,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72434
+  }, {
+    "node_costs" : 51025,
+    "computation_time_ms" : 5647,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22778,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73803
+  }, {
+    "node_costs" : 49697,
+    "computation_time_ms" : 5673,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22785,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72482
+  }, {
+    "node_costs" : 50330,
+    "computation_time_ms" : 5565,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22918,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73248
+  }, {
+    "node_costs" : 50106,
+    "computation_time_ms" : 5768,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22143,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72249
+  }, {
+    "node_costs" : 48685,
+    "computation_time_ms" : 5668,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22435,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71120
+  }, {
+    "node_costs" : 49387,
+    "computation_time_ms" : 5511,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23442,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72829
+  }, {
+    "node_costs" : 52146,
+    "computation_time_ms" : 5765,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21840,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73986
+  }, {
+    "node_costs" : 51579,
+    "computation_time_ms" : 5641,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22145,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73724
+  }, {
+    "node_costs" : 52291,
+    "computation_time_ms" : 4728,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20796,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73087
+  }, {
+    "node_costs" : 50594,
+    "computation_time_ms" : 4762,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22700,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73294
+  }, {
+    "node_costs" : 49319,
+    "computation_time_ms" : 4657,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22365,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71684
+  }, {
+    "node_costs" : 50757,
+    "computation_time_ms" : 4737,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22463,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73220
+  }, {
+    "node_costs" : 49899,
+    "computation_time_ms" : 4652,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22547,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72446
+  }, {
+    "node_costs" : 49751,
+    "computation_time_ms" : 4733,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22793,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72544
+  }, {
+    "node_costs" : 50265,
+    "computation_time_ms" : 4668,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22319,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72584
+  }, {
+    "node_costs" : 51031,
+    "computation_time_ms" : 4152,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22819,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73850
+  }, {
+    "node_costs" : 48895,
+    "computation_time_ms" : 4506,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22521,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71416
+  }, {
+    "node_costs" : 49795,
+    "computation_time_ms" : 4616,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22498,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72293
+  }, {
+    "node_costs" : 52143,
+    "computation_time_ms" : 4776,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20413,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72556
+  }, {
+    "node_costs" : 50483,
+    "computation_time_ms" : 4741,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21682,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72165
+  }, {
+    "node_costs" : 50995,
+    "computation_time_ms" : 4866,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21968,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72963
+  }, {
+    "node_costs" : 49848,
+    "computation_time_ms" : 4731,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23168,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73016
+  }, {
+    "node_costs" : 49754,
+    "computation_time_ms" : 4727,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21868,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71622
+  }, {
+    "node_costs" : 49998,
+    "computation_time_ms" : 4722,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23202,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73200
+  }, {
+    "node_costs" : 51514,
+    "computation_time_ms" : 4706,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22249,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73763
+  }, {
+    "node_costs" : 49414,
+    "computation_time_ms" : 4723,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22040,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71454
+  }, {
+    "node_costs" : 49414,
+    "computation_time_ms" : 4688,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22639,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72053
+  }, {
+    "node_costs" : 48736,
+    "computation_time_ms" : 4702,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21822,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 70558
+  }, {
+    "node_costs" : 49825,
+    "computation_time_ms" : 5723,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22312,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72137
+  }, {
+    "node_costs" : 48465,
+    "computation_time_ms" : 5636,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23974,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72439
+  }, {
+    "node_costs" : 51105,
+    "computation_time_ms" : 5873,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22020,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73125
+  }, {
+    "node_costs" : 51914,
+    "computation_time_ms" : 5970,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21366,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73280
+  }, {
+    "node_costs" : 49880,
+    "computation_time_ms" : 5697,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21906,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71786
+  }, {
+    "node_costs" : 51730,
+    "computation_time_ms" : 5656,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21922,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73652
+  }, {
+    "node_costs" : 48217,
+    "computation_time_ms" : 5609,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 24335,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72552
+  }, {
+    "node_costs" : 49917,
+    "computation_time_ms" : 5729,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23600,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73517
+  }, {
+    "node_costs" : 49904,
+    "computation_time_ms" : 5839,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23526,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73430
+  }, {
+    "node_costs" : 48658,
+    "computation_time_ms" : 5486,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23133,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71791
+  }, {
+    "node_costs" : 50027,
+    "computation_time_ms" : 5921,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23749,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73776
+  }, {
+    "node_costs" : 48853,
+    "computation_time_ms" : 5768,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 24238,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73091
+  }, {
+    "node_costs" : 48775,
+    "computation_time_ms" : 5562,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23039,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71814
+  }, {
+    "node_costs" : 49549,
+    "computation_time_ms" : 5636,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23364,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72913
+  }, {
+    "node_costs" : 49522,
+    "computation_time_ms" : 5636,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 24033,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73555
+  }, {
+    "node_costs" : 50089,
+    "computation_time_ms" : 5721,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23206,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73295
+  }, {
+    "node_costs" : 50248,
+    "computation_time_ms" : 5575,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22429,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72677
+  }, {
+    "node_costs" : 48038,
+    "computation_time_ms" : 5636,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 25159,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73197
+  }, {
+    "node_costs" : 49738,
+    "computation_time_ms" : 5659,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23743,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73481
+  }, {
+    "node_costs" : 51062,
+    "computation_time_ms" : 5718,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22565,
+    "algorithm" : "LNS_d-0.30_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73627
+  }, {
+    "node_costs" : 50042,
+    "computation_time_ms" : 3207,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21207,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71249
+  }, {
+    "node_costs" : 48806,
+    "computation_time_ms" : 3210,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22533,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71339
+  }, {
+    "node_costs" : 48507,
+    "computation_time_ms" : 3109,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21781,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 70288
+  }, {
+    "node_costs" : 49360,
+    "computation_time_ms" : 3068,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22046,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71406
+  }, {
+    "node_costs" : 50971,
+    "computation_time_ms" : 3202,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21952,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72923
+  }, {
+    "node_costs" : 50645,
+    "computation_time_ms" : 3112,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21911,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72556
+  }, {
+    "node_costs" : 51776,
+    "computation_time_ms" : 3108,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21795,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73571
+  }, {
+    "node_costs" : 49082,
+    "computation_time_ms" : 3216,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22110,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71192
+  }, {
+    "node_costs" : 48317,
+    "computation_time_ms" : 3142,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22251,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 70568
+  }, {
+    "node_costs" : 49214,
+    "computation_time_ms" : 3082,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22107,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71321
+  }, {
+    "node_costs" : 50384,
+    "computation_time_ms" : 3097,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22043,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72427
+  }, {
+    "node_costs" : 53585,
+    "computation_time_ms" : 3105,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21238,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 74823
+  }, {
+    "node_costs" : 49430,
+    "computation_time_ms" : 3129,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21411,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 70841
+  }, {
+    "node_costs" : 50850,
+    "computation_time_ms" : 3045,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22312,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73162
+  }, {
+    "node_costs" : 49120,
+    "computation_time_ms" : 3213,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21518,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 70638
+  }, {
+    "node_costs" : 49833,
+    "computation_time_ms" : 3109,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21451,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71284
+  }, {
+    "node_costs" : 49162,
+    "computation_time_ms" : 3095,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21549,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 70711
+  }, {
+    "node_costs" : 49321,
+    "computation_time_ms" : 3150,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21416,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 70737
+  }, {
+    "node_costs" : 50118,
+    "computation_time_ms" : 3184,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21913,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72031
+  }, {
+    "node_costs" : 49108,
+    "computation_time_ms" : 3134,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22082,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71190
+  }, {
+    "node_costs" : 51108,
+    "computation_time_ms" : 3679,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21905,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73013
+  }, {
+    "node_costs" : 48900,
+    "computation_time_ms" : 3628,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22062,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 70962
+  }, {
+    "node_costs" : 49140,
+    "computation_time_ms" : 3613,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21910,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71050
+  }, {
+    "node_costs" : 49445,
+    "computation_time_ms" : 3578,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22497,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71942
+  }, {
+    "node_costs" : 49526,
+    "computation_time_ms" : 3588,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22002,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71528
+  }, {
+    "node_costs" : 49568,
+    "computation_time_ms" : 3594,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22507,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72075
+  }, {
+    "node_costs" : 49982,
+    "computation_time_ms" : 3560,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21780,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71762
+  }, {
+    "node_costs" : 49434,
+    "computation_time_ms" : 3643,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21654,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71088
+  }, {
+    "node_costs" : 52033,
+    "computation_time_ms" : 3599,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22441,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74474
+  }, {
+    "node_costs" : 53049,
+    "computation_time_ms" : 3547,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22243,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 75292
+  }, {
+    "node_costs" : 48562,
+    "computation_time_ms" : 3531,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22355,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 70917
+  }, {
+    "node_costs" : 49478,
+    "computation_time_ms" : 3605,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22467,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71945
+  }, {
+    "node_costs" : 49789,
+    "computation_time_ms" : 3582,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22061,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71850
+  }, {
+    "node_costs" : 50101,
+    "computation_time_ms" : 3609,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23124,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73225
+  }, {
+    "node_costs" : 50413,
+    "computation_time_ms" : 3535,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22249,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72662
+  }, {
+    "node_costs" : 50742,
+    "computation_time_ms" : 3617,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22144,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72886
+  }, {
+    "node_costs" : 51221,
+    "computation_time_ms" : 3617,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22350,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73571
+  }, {
+    "node_costs" : 49132,
+    "computation_time_ms" : 3541,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22416,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71548
+  }, {
+    "node_costs" : 52059,
+    "computation_time_ms" : 3637,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21644,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73703
+  }, {
+    "node_costs" : 50268,
+    "computation_time_ms" : 3508,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23453,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73721
+  }, {
+    "node_costs" : 51062,
+    "computation_time_ms" : 2891,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21143,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72205
+  }, {
+    "node_costs" : 50009,
+    "computation_time_ms" : 3153,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21983,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71992
+  }, {
+    "node_costs" : 51515,
+    "computation_time_ms" : 3027,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21556,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73071
+  }, {
+    "node_costs" : 52154,
+    "computation_time_ms" : 3245,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 20983,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73137
+  }, {
+    "node_costs" : 50673,
+    "computation_time_ms" : 3126,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21826,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72499
+  }, {
+    "node_costs" : 50082,
+    "computation_time_ms" : 3112,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22712,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72794
+  }, {
+    "node_costs" : 51485,
+    "computation_time_ms" : 3147,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22834,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 74319
+  }, {
+    "node_costs" : 50472,
+    "computation_time_ms" : 3093,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22824,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73296
+  }, {
+    "node_costs" : 50356,
+    "computation_time_ms" : 2905,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22449,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72805
+  }, {
+    "node_costs" : 48976,
+    "computation_time_ms" : 3026,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22051,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71027
+  }, {
+    "node_costs" : 52354,
+    "computation_time_ms" : 3120,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21701,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 74055
+  }, {
+    "node_costs" : 52640,
+    "computation_time_ms" : 3084,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21407,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 74047
+  }, {
+    "node_costs" : 50434,
+    "computation_time_ms" : 3162,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22938,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 73372
+  }, {
+    "node_costs" : 49717,
+    "computation_time_ms" : 3158,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22477,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72194
+  }, {
+    "node_costs" : 51176,
+    "computation_time_ms" : 3067,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21629,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72805
+  }, {
+    "node_costs" : 48696,
+    "computation_time_ms" : 3121,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22650,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71346
+  }, {
+    "node_costs" : 50404,
+    "computation_time_ms" : 3102,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22317,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72721
+  }, {
+    "node_costs" : 49427,
+    "computation_time_ms" : 3068,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22303,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71730
+  }, {
+    "node_costs" : 49961,
+    "computation_time_ms" : 3004,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22627,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 72588
+  }, {
+    "node_costs" : 48303,
+    "computation_time_ms" : 3049,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23693,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-On_hood-TWO_OPT",
+    "objective_value" : 71996
+  }, {
+    "node_costs" : 49159,
+    "computation_time_ms" : 3456,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22408,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71567
+  }, {
+    "node_costs" : 50262,
+    "computation_time_ms" : 3475,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22777,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73039
+  }, {
+    "node_costs" : 50458,
+    "computation_time_ms" : 3576,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21797,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72255
+  }, {
+    "node_costs" : 48963,
+    "computation_time_ms" : 3457,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23548,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72511
+  }, {
+    "node_costs" : 49846,
+    "computation_time_ms" : 3446,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 24032,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73878
+  }, {
+    "node_costs" : 50768,
+    "computation_time_ms" : 3632,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21994,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72762
+  }, {
+    "node_costs" : 49100,
+    "computation_time_ms" : 3551,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22747,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71847
+  }, {
+    "node_costs" : 50506,
+    "computation_time_ms" : 3425,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23322,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73828
+  }, {
+    "node_costs" : 52875,
+    "computation_time_ms" : 3586,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 21709,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74584
+  }, {
+    "node_costs" : 48948,
+    "computation_time_ms" : 3540,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22141,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 71089
+  }, {
+    "node_costs" : 50758,
+    "computation_time_ms" : 3530,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23222,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73980
+  }, {
+    "node_costs" : 53782,
+    "computation_time_ms" : 3360,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22161,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 75943
+  }, {
+    "node_costs" : 50146,
+    "computation_time_ms" : 3493,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23822,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 73968
+  }, {
+    "node_costs" : 51633,
+    "computation_time_ms" : 3481,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22494,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74127
+  }, {
+    "node_costs" : 51865,
+    "computation_time_ms" : 3512,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22490,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74355
+  }, {
+    "node_costs" : 50101,
+    "computation_time_ms" : 3473,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22272,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72373
+  }, {
+    "node_costs" : 48720,
+    "computation_time_ms" : 3451,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23726,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72446
+  }, {
+    "node_costs" : 51440,
+    "computation_time_ms" : 3563,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23410,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74850
+  }, {
+    "node_costs" : 50852,
+    "computation_time_ms" : 3426,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 23435,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 74287
+  }, {
+    "node_costs" : 49676,
+    "computation_time_ms" : 3440,
+    "instance" : "TSPA",
+    "selected_nodes_count" : 100,
+    "total_nodes" : 200,
+    "path_length" : 22434,
+    "algorithm" : "LNS_d-0.40_REGRET_INSERTION_LONGEST_EDGE_REMOVAL_ls-Off_hood-TWO_OPT",
+    "objective_value" : 72110
+  } ],
+  "timestamp" : "2025-11-30T13:46:25.926715491"
+}

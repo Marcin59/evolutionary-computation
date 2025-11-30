@@ -5,6 +5,8 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
+import tsp.analysis.LNSExperimentRunner;
+
 /**
  * Generic experiment runner for different algorithm types.
  * This class provides a unified interface for running experiments and organizing results.
@@ -62,6 +64,11 @@ public class AlgorithmExperimentRunner {
             case "msls_ils":
                 results = MSLS_ILS_ExperimentRunner.runAllExperiments(instance);
                 bestSolutions = MSLS_ILS_ExperimentRunner.analyzeBestSolutions(results);
+                break;
+
+            case "lns":
+                results = LNSExperimentRunner.runAllExperiments(instance);
+                bestSolutions = LNSExperimentRunner.analyzeBestSolutions(results);
                 break;
             
             // Future algorithm types can be added here:
