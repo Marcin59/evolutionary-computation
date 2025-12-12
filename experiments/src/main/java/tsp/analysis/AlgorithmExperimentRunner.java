@@ -70,6 +70,11 @@ public class AlgorithmExperimentRunner {
                 results = LNSExperimentRunner.runAllExperiments(instance);
                 bestSolutions = LNSExperimentRunner.analyzeBestSolutions(results);
                 break;
+
+            case "hea":
+                results = HEAExperimentRunner.runAllExperiments(instance);
+                bestSolutions = HEAExperimentRunner.analyzeBestSolutions(results);
+                break;
             
             // Future algorithm types can be added here:
             // case "genetic":
