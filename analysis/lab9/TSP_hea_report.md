@@ -1,11 +1,154 @@
 # Hea algorithm for TSP Problem
 
+## Authors
+- Adam Tomys 156057
+- Marcin Kapiszewski 156048
+
 ## Implemented Algorithms
 
 ### Pseudocode
 
 ```
-# TODO: Add algorithm pseudocode here
+Algorithm HybridEvolutionaryAlgorithm(instance, populationSize, timeLimitMs, 
+                                       recombinationOperator, useLocalSearch):
+    
+    // Initialize population with local search optimization
+    population ← empty priority queue
+    objectiveValues ← empty set
+    
+    while |population| < populationSize do:
+        solution ← GenerateRandomSolution(instance)
+        solution ← SteepestLocalSearch(solution)
+        if solution.objectiveValue not in objectiveValues then:
+            Add solution to population
+            Add solution.objectiveValue to objectiveValues
+    
+    bestSolution ← population.first()  // Best solution (min objective)
+    startTime ← CurrentTime()
+    
+    // Main evolutionary loop
+    while (CurrentTime() - startTime) < timeLimitMs do:
+        parent1, parent2 ← SelectRandomParents(population)
+        
+        if recombinationOperator == OPERATOR_1 then:
+            offspring ← RecombineOperator1(parent1, parent2)
+        else:
+            offspring ← RecombineOperator2(parent1, parent2)
+        
+        if useLocalSearch then:
+            offspring ← SteepestLocalSearch(offspring)
+        
+        if offspring.objectiveValue in objectiveValues then:
+            continue
+        
+        // Steady-state selection: replace worst if offspring is better
+        worst ← population.last()
+        if offspring.objectiveValue < worst.objectiveValue then:
+            Remove worst from population
+            Remove worst.objectiveValue from objectiveValues
+            Add offspring to population
+            Add offspring.objectiveValue to objectiveValues
+            
+            if offspring.objectiveValue < bestSolution.objectiveValue then:
+                bestSolution ← offspring
+    
+    return bestSolution
+
+---
+
+
+RecombineOperator1(parent1, parent2):
+    // Find common nodes and edges between parents
+    commonNodes ← parent1.nodes ∩ parent2.nodes
+    commonEdges ← parent1.edges ∩ parent2.edges
+    
+    // Build subpaths from common edges
+    subpaths ← BuildSubpathsFromEdges(commonEdges)
+    
+    // Add single-node subpaths for common nodes not in any subpath
+    for node in commonNodes do:
+        if node not in any subpath then:
+            Add [node] to subpaths
+    
+    // Add random nodes to reach required count (50% of total)
+    nodesToAdd ← requiredNodes - |nodesInSubpaths|
+    availableNodes ← allNodes - nodesInSubpaths
+    Shuffle availableNodes randomly
+    for i = 1 to nodesToAdd do:
+        Add [availableNodes[i]] to subpaths
+    
+    // Connect subpaths in random order with random orientation
+    subpaths.shuffle()
+    route ← empty list
+    for subpath in subpaths do:
+        if random() < 0.5 then:
+            Reverse subpath
+        Append subpath to route
+    
+    return CreateSolution(route)
+
+---
+
+BuildSubpathsFromEdges(edges):
+    // Build adjacency list from edges
+    adjacency ← empty map
+    for edge(a, b) in edges do:
+        adjacency[a].add(b)
+        adjacency[b].add(a)
+    // final result example {a: [b, c], b: [a], c:[a], d: [e], e: [d]}
+    
+    subpaths ← empty list
+    visited ← empty set
+    
+    for startNode in adjacency.keys() do:
+        if startNode in visited then:
+            continue
+        
+        // Find endpoint (node with degree 1) by walking along chain
+        endpoint ← FindEndpoint(startNode, adjacency)
+        
+        // Build path segment from endpoint
+        segment ← empty list
+        current ← endpoint
+        prev ← null
+        
+        while current not null do:
+            visited.add(current)
+            segment.add(current)
+            
+            // Move to next unvisited neighbor
+            next ← null
+            for neighbor in adjacency[current] do:
+                if neighbor ≠ prev and neighbor not in visited then:
+                    next ← neighbor
+                    break
+            prev ← current
+            current ← next
+        
+        if segment not empty then:
+            subpaths.add(segment)
+    
+    return subpaths
+
+---
+
+RecombineOperator2(parent1, parent2):
+    // Randomly choose base parent
+    if random() < 0.5 then:
+        baseParent ← parent1
+        otherParent ← parent2
+    else:
+        baseParent ← parent2
+        otherParent ← parent1
+    
+    // Keep only common nodes (preserving order from base parent)
+    partialRoute ← empty list
+    for node in baseParent.route do:
+        if node in otherParent.nodes then:
+            Add node to partialRoute
+    
+    // Repair using 2-regret heuristic
+    return RepairWith2Regret(partialRoute, requiredNodes)
 ```
 
 ---
@@ -16,7 +159,13 @@
 
 | Algorithm | TSPA | TSPB |
 |---|---|---|
-| HEA_OPERATOR_1_LS_pop20_TWO_OPT | 69260.30 (69107.00 - 69568.00) | 43558.45 (43456.00 - 43971.00) |
+| MSLS_STEEPEST_TWO_OPT | 71357.85 (70897.00 - 71801.00) | 45641.30 (44699.00 - 46076.00) |
+| ILS_STEEPEST_TWO_OPT_pert15_ext1 | 69990.80 (69287.00 - 70452.00) | 44551.25 (44334.00 - 44912.00) |
+| ILS_STEEPEST_TWO_OPT_pert15_ext3 | 70212.05 (69905.00 - 70466.00) | 44514.45 (44012.00 - 44820.00) |
+| LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT | 69612.30 (69214.00 - 70184.00) | 44292.90 (**43484.00** - 45362.00) |
+| LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT | 69737.15 (69255.00 - 70554.00) | 44199.95 (43602.00 - 44832.00) |
+| LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT | **69605.65** (**69185.00** - 70200.00) | **44026.40** (43509.00 - 44623.00) |
+| **HEA_OPERATOR_1_LS_pop20_TWO_OPT** | **69260.30** (**69107.00** - 69568.00) | **43558.45** (**43456.00** - 43971.00) |
 | HEA_OPERATOR_2_LS_pop20_TWO_OPT | 70069.75 (69610.00 - 70962.00) | 44214.75 (43780.00 - 44821.00) |
 | HEA_OPERATOR_2_noLS_pop20_TWO_OPT | 70350.50 (69582.00 - 71197.00) | 44565.15 (43977.00 - 45126.00) |
 
@@ -26,9 +175,24 @@
 
 | Algorithm | TSPA | TSPB |
 |---|---|---|
+| STEEPESTLS_EDGES_RANDOM                         | 59.24 (51 - 80) | 56.47 (42 - 65) |
+| MSLS_STEEPEST_TWO_OPT | 5850.60 (5756 - 6041) | 5838.85 (5769 - 5930) |
+
+### Iterations
+
+| Algorithm | TSPA | TSPB |
+|---|---|---|
+| ILS_STEEPEST_TWO_OPT_pert15_ext1 | 1049.15 (1023 - 1079) | 1041.85 (1023 - 1064) |
+| ILS_STEEPEST_TWO_OPT_pert15_ext3 | 916.65 (907 - 932) | 905.15 (889 - 920) |
+| LNS_d-0.20_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT | 11177.45 (10979 - 11347) | 11378.25 (11169 - 11565) |
+| LNS_d-0.20_RANDOM_REMOVAL_ls-On_hood-TWO_OPT | 6740.95 (5891 - 7517) | 6586.00 (5215 - 7734) |
+| LNS_d-0.30_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT | 7552.75 (7462 - 7631) | 7708.45 (7591 - 7838) |
+| LNS_d-0.30_RANDOM_REMOVAL_ls-On_hood-TWO_OPT | 5108.50 (4188 - 5591) | 4550.55 (3687 - 4960) |
+| LNS_d-0.40_RANDOM_REMOVAL_ls-Off_hood-TWO_OPT | 5782.30 (5704 - 5876) | 5920.50 (5823 - 6006) |
+| LNS_d-0.40_RANDOM_REMOVAL_ls-On_hood-TWO_OPT | 3993.10 (3522 - 4428) | 3530.70 (2935 - 3879) |
 | HEA_OPERATOR_1_LS_pop20_TWO_OPT | 2003.50 (1103 - 2911) | 1642.95 (625 - 2269) |
 | HEA_OPERATOR_2_LS_pop20_TWO_OPT | 13244.80 (9691 - 18125) | 12409.85 (9828 - 18218) |
-| HEA_OPERATOR_2_noLS_pop20_TWO_OPT | 13244.80 (30186 - 75469) | 44160.65 (27498 - 110516) |
+| HEA_OPERATOR_2_noLS_pop20_TWO_OPT | 47212.85 (30186 - 75469) | 44160.65 (27498 - 110516) |
 
 ## 2D Visualization of Best Solution
 
@@ -82,18 +246,7 @@
 
 ## Conclusions
 
-### Key Findings
-
-<!-- TODO: Add analysis of results -->
-
-
-
-### Performance Comparison
-
-<!-- TODO: Compare algorithms -->
-
-
-
-### Observations
-
-<!-- TODO: Add observations -->
+1. HEA with Operator 1 and Local Search achieves the best solution quality
+2. Operator 1 significantly outperforms Operator 2
+3. Local Search improves the effectiveness of the algotihm, however the diffrence is not extreme in the Operator 2.
+4. First operator is much more expensive, it does over 6 times less iterations that the second one with LS on and almost 24 times less than the second operator with LS off.
