@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import tsp.analysis.LNSExperimentRunner;
+import tsp.analysis.ALNSExperimentRunner;
 
 /**
  * Generic experiment runner for different algorithm types.
@@ -75,7 +76,12 @@ public class AlgorithmExperimentRunner {
                 results = HEAExperimentRunner.runAllExperiments(instance);
                 bestSolutions = HEAExperimentRunner.analyzeBestSolutions(results);
                 break;
-            
+
+            case "alns":
+                results = ALNSExperimentRunner.runAllExperiments(instance);
+                bestSolutions = ALNSExperimentRunner.analyzeBestSolutions(results);
+                break;
+
             // Future algorithm types can be added here:
             // case "genetic":
             //     results = GeneticExperimentRunner.runGeneticExperiments(instance);
