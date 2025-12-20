@@ -110,17 +110,21 @@ public class ALNSExperimentRunner {
     private static List<ALNSConfig> defineConfigurations() {
         List<ALNSConfig> configs = new ArrayList<>();
 
-        // Top 5 configurations from parameter tuning:
-        // 1. Best min (69,178)
-        configs.add(new ALNSConfig(0.25, 0.15, 7, 0.9999, true));
-        // 2. Good balance (69,179 min, 69,236 avg)
-        configs.add(new ALNSConfig(0.25, 0.20, 9, 1.0, true));
-        // 3. Best avg (69,225)
-        configs.add(new ALNSConfig(0.30, 0.10, 25, 1.0, true));
-        // 4. Consistent (69,200 min, 69,239 avg)
-        configs.add(new ALNSConfig(0.30, 0.25, 25, 1.0, true));
-        // 5. Fast with good min (69,202)
-        configs.add(new ALNSConfig(0.60, 0.25, 11, 0.9999, true));
+        // Configuration 1: Default balanced
+        // destructionRate=0.25, rho=0.1, segment=100, cooling=0.9995
+        configs.add(new ALNSConfig(0.25, 0.1, 100, 0.9995, true));
+
+        // Configuration 2: More destruction, slower adaptation
+        configs.add(new ALNSConfig(0.35, 0.1, 100, 0.9995, true));
+
+        // Configuration 3: Faster adaptation, smaller segments
+        configs.add(new ALNSConfig(0.25, 0.2, 50, 0.9995, true));
+
+        // Configuration 4: No cooling (pure adaptive)
+        configs.add(new ALNSConfig(0.30, 0.15, 75, 1.0, true));
+
+        // Configuration 5: Aggressive destruction with slow cooling
+        configs.add(new ALNSConfig(0.40, 0.1, 100, 0.999, true));
 
         return configs;
     }
@@ -154,7 +158,8 @@ public class ALNSExperimentRunner {
             long computationTime = endTime - startTime;
 
             int iterations = algorithm.getIterationCount();
-            double[] finalWeights = algorithm.getDestroyWeights();
+            double[] destroyWeights = algorithm.getDestroyWeights();
+            double[] repairWeights = algorithm.getRepairWeights();
 
             AlgorithmResult result = new AlgorithmResult(
                     algorithm.getName(),
@@ -164,11 +169,12 @@ public class ALNSExperimentRunner {
             );
             results.add(result);
 
-            System.out.printf("Objective: %d, Iterations: %d, Time: %.2fs, Weights: [%.2f, %.2f, %.2f]\n",
+            System.out.printf("Obj: %d, Iters: %d, Time: %.2fs, Destroy:[%.2f,%.2f,%.2f] Repair:[%.2f,%.2f]\n",
                     result.getObjectiveValue(),
                     iterations,
                     computationTime / 1000.0,
-                    finalWeights[0], finalWeights[1], finalWeights[2]);
+                    destroyWeights[0], destroyWeights[1], destroyWeights[2],
+                    repairWeights[0], repairWeights[1]);
         }
         return results;
     }

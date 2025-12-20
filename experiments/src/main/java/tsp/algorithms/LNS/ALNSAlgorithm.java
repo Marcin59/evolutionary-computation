@@ -6,8 +6,10 @@ import tsp.algorithms.greedy.GreedyCycleAlgorithm;
 import tsp.algorithms.localsearch.LocalSearchAlgorithm;
 import tsp.algorithms.localsearch.SteepestLocalSearch;
 import tsp.algorithms.regret.NearestNeighborAnyPositionTwoRegretAlgorithm;
+import tsp.core.DistanceMatrix;
 import tsp.core.Instance;
 import tsp.core.Solution;
+import tsp.core.TSPSolution;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,12 +57,23 @@ public class ALNSAlgorithm extends Algorithm {
     private double temperature;
     private int iterationCount;
 
-    // Destroy operators (reuse from LNS)
+    // Destroy operators (RANDOM, SUBPATH from LNS + COST_WEIGHTED_ROULETTE replacing LONGEST_EDGE)
     public enum DestroyHeuristic {
         RANDOM_REMOVAL,
         SUBPATH_REMOVAL,
-        LONGEST_EDGE_REMOVAL
+        COST_WEIGHTED_ROULETTE  // Replaced LONGEST_EDGE_REMOVAL
     }
+
+    // Repair operators
+    public enum RepairHeuristic {
+        TWO_REGRET,
+        GREEDY_CYCLE
+    }
+
+    // Repair operator weights and statistics
+    private double[] repairWeights;
+    private int[] repairUsageCounts;
+    private double[] repairScores;
 
     /**
      * Constructor with default ALNS parameters.
@@ -101,15 +114,26 @@ public class ALNSAlgorithm extends Algorithm {
         this.minWeight = minWeight;
         this.iterationCount = 0;
 
-        // Initialize operator weights (equal initially)
-        int numOperators = DestroyHeuristic.values().length;
-        this.destroyWeights = new double[numOperators];
-        this.destroyUsageCounts = new int[numOperators];
-        this.destroyScores = new double[numOperators];
-        for (int i = 0; i < numOperators; i++) {
+        // Initialize destroy operator weights (equal initially)
+        int numDestroyOps = DestroyHeuristic.values().length;
+        this.destroyWeights = new double[numDestroyOps];
+        this.destroyUsageCounts = new int[numDestroyOps];
+        this.destroyScores = new double[numDestroyOps];
+        for (int i = 0; i < numDestroyOps; i++) {
             destroyWeights[i] = 1.0;
             destroyUsageCounts[i] = 0;
             destroyScores[i] = 0.0;
+        }
+
+        // Initialize repair operator weights (equal initially)
+        int numRepairOps = RepairHeuristic.values().length;
+        this.repairWeights = new double[numRepairOps];
+        this.repairUsageCounts = new int[numRepairOps];
+        this.repairScores = new double[numRepairOps];
+        for (int i = 0; i < numRepairOps; i++) {
+            repairWeights[i] = 1.0;
+            repairUsageCounts[i] = 0;
+            repairScores[i] = 0.0;
         }
     }
 
@@ -135,23 +159,27 @@ public class ALNSAlgorithm extends Algorithm {
         // 4. Main ALNS loop
         while (System.currentTimeMillis() - startTime < timeLimitMs) {
             // 4a. Select destroy operator (roulette wheel based on weights)
-            DestroyHeuristic selectedOperator = selectDestroyOperator();
-            int operatorIndex = selectedOperator.ordinal();
+            DestroyHeuristic selectedDestroyOp = selectDestroyOperator();
+            int destroyOpIndex = selectedDestroyOp.ordinal();
 
-            // 4b. Destroy
+            // 4b. Select repair operator (roulette wheel based on weights)
+            RepairHeuristic selectedRepairOp = selectRepairOperator();
+            int repairOpIndex = selectedRepairOp.ordinal();
+
+            // 4c. Destroy
             List<Integer> removedNodes = new ArrayList<>();
             List<Integer> partialTour = new ArrayList<>(currentSolution.getRoute());
-            destroy(partialTour, removedNodes, selectedOperator);
+            destroy(partialTour, removedNodes, selectedDestroyOp);
 
-            // 4c. Repair using 2-regret heuristic
-            Solution newSolution = repair(partialTour, removedNodes);
+            // 4d. Repair using selected operator
+            Solution newSolution = repair(partialTour, removedNodes, selectedRepairOp);
 
-            // 4d. Optional Local Search
+            // 4e. Optional Local Search
             if (useLocalSearchAfterRepair) {
                 newSolution = applyLocalSearch(new SolutionAlgorithm(newSolution));
             }
 
-            // 4e. Calculate operator score based on solution quality
+            // 4f. Calculate operator score based on solution quality
             double operatorScore = 0.0;
             long delta = newSolution.getObjectiveValue() - currentSolution.getObjectiveValue();
 
@@ -164,7 +192,7 @@ public class ALNSAlgorithm extends Algorithm {
                 operatorScore = sigma2;
             }
 
-            // 4f. Simulated Annealing acceptance
+            // 4g. Simulated Annealing acceptance
             boolean accepted = false;
             if (delta < 0) {
                 // Always accept improvements
@@ -182,17 +210,19 @@ public class ALNSAlgorithm extends Algorithm {
                 currentSolution = newSolution;
             }
 
-            // 4g. Update operator statistics
-            destroyUsageCounts[operatorIndex]++;
-            destroyScores[operatorIndex] += operatorScore;
+            // 4h. Update operator statistics (both destroy and repair)
+            destroyUsageCounts[destroyOpIndex]++;
+            destroyScores[destroyOpIndex] += operatorScore;
+            repairUsageCounts[repairOpIndex]++;
+            repairScores[repairOpIndex] += operatorScore;
 
-            // 4h. Update weights every segmentLength iterations
+            // 4i. Update weights every segmentLength iterations
             iterationCount++;
             if (iterationCount % segmentLength == 0) {
                 updateWeights();
             }
 
-            // 4i. Cool down temperature
+            // 4j. Cool down temperature
             temperature = Math.max(temperature * coolingRate, 0.001);
         }
 
@@ -222,10 +252,33 @@ public class ALNSAlgorithm extends Algorithm {
     }
 
     /**
+     * Select a repair operator using roulette wheel selection based on weights.
+     */
+    private RepairHeuristic selectRepairOperator() {
+        double totalWeight = 0;
+        for (double w : repairWeights) {
+            totalWeight += w;
+        }
+
+        double r = random.nextDouble() * totalWeight;
+        double cumulative = 0;
+        RepairHeuristic[] operators = RepairHeuristic.values();
+
+        for (int i = 0; i < operators.length; i++) {
+            cumulative += repairWeights[i];
+            if (r <= cumulative) {
+                return operators[i];
+            }
+        }
+        return operators[operators.length - 1]; // Fallback
+    }
+
+    /**
      * Update operator weights based on their performance in the last segment.
      * Formula: w_new = w_old * (1 - rho) + rho * avgScore
      */
     private void updateWeights() {
+        // Update destroy weights
         for (int i = 0; i < destroyWeights.length; i++) {
             if (destroyUsageCounts[i] > 0) {
                 double avgScore = destroyScores[i] / destroyUsageCounts[i];
@@ -235,6 +288,18 @@ public class ALNSAlgorithm extends Algorithm {
             // Reset for next segment
             destroyUsageCounts[i] = 0;
             destroyScores[i] = 0.0;
+        }
+
+        // Update repair weights
+        for (int i = 0; i < repairWeights.length; i++) {
+            if (repairUsageCounts[i] > 0) {
+                double avgScore = repairScores[i] / repairUsageCounts[i];
+                repairWeights[i] = repairWeights[i] * (1 - reactionFactor) + reactionFactor * avgScore;
+                repairWeights[i] = Math.max(repairWeights[i], minWeight);
+            }
+            // Reset for next segment
+            repairUsageCounts[i] = 0;
+            repairScores[i] = 0.0;
         }
     }
 
@@ -258,8 +323,8 @@ public class ALNSAlgorithm extends Algorithm {
             case SUBPATH_REMOVAL:
                 destroySubpath(tour, removedNodes, nodesToRemove);
                 break;
-            case LONGEST_EDGE_REMOVAL:
-                destroyLongestEdge(tour, removedNodes, nodesToRemove);
+            case COST_WEIGHTED_ROULETTE:
+                destroyCostWeightedRoulette(tour, removedNodes, nodesToRemove);
                 break;
         }
     }
@@ -284,36 +349,80 @@ public class ALNSAlgorithm extends Algorithm {
         tour.removeAll(toRemoveSet);
     }
 
-    private void destroyLongestEdge(List<Integer> tour, List<Integer> removedNodes, int count) {
+    /**
+     * Cost-weighted roulette destroy: nodes with higher cost (node cost + adjacent edge costs)
+     * have higher probability of being removed.
+     */
+    private void destroyCostWeightedRoulette(List<Integer> tour, List<Integer> removedNodes, int count) {
         if (tour.size() < 2) return;
 
-        List<Edge> edges = new ArrayList<>();
-        for (int i = 0; i < tour.size(); i++) {
-            int u = tour.get(i);
-            int v = tour.get((i + 1) % tour.size());
-            edges.add(new Edge(u, v, instance.getDistanceMatrix().getDistance(u, v)));
-        }
+        DistanceMatrix dm = instance.getDistanceMatrix();
+        Set<Integer> toRemove = new HashSet<>();
 
-        edges.sort(Comparator.comparingDouble(Edge::getLength).reversed());
+        while (toRemove.size() < count && tour.size() - toRemove.size() > 2) {
+            // Calculate cost for each node not yet marked for removal
+            List<Integer> candidates = new ArrayList<>();
+            List<Double> costs = new ArrayList<>();
+            double totalCost = 0;
 
-        Set<Integer> nodesForRemoval = new HashSet<>();
-        for (Edge edge : edges) {
-            if (nodesForRemoval.size() >= count) break;
+            for (int i = 0; i < tour.size(); i++) {
+                int node = tour.get(i);
+                if (toRemove.contains(node)) continue;
 
-            int nodeToAdd = random.nextBoolean() ? edge.getU() : edge.getV();
-            if (tour.size() - nodesForRemoval.size() > 2) {
-                nodesForRemoval.add(nodeToAdd);
+                // Cost = node cost + incoming edge + outgoing edge
+                int prevIdx = (i - 1 + tour.size()) % tour.size();
+                int nextIdx = (i + 1) % tour.size();
+                int prevNode = tour.get(prevIdx);
+                int nextNode = tour.get(nextIdx);
+
+                double nodeCost = instance.getNode(node).getCost();
+                double edgeCost = dm.getDistance(prevNode, node) + dm.getDistance(node, nextNode);
+                double cost = nodeCost + edgeCost;
+
+                candidates.add(node);
+                costs.add(cost);
+                totalCost += cost;
             }
+
+            if (candidates.isEmpty() || totalCost == 0) break;
+
+            // Roulette wheel selection
+            double spin = random.nextDouble() * totalCost;
+            double cumulative = 0;
+            int selectedNode = candidates.get(candidates.size() - 1);
+
+            for (int i = 0; i < candidates.size(); i++) {
+                cumulative += costs.get(i);
+                if (cumulative >= spin) {
+                    selectedNode = candidates.get(i);
+                    break;
+                }
+            }
+
+            toRemove.add(selectedNode);
         }
 
-        removedNodes.addAll(nodesForRemoval);
-        tour.removeAll(removedNodes);
+        removedNodes.addAll(toRemove);
+        tour.removeAll(toRemove);
     }
 
     /**
-     * Repair the partial tour using 2-regret heuristic with weights (1, 1).
+     * Repair the partial tour using selected repair operator.
      */
-    private Solution repair(List<Integer> partialTour, List<Integer> removedNodes) {
+    private Solution repair(List<Integer> partialTour, List<Integer> removedNodes, RepairHeuristic heuristic) {
+        switch (heuristic) {
+            case TWO_REGRET:
+                return repairWith2Regret(partialTour);
+            case GREEDY_CYCLE:
+            default:
+                return repairWithGreedyCycle(partialTour);
+        }
+    }
+
+    /**
+     * Repair using 2-regret heuristic with weights (1, 1).
+     */
+    private Solution repairWith2Regret(List<Integer> partialTour) {
         NearestNeighborAnyPositionTwoRegretAlgorithm regretAlgorithm =
             new NearestNeighborAnyPositionTwoRegretAlgorithm(
                 instance,
@@ -325,19 +434,59 @@ public class ALNSAlgorithm extends Algorithm {
         return regretAlgorithm.solve();
     }
 
-    private static class Edge {
-        private final int u, v;
-        private final double length;
+    /**
+     * Repair using greedy cycle insertion.
+     * Inserts nodes at the position causing minimum cost increase.
+     */
+    private Solution repairWithGreedyCycle(List<Integer> partialTour) {
+        List<Integer> route = new ArrayList<>(partialTour);
+        Set<Integer> selectedNodes = new HashSet<>(partialTour);
 
-        public Edge(int u, int v, double length) {
-            this.u = u;
-            this.v = v;
-            this.length = length;
+        // Find unselected nodes
+        Set<Integer> unselectedNodes = new HashSet<>();
+        for (int i = 0; i < instance.getTotalNodes(); i++) {
+            if (!selectedNodes.contains(i)) {
+                unselectedNodes.add(i);
+            }
         }
 
-        public int getU() { return u; }
-        public int getV() { return v; }
-        public double getLength() { return length; }
+        DistanceMatrix dm = instance.getDistanceMatrix();
+
+        // Greedy insertion until we have required number of nodes
+        while (selectedNodes.size() < instance.getRequiredNodes()) {
+            int bestNode = -1;
+            int bestPosition = -1;
+            long bestCost = Long.MAX_VALUE;
+
+            for (int candidate : unselectedNodes) {
+                long nodeCost = instance.getNode(candidate).getCost();
+
+                for (int pos = 0; pos < route.size(); pos++) {
+                    int nodeA = route.get(pos);
+                    int nodeB = route.get((pos + 1) % route.size());
+
+                    long removedDist = dm.getDistance(nodeA, nodeB);
+                    long addedDist = dm.getDistance(nodeA, candidate) + dm.getDistance(candidate, nodeB);
+                    long insertionCost = nodeCost + addedDist - removedDist;
+
+                    if (insertionCost < bestCost) {
+                        bestCost = insertionCost;
+                        bestNode = candidate;
+                        bestPosition = pos + 1;
+                    }
+                }
+            }
+
+            if (bestNode != -1) {
+                route.add(bestPosition, bestNode);
+                selectedNodes.add(bestNode);
+                unselectedNodes.remove(bestNode);
+            } else {
+                break;
+            }
+        }
+
+        return new TSPSolution(instance, selectedNodes, route);
     }
 
     private static class SolutionAlgorithm extends Algorithm {
@@ -366,9 +515,16 @@ public class ALNSAlgorithm extends Algorithm {
     }
 
     /**
-     * Get the final weights for analysis purposes.
+     * Get the final destroy weights for analysis purposes.
      */
     public double[] getDestroyWeights() {
         return destroyWeights.clone();
+    }
+
+    /**
+     * Get the final repair weights for analysis purposes.
+     */
+    public double[] getRepairWeights() {
+        return repairWeights.clone();
     }
 }
