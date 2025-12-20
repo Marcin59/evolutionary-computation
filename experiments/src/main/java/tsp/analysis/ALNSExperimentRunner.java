@@ -110,21 +110,17 @@ public class ALNSExperimentRunner {
     private static List<ALNSConfig> defineConfigurations() {
         List<ALNSConfig> configs = new ArrayList<>();
 
-        // Default configuration
-        configs.add(new ALNSConfig(0.25, 0.1, 100, 0.9995, true));
-
-        // Reactive configuration (faster adaptation)
-        configs.add(new ALNSConfig(0.25, 0.3, 100, 0.9995, true));
-
-        // Different destruction rates
-        configs.add(new ALNSConfig(0.30, 0.1, 100, 0.9995, true));
-        configs.add(new ALNSConfig(0.35, 0.1, 100, 0.9995, true));
-
-        // Slower cooling (more exploration)
-        configs.add(new ALNSConfig(0.25, 0.1, 100, 0.9998, true));
-
-        // Without local search (for comparison)
-        configs.add(new ALNSConfig(0.25, 0.1, 100, 0.9995, false));
+        // Top 5 configurations from parameter tuning:
+        // 1. Best min (69,178)
+        configs.add(new ALNSConfig(0.25, 0.15, 7, 0.9999, true));
+        // 2. Good balance (69,179 min, 69,236 avg)
+        configs.add(new ALNSConfig(0.25, 0.20, 9, 1.0, true));
+        // 3. Best avg (69,225)
+        configs.add(new ALNSConfig(0.30, 0.10, 25, 1.0, true));
+        // 4. Consistent (69,200 min, 69,239 avg)
+        configs.add(new ALNSConfig(0.30, 0.25, 25, 1.0, true));
+        // 5. Fast with good min (69,202)
+        configs.add(new ALNSConfig(0.60, 0.25, 11, 0.9999, true));
 
         return configs;
     }
@@ -146,10 +142,10 @@ public class ALNSExperimentRunner {
                     config.reactionFactor,
                     config.segmentLength,
                     config.coolingRate,
-                    3.0,  // sigma1
-                    2.0,   // sigma2
-                    1.0,  // sigma3
-                    0.1    // minWeight
+                    10.0,  // sigma1 - reward for new global best
+                    5.0,   // sigma2 - reward for improving current
+                    2.0,  // sigma3 - reward for accepting worse
+                    0.05    // minWeight - prevent operator starvation
             );
 
             long startTime = System.currentTimeMillis();

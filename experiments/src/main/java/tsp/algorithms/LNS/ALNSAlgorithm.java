@@ -2,6 +2,7 @@ package tsp.algorithms.LNS;
 
 import tsp.core.Algorithm;
 import tsp.algorithms.greedy.RandomSolutionAlgorithm;
+import tsp.algorithms.greedy.GreedyCycleAlgorithm;
 import tsp.algorithms.localsearch.LocalSearchAlgorithm;
 import tsp.algorithms.localsearch.SteepestLocalSearch;
 import tsp.algorithms.regret.NearestNeighborAnyPositionTwoRegretAlgorithm;
