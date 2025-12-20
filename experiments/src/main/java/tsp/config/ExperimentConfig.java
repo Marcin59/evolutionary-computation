@@ -7,7 +7,7 @@ package tsp.config;
 public class ExperimentConfig {
     
     // Algorithm type configuration
-    public static final String ALGORITHM_TYPE = "lns"; // Change this to switch algorithm types
+    public static final String ALGORITHM_TYPE = "local_search"; // Change this to switch algorithm types
     // Supported types: "greedy", "regret", "local_search", "candidate_moves", "deltas", "msls_ils", "lns"
     
     // Directory configuration

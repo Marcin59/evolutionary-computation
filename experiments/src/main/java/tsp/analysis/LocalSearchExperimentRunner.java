@@ -52,59 +52,24 @@ public class LocalSearchExperimentRunner {
         System.out.println("Total nodes: " + instance.getTotalNodes());
         System.out.println("Required nodes: " + instance.getRequiredNodes());
         
-        // Define all 8 configurations
         List<LSConfiguration> configurations = Arrays.asList(
-            // Steepest + Nodes + Random
-            new LSConfiguration("SteepestLS_Nodes_Random", true, 
-                LocalSearchAlgorithm.Neighborhood.NODE_SWAP, false),
-            
-            // Steepest + Nodes + NearestNeighborAny2Regret_w1_1
-            new LSConfiguration("SteepestLS_Nodes_NearestNeighborAny2Regret_w1_1", true, 
-                LocalSearchAlgorithm.Neighborhood.NODE_SWAP, true),
-            
-            // Steepest + Edges + Random
-            new LSConfiguration("SteepestLS_Edges_Random", true, 
-                LocalSearchAlgorithm.Neighborhood.TWO_OPT, false),
-            
-            // Steepest + Edges + NearestNeighborAny2Regret_w1_1
-            new LSConfiguration("SteepestLS_Edges_NearestNeighborAny2Regret_w1_1", true, 
-                LocalSearchAlgorithm.Neighborhood.TWO_OPT, true),
-            
-            // Greedy + Nodes + Random
-            new LSConfiguration("GreedyLS_Nodes_Random", false, 
-                LocalSearchAlgorithm.Neighborhood.NODE_SWAP, false),
-            
-            // Greedy + Nodes + NearestNeighborAny2Regret_w1_1
-            new LSConfiguration("GreedyLS_Nodes_NearestNeighborAny2Regret_w1_1", false, 
-                LocalSearchAlgorithm.Neighborhood.NODE_SWAP, true),
-            
             // Greedy + Edges + Random
             new LSConfiguration("GreedyLS_Edges_Random", false, 
-                LocalSearchAlgorithm.Neighborhood.TWO_OPT, false),
-            
-            // Greedy + Edges + NearestNeighborAny2Regret_w1_1
-            new LSConfiguration("GreedyLS_Edges_NearestNeighborAny2Regret_w1_1", false, 
-                LocalSearchAlgorithm.Neighborhood.TWO_OPT, true)
+                LocalSearchAlgorithm.Neighborhood.TWO_OPT, false)
         );
         
         // Run each configuration starting from each node
         for (LSConfiguration config : configurations) {
             System.out.println("\nRunning " + config.getFullName() + "...");
             
-            for (int startNode = 0; startNode < instance.getTotalNodes(); startNode++) {
-                // Create initial solution algorithm
-                Algorithm initialAlgorithm;
-                if (config.useNearestNeighborAny2Regret_w1_1) {
-                    initialAlgorithm = new NearestNeighborAnyPositionTwoRegretAlgorithm(instance, startNode, 1, 1);
-                } else {
+            Algorithm initialAlgorithm;
+            for (int startNode = 0; startNode < 1000; startNode++) {
                     // Use seed for reproducibility
-                    long seed = startNode * 1000L + config.hashCode();
-                    initialAlgorithm = new RandomSolutionAlgorithm(instance, startNode, seed);
-                }
+                long seed = startNode * 1000L + config.hashCode();
+                initialAlgorithm = new RandomSolutionAlgorithm(instance, startNode, seed);
                 
                 // Create local search algorithm
                 LocalSearchAlgorithm lsAlgorithm;
-                long seed = startNode * 1000L + config.hashCode();
                 
                 if (config.isSteepest) {
                     lsAlgorithm = new SteepestLocalSearch(initialAlgorithm, seed, config.neighborhood);

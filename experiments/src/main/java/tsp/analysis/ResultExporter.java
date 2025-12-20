@@ -88,6 +88,7 @@ public class ResultExporter {
         map.put("computation_time_ms", result.getComputationTimeMs());
         map.put("selected_nodes_count", result.getSelectedNodes());
         map.put("total_nodes", result.getTotalNodes());
+        map.put("solution_route", result.getSolution().getRoute());
         return map;
     }
     
